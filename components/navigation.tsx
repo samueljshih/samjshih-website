@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { Logo } from "@/components/logo";
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,9 +18,12 @@ export function Navigation() {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-bold text-2xl lg:text-3xl text-electric-blue-600">
-            Sam Shih
-          </div>
+          <button
+            onClick={() => scrollToSection("hero")}
+            className="hover:scale-105 transition-transform duration-200"
+          >
+            <Logo size="md" />
+          </button>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

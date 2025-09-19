@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import Image from "next/image";
 import {
   Search,
   ChevronLeft,
@@ -151,9 +152,11 @@ export function CaseStudiesSection() {
               className="overflow-hidden hover:shadow-lg transition-all duration-300 group"
             >
               <div className="aspect-video overflow-hidden">
-                <img
+                <Image
                   src={study.image || "/placeholder.svg"}
                   alt={study.company}
+                  width={400}
+                  height={225}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
               </div>

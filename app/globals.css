@@ -1,6 +1,17 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/* Performance optimizations */
+.hero-section {
+  contain: layout style paint;
+}
+
+/* Optimize font loading */
+@font-face {
+  font-family: "Geist Sans";
+  font-display: swap;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -228,53 +239,70 @@
   }
 }
 
-/* Hero section polygon animations */
-@keyframes float {
+/* Hero section polygon animations - Optimized for performance */
+@keyframes subtleFloat {
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) translateZ(0);
+    opacity: 0.6;
   }
   50% {
-    transform: translateY(-20px) rotate(5deg);
+    transform: translateY(-10px) translateZ(0);
+    opacity: 0.8;
   }
 }
 
-@keyframes floatReverse {
+@keyframes subtleFloatReverse {
   0%,
   100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px) translateZ(0);
+    opacity: 0.5;
   }
   50% {
-    transform: translateY(20px) rotate(-5deg);
+    transform: translateY(8px) translateZ(0);
+    opacity: 0.7;
   }
 }
 
-@keyframes glow {
-  0%,
-  100% {
-    box-shadow: 0 0 20px rgba(37, 99, 235, 0.1);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(37, 99, 235, 0.2);
-  }
-}
-
+/* Use will-change and transform3d for better performance */
 .hero-polygon-1 {
-  animation: float 6s ease-in-out infinite;
+  animation: subtleFloat 8s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .hero-polygon-2 {
-  animation: floatReverse 8s ease-in-out infinite;
+  animation: subtleFloatReverse 10s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .hero-polygon-3 {
-  animation: float 7s ease-in-out infinite;
+  animation: subtleFloat 12s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .hero-polygon-4 {
-  animation: floatReverse 9s ease-in-out infinite;
+  animation: subtleFloatReverse 9s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .hero-polygon-5 {
-  animation: float 5s ease-in-out infinite;
+  animation: subtleFloat 7s ease-in-out infinite;
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/* Disable animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-polygon-1,
+  .hero-polygon-2,
+  .hero-polygon-3,
+  .hero-polygon-4,
+  .hero-polygon-5 {
+    animation: none;
+    transform: none;
+  }
 }

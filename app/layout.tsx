@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "AI automation, chatbots, business automation, AI consultant, workflow automation, lead generation",
   authors: [{ name: "Sam Shih" }],
   creator: "Sam Shih",
+  other: {
+    "font-display": "swap",
+  },
 };
 
 export default function RootLayout({

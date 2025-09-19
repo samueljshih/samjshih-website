@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Music, Linkedin, Instagram, ExternalLink } from "lucide-react";
+import Image from "next/image";
 
 export function AboutSection() {
   return (
@@ -15,9 +16,11 @@ export function AboutSection() {
 
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="flex-shrink-0">
-            <img
+            <Image
               src="/sam-headshot.webp"
               alt="Sam J. Shih professional headshot"
+              width={256}
+              height={256}
               className="w-64 h-64 rounded-2xl object-cover shadow-lg"
             />
           </div>

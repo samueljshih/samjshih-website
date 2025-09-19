@@ -1,11 +1,12 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
+      className="hero-section relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
     >
       {/* Elegant polygon background */}
       <div className="absolute inset-0 z-0">
@@ -99,9 +100,12 @@ export function HeroSection() {
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
               <div className="absolute inset-0 bg-electric-blue-600/20 rounded-2xl blur-2xl transform rotate-6"></div>
-              <img
+              <Image
                 src="/sam-headshot.webp"
                 alt="Sam - AI Automation Expert"
+                width={320}
+                height={384}
+                priority
                 className="relative w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white/30 backdrop-blur-sm"
               />
               <div className="absolute -bottom-4 -right-4 bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
