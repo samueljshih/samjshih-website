@@ -27,19 +27,26 @@ export function AboutSection() {
 
           <div className="flex-1 text-center md:text-left">
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              When I'm not building automation systems, you'll find me creating
-              music or exploring new ventures. I believe in the power of
-              technology to free up human creativity and potential. My goal is
-              to help businesses focus on what they do best while AI handles the
-              rest.
+              I've always enjoyed making things more efficient — there's
+              something deeply satisfying about seeing a process run smoothly
+              and watching the relief it brings to business owners. When the
+              busywork is handled, they have more space to focus on growing
+              their business, connecting with customers, and doing the work they
+              actually enjoy.
             </p>
 
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-              With a background in cognitive psychology and 5+ years in software
-              engineering, I bring a unique perspective to automation -
-              understanding both how people think and how technology works. I
-              love seeing the moment when a business owner realizes they can get
-              their time back through smart automation.
+              With over five years in software engineering and a background in
+              psychology, I bring a mix of technical expertise and an
+              understanding of human behavior to every project. The systems I
+              build aren't just functional — they're designed to fit naturally
+              into how people work, so they actually get used.
+            </p>
+
+            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+              Outside of work, I'm usually making music or tinkering with new
+              projects. I love collaborating with business owners who are ready
+              to simplify, scale, and create more room for what really matters.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">

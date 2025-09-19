@@ -14,52 +14,7 @@ const testimonials = [
     content:
       "There are core things I need to handle as the business owner — but I simply don't have the time. This system gave me back hours every week.",
     rating: 5,
-    image: "/professional-business-owner-headshot.png",
-  },
-  {
-    id: 2,
-    name: "Sarah Johnson",
-    title: "CEO, Leagarvin",
-    content:
-      "Our onboarding is now seamless and professional. Sam's automation reduced our setup time by 75% and virtually eliminated errors.",
-    rating: 5,
-    image: "/professional-business-owner-headshot.png",
-  },
-  {
-    id: 3,
-    name: "Mike Chen",
-    title: "Operations Manager, Archna",
-    content:
-      "Never run out of stock again. This inventory system is incredible - 99.5% accuracy and $50K saved annually.",
-    rating: 5,
-    image: "/professional-business-owner-headshot.png",
-  },
-  {
-    id: 4,
-    name: "Jennifer Martinez",
-    title: "Founder, TechStart Solutions",
-    content:
-      "The automation system completely transformed our business. Revenue increased 40% while our workload decreased significantly.",
-    rating: 5,
-    image: "/professional-business-owner-headshot.png",
-  },
-  {
-    id: 5,
-    name: "David Park",
-    title: "Director, Growth Co",
-    content:
-      "Sam's AI solutions are game-changing. We automated our entire lead qualification process and saw immediate results.",
-    rating: 5,
-    image: "/professional-business-owner-headshot.png",
-  },
-  {
-    id: 6,
-    name: "Lisa Wong",
-    title: "VP Operations, Scale Inc",
-    content:
-      "Professional, efficient, and results-driven. The custom workflow Sam built saves us 25 hours per week.",
-    rating: 5,
-    image: "/professional-business-owner-headshot.png",
+    image: "/denney.jpeg",
   },
 ];
 

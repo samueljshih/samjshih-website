@@ -55,7 +55,7 @@ export function HeroSection() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance mb-6 leading-tight">
               Hi, I'm <span className="text-electric-blue-600">Sam</span>
-              <br />I Save Businesses 20+ Hours Per Week
+              <br />I Save Businesses 10+ Hours Per Week
             </h1>
 
             <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-12 text-pretty leading-relaxed">

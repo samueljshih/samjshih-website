@@ -39,42 +39,6 @@ const caseStudies = [
     tools: ["Chatbase", "Twilio", "Zapier"],
     image: "/modern-business-logo.png",
   },
-  {
-    id: 2,
-    company: "Leagarvin",
-    industry: "Professional Services",
-    title: "Client Onboarding Automation",
-    description:
-      "Streamlined client intake process with automated document collection and scheduling.",
-    category: "Process Automation",
-    metrics: [
-      { label: "Setup Time", value: "75% Faster", icon: Zap },
-      { label: "Error Rate", value: "90% Reduced", icon: AlertCircle },
-      { label: "Client Satisfaction", value: "95%", icon: Users },
-    ],
-    testimonial: "Our onboarding is now seamless and professional.",
-    author: "Sarah Johnson, CEO",
-    tools: ["Zapier", "Airtable", "Calendly"],
-    image: "/saas-platform-logo.png",
-  },
-  {
-    id: 3,
-    company: "Archna",
-    industry: "E-commerce",
-    title: "Inventory Management System",
-    description:
-      "Automated inventory tracking and reorder notifications with real-time analytics.",
-    category: "Operations",
-    metrics: [
-      { label: "Stock Accuracy", value: "99.5%", icon: Target },
-      { label: "Reorder Time", value: "80% Faster", icon: BarChart3 },
-      { label: "Cost Savings", value: "$50K/year", icon: DollarSign },
-    ],
-    testimonial: "Never run out of stock again. This system is incredible.",
-    author: "Mike Chen, Operations Manager",
-    tools: ["Python", "APIs", "Slack"],
-    image: "/health-tech-logo.png",
-  },
 ];
 
 const categories = [
