@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Code, Zap } from "lucide-react";
+import Image from "next/image";
 
 export function EngineeringProjectsSection() {
   const projects = [
@@ -12,6 +13,7 @@ export function EngineeringProjectsSection() {
       category: "SaaS Platform",
       tech: ["React", "Next.js", "TypeScript"],
       color: "bg-primary",
+      logo: "/top_logo.png",
     },
     {
       title: "Rapid Weight Loss USA",
@@ -21,6 +23,7 @@ export function EngineeringProjectsSection() {
       category: "Health Tech",
       tech: ["React", "Next.js", "Mobile-First"],
       color: "bg-secondary",
+      logo: "/rapid_weight_loss_logo.webp",
     },
     {
       title: "The Godfellas",
@@ -30,6 +33,7 @@ export function EngineeringProjectsSection() {
       category: "Nonprofit",
       tech: ["React", "UX Design", "Analytics"],
       color: "bg-accent",
+      logo: "/the_godfellas_logo.webp",
     },
   ];
 
@@ -57,13 +61,20 @@ export function EngineeringProjectsSection() {
                 <div className={`h-2 ${project.color} rounded-t-lg`}></div>
                 <div className="p-6">
                   <div className="flex items-start justify-between mb-4">
-                    <div>
+                    <div className="flex-1">
                       <span className="text-xs font-medium text-muted-foreground bg-slate-100 px-2 py-1 rounded-full">
                         {project.category}
                       </span>
-                      <h3 className="text-xl font-bold mt-3 mb-2">
-                        {project.title}
-                      </h3>
+                      <div className="flex items-center gap-3 mt-3 mb-2">
+                        <Image
+                          src={project.logo}
+                          alt={project.title}
+                          width={32}
+                          height={32}
+                          className="w-8 h-8 object-contain"
+                        />
+                        <h3 className="text-xl font-bold">{project.title}</h3>
+                      </div>
                     </div>
                     <Code className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
                   </div>

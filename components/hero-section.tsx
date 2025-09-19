@@ -53,7 +53,7 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-balance mb-6 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-balance mb-6 leading-tight">
               Hi, I'm <span className="text-electric-blue-600">Sam</span>
               <br />I Save Businesses 10+ Hours Per Week
             </h1>
@@ -93,7 +93,7 @@ export function HeroSection() {
             </div>
 
             <div className="mt-12 text-base text-muted-foreground text-center lg:text-left">
-              <p>Trusted by 50+ businesses • Average ROI: 400%</p>
+              <p>Guaranteed results • Proven track record</p>
             </div>
           </div>
 

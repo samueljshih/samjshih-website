@@ -37,7 +37,7 @@ const caseStudies = [
     testimonial: "This system gave me back hours every week.",
     author: "Coach Denney Choi",
     tools: ["Chatbase", "Twilio", "Zapier"],
-    image: "/modern-business-logo.png",
+    image: "/baem_jitsu.jpg",
   },
 ];
 
@@ -115,15 +115,6 @@ export function CaseStudiesSection() {
               key={study.id}
               className="overflow-hidden hover:shadow-lg transition-all duration-300 group"
             >
-              <div className="aspect-video overflow-hidden">
-                <Image
-                  src={study.image || "/placeholder.svg"}
-                  alt={study.company}
-                  width={400}
-                  height={225}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-              </div>
               <CardContent className="p-6">
                 <div className="flex items-center justify-between mb-3">
                   <Badge className="bg-primary/10 text-primary border-primary/20">
@@ -134,9 +125,18 @@ export function CaseStudiesSection() {
                   </Badge>
                 </div>
 
-                <h3 className="text-2xl font-bold mb-3 text-balance">
-                  {study.company}
-                </h3>
+                <div className="flex items-center gap-3 mb-3">
+                  <Image
+                    src={study.image || "/placeholder.svg"}
+                    alt={study.company}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 object-cover rounded-lg"
+                  />
+                  <h3 className="text-2xl font-bold text-balance">
+                    {study.company}
+                  </h3>
+                </div>
                 <h4 className="text-xl font-semibold text-primary mb-4">
                   {study.title}
                 </h4>

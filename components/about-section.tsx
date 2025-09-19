@@ -27,26 +27,18 @@ export function AboutSection() {
 
           <div className="flex-1 text-center md:text-left">
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              I've always enjoyed making things more efficient — there's
-              something deeply satisfying about seeing a process run smoothly
-              and watching the relief it brings to business owners. When the
-              busywork is handled, they have more space to focus on growing
-              their business, connecting with customers, and doing the work they
-              actually enjoy.
+              I'm a software engineer with over five years in the tech industry,
+              passionate about building efficient systems that solve real
+              business problems. I specialize in creating automation solutions
+              that handle the busywork so business owners can focus on growth
+              and what they actually enjoy.
             </p>
 
             <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-              With over five years in software engineering and a background in
-              psychology, I bring a mix of technical expertise and an
-              understanding of human behavior to every project. The systems I
-              build aren't just functional — they're designed to fit naturally
-              into how people work, so they actually get used.
-            </p>
-
-            <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
-              Outside of work, I'm usually making music or tinkering with new
-              projects. I love collaborating with business owners who are ready
-              to simplify, scale, and create more room for what really matters.
+              I work with modern technologies like React, Next.js, and AI tools
+              to build systems that are both powerful and user-friendly. When
+              I'm not coding, you'll find me making music or exploring new tech
+              projects.
             </p>
 
             <div className="flex flex-wrap gap-4 justify-center md:justify-start">
