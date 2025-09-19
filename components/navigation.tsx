@@ -17,7 +17,7 @@ export function Navigation() {
       <div className="container max-w-6xl mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="font-bold text-xl text-electric-blue-600">
+          <div className="font-bold text-2xl lg:text-3xl text-electric-blue-600">
             Sam Shih
           </div>
 
@@ -25,37 +25,37 @@ export function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("hero")}
-              className="text-gray-700 hover:text-electric-blue-600 transition-colors"
+              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
               Home
             </button>
             <button
               onClick={() => scrollToSection("case-studies")}
-              className="text-gray-700 hover:text-electric-blue-600 transition-colors"
+              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
               Case Studies
             </button>
             <button
               onClick={() => scrollToSection("projects")}
-              className="text-gray-700 hover:text-electric-blue-600 transition-colors"
+              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
               Projects
             </button>
             <button
               onClick={() => scrollToSection("services")}
-              className="text-gray-700 hover:text-electric-blue-600 transition-colors"
+              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
               Services
             </button>
             <button
               onClick={() => scrollToSection("about")}
-              className="text-gray-700 hover:text-electric-blue-600 transition-colors"
+              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
               About
             </button>
             <Button
               onClick={() => scrollToSection("calendly")}
-              className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white"
+              className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white text-lg font-semibold px-6 py-3"
             >
               Book Call
             </Button>
@@ -73,37 +73,37 @@ export function Navigation() {
             <div className="flex flex-col space-y-4">
               <button
                 onClick={() => scrollToSection("hero")}
-                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors"
+                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
                 Home
               </button>
               <button
                 onClick={() => scrollToSection("case-studies")}
-                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors"
+                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
                 Case Studies
               </button>
               <button
                 onClick={() => scrollToSection("projects")}
-                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors"
+                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
                 Projects
               </button>
               <button
                 onClick={() => scrollToSection("services")}
-                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors"
+                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
                 Services
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors"
+                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
                 About
               </button>
               <Button
                 onClick={() => scrollToSection("calendly")}
-                className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white w-fit"
+                className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white w-fit text-lg font-semibold px-6 py-3"
               >
                 Book Call
               </Button>

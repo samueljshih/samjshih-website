@@ -27,10 +27,10 @@ export function CalendlySection() {
     <section id="calendly" className="py-20 px-4">
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             Ready to Automate Your Business?
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             Book a free 30-minute consultation to discuss your automation needs
             and see how I can help you save time and increase revenue.
           </p>
@@ -41,8 +41,8 @@ export function CalendlySection() {
             <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
               <Calendar className="w-6 h-6 text-primary" />
             </div>
-            <h3 className="font-semibold mb-2">Free Consultation</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="text-lg font-semibold mb-2">Free Consultation</h3>
+            <p className="text-base text-muted-foreground">
               30-minute strategy session to identify automation opportunities
             </p>
           </div>
@@ -51,8 +51,8 @@ export function CalendlySection() {
             <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
               <Clock className="w-6 h-6 text-secondary" />
             </div>
-            <h3 className="font-semibold mb-2">Quick Turnaround</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="text-lg font-semibold mb-2">Quick Turnaround</h3>
+            <p className="text-base text-muted-foreground">
               Most projects completed within 2-4 weeks
             </p>
           </div>
@@ -61,8 +61,8 @@ export function CalendlySection() {
             <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-6 h-6 text-accent" />
             </div>
-            <h3 className="font-semibold mb-2">Quality Focused</h3>
-            <p className="text-sm text-muted-foreground">
+            <h3 className="text-lg font-semibold mb-2">Quality Focused</h3>
+            <p className="text-base text-muted-foreground">
               Dedicated to delivering measurable results
             </p>
           </div>
@@ -70,8 +70,8 @@ export function CalendlySection() {
 
         <div className="bg-card rounded-2xl p-8 md:p-12">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-4">Schedule Your Free Call</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-3xl font-bold mb-6">Schedule Your Free Call</h3>
+            <p className="text-lg text-muted-foreground">
               Choose a time that works for you. No sales pitch - just valuable
               insights about your automation potential.
             </p>

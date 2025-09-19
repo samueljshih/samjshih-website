@@ -108,10 +108,10 @@ export function CaseStudiesSection() {
     <section id="case-studies" className="py-20 px-4 bg-slate-50/50">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             Real Results from Real Businesses
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             See how AI automation transformed these companies' operations and
             bottom line.
           </p>
@@ -167,13 +167,13 @@ export function CaseStudiesSection() {
                   </Badge>
                 </div>
 
-                <h3 className="text-xl font-bold mb-2 text-balance">
+                <h3 className="text-2xl font-bold mb-3 text-balance">
                   {study.company}
                 </h3>
-                <h4 className="text-lg font-semibold text-primary mb-3">
+                <h4 className="text-xl font-semibold text-primary mb-4">
                   {study.title}
                 </h4>
-                <p className="text-muted-foreground text-sm mb-4 text-pretty">
+                <p className="text-muted-foreground text-base mb-6 text-pretty">
                   {study.description}
                 </p>
 

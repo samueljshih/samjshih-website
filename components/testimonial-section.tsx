@@ -75,10 +75,10 @@ export function TestimonialSection() {
     <section className="py-20 px-4 bg-white">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             What Clients Say
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             Real feedback from businesses that transformed their operations with
             AI automation
           </p>
@@ -111,12 +111,12 @@ export function TestimonialSection() {
                     className="w-12 h-12 rounded-full object-cover"
                   />
                   <div>
-                    <div className="font-semibold text-sm">
-                      {testimonial.name}
-                    </div>
-                    <div className="text-xs text-muted-foreground">
-                      {testimonial.title}
-                    </div>
+                  <div className="font-semibold text-base">
+                    {testimonial.name}
+                  </div>
+                  <div className="text-sm text-muted-foreground">
+                    {testimonial.title}
+                  </div>
                   </div>
                 </div>
               </CardContent>
