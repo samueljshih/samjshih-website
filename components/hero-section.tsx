@@ -49,7 +49,7 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-electric-blue-600/15 border border-electric-blue-600/25 text-electric-blue-600 mb-8 backdrop-blur-sm">
               <span className="text-lg">⚡</span>
               <span className="text-sm font-semibold">
-                AI Automation Expert
+                AI Automation Specialist
               </span>
             </div>
 
@@ -74,7 +74,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Book Free 30-Min Call
+                Book Free 20-Min Call
                 <span className="ml-2 text-xl">→</span>
               </Button>
 
@@ -102,7 +102,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-electric-blue-600/20 rounded-2xl blur-2xl transform rotate-6"></div>
               <Image
                 src="/sam-headshot.webp"
-                alt="Sam - AI Automation Expert"
+                alt="Sam - AI Automation Specialist"
                 width={320}
                 height={384}
                 priority

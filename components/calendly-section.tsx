@@ -30,8 +30,8 @@ export function CalendlySection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             Ready to Automate Your Business?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Book a free 30-minute consultation to discuss your automation needs
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
+            Book a free 20-minute consultation to discuss your automation needs
             and see how I can help you save time and increase revenue.
           </p>
         </div>
@@ -81,7 +81,7 @@ export function CalendlySection() {
           <div className="calendly-embed-container mb-6">
             <div
               className="calendly-inline-widget"
-              data-url="https://calendly.com/samuels-shih/30min"
+              data-url="https://calendly.com/samuels-shih/20min"
               style={{ minWidth: "320px", height: "700px" }}
             ></div>
           </div>
