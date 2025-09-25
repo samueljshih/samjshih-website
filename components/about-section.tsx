@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export function AboutSection() {
   return (
-    <section className="py-20 px-4 bg-slate-50/50">
+    <section id="about" className="py-20 px-4 bg-slate-50/50">
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
