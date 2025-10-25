@@ -39,6 +39,25 @@ const caseStudies = [
     tools: ["Chatbase", "Twilio", "Zapier"],
     image: "/baem_jitsu.jpg",
   },
+  {
+    id: 2,
+    company: "Lia Garvin",
+    industry: "Business Coaching",
+    title: "Calendly Call Prep Automation",
+    description:
+      "Built a multi-step research workflow triggered by every scheduled discovery call, automatically gathering lead insights and recent news before the meeting.",
+    category: "Process Automation",
+    metrics: [
+      { label: "Prep Time Saved", value: "90%", icon: Clock },
+      { label: "Insights Generated", value: "5+", icon: Target },
+      { label: "Tools Orchestrated", value: "4", icon: BarChart3 },
+    ],
+    testimonial:
+      "The automation ensures I'm never walking into a discovery call blind—it's like having a research team on call.",
+    author: "Lia Garvin",
+    tools: ["Calendly", "Apollo", "OpenAI", "Airtable", "Custom Integrations"],
+    image: "/lia-garvin-team-whisperer.svg",
+  },
 ];
 
 const categories = [
@@ -129,9 +148,9 @@ export function CaseStudiesSection() {
                   <Image
                     src={study.image || "/placeholder.svg"}
                     alt={study.company}
-                    width={48}
-                    height={48}
-                    className="w-12 h-12 object-cover rounded-lg"
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 object-contain"
                   />
                   <h3 className="text-2xl font-bold text-balance">
                     {study.company}

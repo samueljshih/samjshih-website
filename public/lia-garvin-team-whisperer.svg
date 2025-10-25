@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Lia Garvin Team Whisperer Logo</title>
+  <desc id="desc">Black background with white script text reading Lia Garvin above bold magenta text reading Team Whisperer.</desc>
+  <rect width="1200" height="600" fill="#070707" />
+  <text x="80" y="170" fill="#ffffff" font-family="'Brush Script MT', 'Pacifico', 'Segoe Script', cursive" font-size="180" letter-spacing="2" style="white-space:pre">Lia Garvin</text>
+  <text x="70" y="350" fill="#ff006e" font-family="'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="190" letter-spacing="2" style="white-space:pre">TEAM</text>
+  <text x="70" y="500" fill="#ff006e" font-family="'Montserrat', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-weight="700" font-size="190" letter-spacing="1" style="white-space:pre">WHISPERER</text>
+</svg>
+
