@@ -34,22 +34,22 @@ export function Navigation() {
               Home
             </button>
             <button
-              onClick={() => scrollToSection("case-studies")}
+              onClick={() => scrollToSection("testimonials")}
               className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
-              Case Studies
-            </button>
-            <button
-              onClick={() => scrollToSection("projects")}
-              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
-            >
-              Projects
+              Testimonials
             </button>
             <button
               onClick={() => scrollToSection("services")}
               className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
             >
               Services
+            </button>
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
+            >
+              Projects
             </button>
             <button
               onClick={() => scrollToSection("about")}
@@ -82,22 +82,22 @@ export function Navigation() {
                 Home
               </button>
               <button
-                onClick={() => scrollToSection("case-studies")}
+                onClick={() => scrollToSection("testimonials")}
                 className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
-                Case Studies
-              </button>
-              <button
-                onClick={() => scrollToSection("projects")}
-                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
-              >
-                Projects
+                Testimonials
               </button>
               <button
                 onClick={() => scrollToSection("services")}
                 className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
               >
                 Services
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
+              >
+                Projects
               </button>
               <button
                 onClick={() => scrollToSection("about")}

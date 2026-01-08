@@ -84,11 +84,11 @@ export function HeroSection() {
                 className="px-8 py-4 text-lg bg-background/90 backdrop-blur-sm border-2 border-secondary/60 text-secondary hover:bg-secondary/10 hover:border-secondary/80 transition-all duration-300 font-semibold"
                 onClick={() =>
                   document
-                    .getElementById("case-studies")
+                    .getElementById("testimonials")
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                View Case Studies
+                View Testimonials
               </Button>
             </div>
 

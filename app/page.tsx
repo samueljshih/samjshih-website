@@ -1,6 +1,5 @@
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
-import { CaseStudiesSection } from "@/components/case-studies-section"
 import { EngineeringProjectsSection } from "@/components/engineering-projects-section"
 import { ServicesSection } from "@/components/services-section"
 import { TestimonialSection } from "@/components/testimonial-section"
@@ -13,14 +12,11 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <div className="bg-gray-50/50">
-        <CaseStudiesSection />
-      </div>
-      <EngineeringProjectsSection />
+      <TestimonialSection />
       <div className="bg-gray-50/50">
         <ServicesSection />
       </div>
-      <TestimonialSection />
+      <EngineeringProjectsSection />
       <div className="bg-gray-50/50">
         <CalendlySection />
       </div>
