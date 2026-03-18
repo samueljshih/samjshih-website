@@ -30,6 +30,16 @@ export function EngineeringProjectsSection() {
       logo: "/rapid_weight_loss_logo.webp",
     },
     {
+      title: "Torchline AI",
+      description:
+        "Torchline AI is a vision analytics platform that turns existing camera feeds into operational intelligence. I contributed to building the platform that helps frontline businesses detect safety violations, coach teams with AI-generated clips, and identify compliance gaps — all without new hardware.",
+      url: "https://www.torchline.ai/",
+      category: "AI SaaS",
+      tech: ["Next.js", "AI/ML", "TypeScript"],
+      headerGradient: "from-orange-500 to-rose-600",
+      logo: "/torchline_logo.png",
+    },
+    {
       title: "The Godfellas",
       description:
         "The Godfellas is a nonprofit focused on empowering marginalized communities worldwide. I led the development of their modern, story-driven website with donation flows and newsletter signup, helping them grow their movement and share their impact.",
