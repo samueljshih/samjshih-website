@@ -12,6 +12,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
+      <div className="h-24 bg-gradient-to-b from-[#050b15] to-white" />
       <TestimonialSection />
       <div className="bg-gray-50/50">
         <ServicesSection />

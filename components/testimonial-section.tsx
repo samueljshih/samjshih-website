@@ -1,25 +1,13 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { Star, ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, FileText } from "lucide-react";
 
 const testimonials = [
-  {
-    id: 1,
-    name: "Coach Denney Choi",
-    title: "Owner, Baem Jiu Jitsu",
-    project: "AI-Powered Lead Follow-Up System",
-    content:
-      "There's core functional things required as a business owner that I can't touch because I'm so limited in my time. Sam implemented chatbots that not only save me time, but give me more support than I could ever produce myself. I'm working less but producing more. That's a win-win.",
-    rating: 5,
-    image: "/denney.jpeg",
-    videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/denney.mp4",
-    videoStartTime: 4,
-    caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/baem_jiu_jitsu_case_study.pdf",
-  },
   {
     id: 2,
     name: "Lia Garvin",
@@ -32,6 +20,19 @@ const testimonials = [
     videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/lia_garvin.mp4",
     videoStartTime: 1,
     caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/lia_garvin.pdf",
+  },
+  {
+    id: 1,
+    name: "Coach Denney Choi",
+    title: "Owner, Baem Jiu Jitsu",
+    project: "AI-Powered Lead Follow-Up System",
+    content:
+      "There's core functional things required as a business owner that I can't touch because I'm so limited in my time. Sam implemented chatbots that not only save me time, but give me more support than I could ever produce myself. I'm working less but producing more. That's a win-win.",
+    rating: 5,
+    image: "/denney.jpeg",
+    videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/denney.mp4",
+    videoStartTime: 4,
+    caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/baem_jiu_jitsu_case_study.pdf",
   },
   {
     id: 3,
@@ -145,6 +146,7 @@ function VideoPlayer({ videoUrl, name, startTime = 1 }: { videoUrl: string; name
 
 export function TestimonialSection() {
   const [currentPage, setCurrentPage] = useState(0);
+  const revealRef = useScrollReveal();
   const itemsPerPage = 3;
   const totalPages = Math.ceil(testimonials.length / itemsPerPage);
   const currentTestimonials = testimonials.slice(
@@ -153,11 +155,14 @@ export function TestimonialSection() {
   );
 
   return (
-    <section id="testimonials" className="py-20 px-4 bg-white">
+    <section id="testimonials" className="grain-section py-20 px-4 bg-white">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
+          <div className="section-eyebrow justify-center">
+            Client Results
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            What Clients Say
+            What Clients <span className="text-primary">Say</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             Real feedback from businesses that transformed their operations with
@@ -165,10 +170,10 @@ export function TestimonialSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 auto-rows-fr">
+        <div ref={revealRef} className="reveal-stagger grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 auto-rows-fr">
           {currentTestimonials.map((testimonial) => (
             <div key={testimonial.id} className="h-full">
-              <Card className="hover:shadow-lg transition-shadow duration-300 overflow-hidden !py-0 !gap-0 h-full">
+              <Card className="glow-card brand-card-shadow overflow-hidden !py-0 !gap-0 h-full">
                 <CardContent className="p-6 flex flex-col h-full">
                 {/* Video Player */}
                 {testimonial.videoUrl && (
@@ -179,22 +184,22 @@ export function TestimonialSection() {
                   />
                 )}
 
-                <div className="flex justify-center mb-3">
+                <div className="flex justify-center mb-2">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
                       key={i}
-                      className="w-4 h-4 fill-primary text-primary"
+                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
                     />
                   ))}
                 </div>
 
                 <blockquote className="text-sm text-muted-foreground text-pretty leading-relaxed mb-4">
-                  "{testimonial.content}"
+                  &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
 
                 <div className="mt-auto pt-4 border-t border-gray-100">
                   <div className="flex items-center justify-between mb-3">
-                    <div className="text-xs font-medium text-primary">
+                    <div className="inline-flex bg-blue-50 text-blue-700 text-xs font-medium px-2 py-0.5 rounded-full">
                       {testimonial.project}
                     </div>
                     {testimonial.caseStudyUrl && (
@@ -215,7 +220,7 @@ export function TestimonialSection() {
                       alt={testimonial.name}
                       width={48}
                       height={48}
-                      className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                      className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-offset-2 ring-cyan-200"
                     />
                     <div>
                       <div className="font-semibold text-base">

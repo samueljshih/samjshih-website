@@ -2,63 +2,79 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+
 export function HeroSection() {
   return (
     <section
       id="hero"
-      className="hero-section relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden"
+      className="hero-section relative min-h-screen flex items-center justify-center px-4 pt-24 pb-16 lg:py-20 overflow-hidden"
     >
-      {/* Elegant polygon background */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100"></div>
+        {/* Dark base */}
+        <div className="absolute inset-0 bg-[#050b15]" />
 
-        {/* Animated polygon shapes */}
-        <div className="hero-polygon-1 absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-electric-blue-600/20 to-indigo-600/20 transform rotate-45 rounded-lg"></div>
-        <div className="hero-polygon-2 absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-purple-500/20 to-pink-500/20 transform rotate-12 rounded-lg"></div>
-        <div className="hero-polygon-3 absolute bottom-32 left-1/4 w-20 h-20 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 transform -rotate-12 rounded-lg"></div>
-        <div className="hero-polygon-4 absolute bottom-20 right-1/3 w-28 h-28 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 transform rotate-45 rounded-lg"></div>
-        <div className="hero-polygon-5 absolute top-1/2 left-1/2 w-16 h-16 bg-gradient-to-br from-orange-500/20 to-red-500/20 transform -rotate-45 rounded-lg"></div>
+        {/* Blue glow — top left */}
+        <div
+          className="hero-blob-1 absolute -top-32 -left-32 w-[900px] h-[900px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(37,99,235,0.22) 0%, transparent 60%)",
+          }}
+        />
 
-        {/* Hexagonal pattern overlay */}
-        <div className="absolute inset-0 opacity-30">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.05'%3E%3Cpath d='M30 0l15 8.66v17.32L30 34.64 15 25.98V8.66L30 0zM0 25.98l15-8.66v17.32L0 43.3V25.98zm60 0v17.32L45 25.98V8.66l15 8.66z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-              backgroundSize: "60px 60px",
-            }}
-          ></div>
-        </div>
+        {/* Cyan glow — bottom right */}
+        <div
+          className="hero-blob-2 absolute -bottom-32 -right-10 w-[600px] h-[600px] rounded-full"
+          style={{
+            background:
+              "radial-gradient(circle, rgba(6,182,212,0.14) 0%, transparent 60%)",
+          }}
+        />
 
-        {/* Subtle grid pattern */}
-        <div className="absolute inset-0 opacity-20">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `linear-gradient(rgba(37, 99, 235, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(37, 99, 235, 0.1) 1px, transparent 1px)`,
-              backgroundSize: "40px 40px",
-            }}
-          ></div>
-        </div>
+        {/* Subtle dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.04]"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #38bdf8 1px, transparent 1px)",
+            backgroundSize: "32px 32px",
+          }}
+        />
+
+        {/* Grain texture */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
+            backgroundSize: "200px 200px",
+            opacity: 0.035,
+          }}
+        />
       </div>
 
       <div className="container max-w-6xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content Column */}
-          <div className="text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-electric-blue-600/15 border border-electric-blue-600/25 text-electric-blue-600 mb-8 backdrop-blur-sm">
-              <span className="text-lg">⚡</span>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Content Column — pushed below photo on mobile */}
+          <div className="order-last lg:order-first text-center lg:text-left">
+            {/* Badge */}
+            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8">
+              <span className="text-base">⚡</span>
               <span className="text-sm font-semibold">
                 AI Automation Specialist
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-balance mb-6 leading-tight">
-              Hi, I'm <span className="text-electric-blue-600">Sam</span>
-              <br />I Save Businesses 10+ Hours Per Week
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-balance mb-6 leading-[1.05] tracking-tight">
+              Hi, I&apos;m Sam
+              <br />
+              I Save Businesses
+              <br />
+              10+ Hours a Week
             </h1>
 
-            <p className="text-lg md:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 mb-12 text-pretty leading-relaxed">
+            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 text-pretty leading-relaxed">
               I help businesses eliminate repetitive tasks and scale operations
               through custom AI solutions. From chatbots to automated workflows,
               I build systems that work while you sleep.
@@ -67,7 +83,7 @@ export function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-[0_8px_30px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.6)] transition-all duration-300"
                 onClick={() =>
                   document
                     .getElementById("calendly")
@@ -81,7 +97,7 @@ export function HeroSection() {
               <Button
                 variant="outline"
                 size="lg"
-                className="px-8 py-4 text-lg bg-background/90 backdrop-blur-sm border-2 border-secondary/60 text-secondary hover:bg-secondary/10 hover:border-secondary/80 transition-all duration-300 font-semibold"
+                className="px-8 py-4 text-lg bg-transparent border-2 border-white/25 text-white/90 hover:bg-white/10 hover:border-white/50 transition-all duration-300 font-semibold"
                 onClick={() =>
                   document
                     .getElementById("testimonials")
@@ -92,24 +108,41 @@ export function HeroSection() {
               </Button>
             </div>
 
-            <div className="mt-12 text-base text-muted-foreground text-center lg:text-left">
-              <p>Guaranteed results • Proven track record</p>
+            {/* Stats row */}
+            <div className="mt-10 grid grid-cols-3 gap-6 max-w-xs mx-auto lg:mx-0 lg:max-w-none">
+              {[
+                { value: "5+", label: "Clients Automated" },
+                { value: "10+", label: "Hrs/Wk Saved" },
+                { value: "100%", label: "Satisfaction" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center lg:text-left">
+                  <div className="text-2xl md:text-3xl font-bold text-white">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs text-slate-400 mt-0.5 leading-tight">
+                    {stat.label}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div className="flex justify-center lg:justify-end">
+          {/* Headshot Column — shown first on mobile */}
+          <div className="order-first lg:order-last flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 bg-electric-blue-600/20 rounded-2xl blur-2xl transform rotate-6"></div>
+              <div className="absolute inset-0 bg-blue-500/20 rounded-2xl blur-3xl rotate-6 scale-110" />
+              <div className="absolute inset-0 bg-cyan-400/10 rounded-2xl blur-2xl -rotate-3 scale-105" />
               <Image
                 src="/sam-headshot.webp"
                 alt="Sam - AI Automation Specialist"
                 width={320}
                 height={384}
                 priority
-                className="relative w-80 h-96 object-cover rounded-2xl shadow-2xl border-4 border-white/30 backdrop-blur-sm"
+                className="relative w-52 h-64 sm:w-64 sm:h-80 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-2xl border-4 border-white/10"
               />
-              <div className="absolute -bottom-4 -right-4 bg-secondary text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                Ready to Help! 👋
+              <div className="absolute -bottom-3 -right-3 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                Available now
               </div>
             </div>
           </div>

@@ -3,9 +3,10 @@ import React from "react";
 interface LogoProps {
   className?: string;
   size?: "sm" | "md" | "lg";
+  variant?: "dark" | "light";
 }
 
-export function Logo({ className = "", size = "md" }: LogoProps) {
+export function Logo({ className = "", size = "md", variant = "dark" }: LogoProps) {
   const sizeClasses = {
     sm: "w-8 h-8",
     md: "w-10 h-10",
@@ -66,11 +67,19 @@ export function Logo({ className = "", size = "md" }: LogoProps) {
       {/* Text with modern typography */}
       <div className="flex flex-col">
         <span
-          className={`${textSizes[size]} font-bold bg-gradient-to-r from-electric-blue-600 to-indigo-600 bg-clip-text text-transparent leading-tight`}
+          className={`${textSizes[size]} font-bold bg-gradient-to-r ${
+            variant === "light"
+              ? "from-white to-sky-300"
+              : "from-electric-blue-600 to-indigo-600"
+          } bg-clip-text text-transparent leading-tight`}
         >
           Sam J Shih
         </span>
-        <span className="text-xs text-muted-foreground font-medium tracking-widest uppercase">
+        <span
+          className={`text-xs font-medium tracking-widest uppercase ${
+            variant === "light" ? "text-slate-300/70" : "text-muted-foreground"
+          }`}
+        >
           AI AUTOMATION
         </span>
       </div>

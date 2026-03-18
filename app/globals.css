@@ -25,12 +25,11 @@
   --primary: #2563eb; /* Electric blue */
   --primary-foreground: #ffffff;
   /* Replaced teal with purple */
-  --secondary: #8b5cf6; /* Purple accent */
+  --secondary: #06b6d4; /* Cyan accent */
   --secondary-foreground: #ffffff;
   --muted: #f1f5f9;
   --muted-foreground: #64748b;
-  /* Replaced teal with purple for accents */
-  --accent: #8b5cf6; /* Purple for accents */
+  --accent: #06b6d4; /* Cyan accent */
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
@@ -92,13 +91,11 @@
   --popover-foreground: #ffffff;
   --primary: #2563eb;
   --primary-foreground: #ffffff;
-  /* Updated dark mode secondary from teal to purple */
-  --secondary: #8b5cf6;
+  --secondary: #06b6d4; /* Cyan accent */
   --secondary-foreground: #ffffff;
   --muted: #334155;
   --muted-foreground: #d1d5db; /* Light gray for subtext */
-  /* Updated dark mode accent from teal to purple */
-  --accent: #8b5cf6;
+  --accent: #06b6d4; /* Cyan accent */
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
@@ -239,70 +236,190 @@
   }
 }
 
-/* Hero section polygon animations - Optimized for performance */
-@keyframes subtleFloat {
-  0%,
-  100% {
-    transform: translateY(0px) translateZ(0);
-    opacity: 0.6;
-  }
-  50% {
-    transform: translateY(-10px) translateZ(0);
-    opacity: 0.8;
-  }
+/* ─── Gradient text utilities ─── */
+.text-gradient-blue {
+  background: linear-gradient(135deg, #06b6d4 0%, #2563eb 50%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-@keyframes subtleFloatReverse {
-  0%,
-  100% {
-    transform: translateY(0px) translateZ(0);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(8px) translateZ(0);
-    opacity: 0.7;
-  }
+.text-gradient-light {
+  background: linear-gradient(135deg, #ffffff 0%, #7dd3fc 50%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-/* Use will-change and transform3d for better performance */
-.hero-polygon-1 {
-  animation: subtleFloat 8s ease-in-out infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+.text-gradient-hero {
+  background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 60%, #0ea5e9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.hero-polygon-2 {
-  animation: subtleFloatReverse 10s ease-in-out infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+/* ─── Glow card hover effect ─── */
+.glow-card {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-.hero-polygon-3 {
-  animation: subtleFloat 12s ease-in-out infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+.glow-card:hover {
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.3),
+    0 12px 40px rgba(37, 99, 235, 0.1);
+  transform: translateY(-3px);
 }
 
-.hero-polygon-4 {
-  animation: subtleFloatReverse 9s ease-in-out infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+/* ─── Section eyebrow ─── */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 1.25rem;
+}
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  flex-shrink: 0;
 }
 
-.hero-polygon-5 {
-  animation: subtleFloat 7s ease-in-out infinite;
-  will-change: transform, opacity;
-  backface-visibility: hidden;
+/* ─── Scroll reveal ─── */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* Disable animations for users who prefer reduced motion */
+.reveal-up.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.reveal-stagger.revealed > *:nth-child(1) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0s;
+}
+
+.reveal-stagger.revealed > *:nth-child(2) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.1s;
+}
+
+.reveal-stagger.revealed > *:nth-child(3) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.2s;
+}
+
+.reveal-stagger.revealed > *:nth-child(4) {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .hero-polygon-1,
-  .hero-polygon-2,
-  .hero-polygon-3,
-  .hero-polygon-4,
-  .hero-polygon-5 {
-    animation: none;
+  .reveal-up,
+  .reveal-stagger > * {
+    opacity: 1;
     transform: none;
+    transition: none;
   }
+}
+
+/* ─── Hero blob animations ─── */
+@keyframes blobFloat1 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  40% {
+    transform: translate(20px, -25px) scale(1.06);
+  }
+  70% {
+    transform: translate(-10px, 15px) scale(0.96);
+  }
+}
+
+@keyframes blobFloat2 {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  35% {
+    transform: translate(-20px, 18px) scale(1.04);
+  }
+  70% {
+    transform: translate(15px, -10px) scale(0.98);
+  }
+}
+
+.hero-blob-1 {
+  animation: blobFloat1 16s ease-in-out infinite;
+  will-change: transform;
+}
+
+.hero-blob-2 {
+  animation: blobFloat2 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob-1,
+  .hero-blob-2 {
+    animation: none;
+  }
+}
+
+/* ─── Grain texture overlay ─── */
+.grain-section {
+  position: relative;
+}
+
+.grain-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.grain-section > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* ─── Floating card shadow ─── */
+.brand-card-shadow {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    0 16px 48px rgba(0, 0, 0, 0.07);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
+}
+
+.brand-card-shadow:hover {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.09),
+    0 28px 72px rgba(0, 0, 0, 0.11);
+  transform: translateY(-5px);
 }
