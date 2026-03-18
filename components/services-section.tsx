@@ -8,28 +8,30 @@ export function ServicesSection() {
 
   const services = [
     {
-      icon: MessageSquare,
-      title: "AI Chatbots",
+      icon: Globe,
+      title: "High-Converting Websites",
       description:
-        "Custom chatbots that handle customer inquiries, qualify leads, and provide 24/7 support — so you're always available without lifting a finger.",
+        "Your website should bring you business — not just look good. I build modern, fast, conversion-focused websites that clearly communicate your value, guide visitors to take action, and increase trust and credibility instantly.",
       features: [
-        "Multi-platform integration",
-        "Custom training on your business",
-        "Analytics dashboard",
+        "Clearly communicates your value",
+        "Guides visitors to take action",
+        "Increases trust and credibility instantly",
       ],
-      gradient: "from-blue-500 to-indigo-600",
+      result: "Result: more leads, more customers",
+      gradient: "from-cyan-500 to-blue-500",
     },
     {
-      icon: Globe,
-      title: "Custom Websites",
+      icon: MessageSquare,
+      title: "AI Customer Support Systems",
       description:
-        "Fast, modern websites built to convert. Clean design, mobile-first, and optimized for the results that actually matter to your business.",
+        "Never miss a message or opportunity again. I build AI systems that respond to customer inquiries instantly, handle repetitive questions automatically, and support your business 24/7.",
       features: [
-        "Mobile-first design",
-        "Performance optimized",
-        "Built to convert",
+        "Responds to inquiries instantly",
+        "Handles repetitive questions automatically",
+        "Supports your business 24/7",
       ],
-      gradient: "from-cyan-500 to-blue-500",
+      result: "Result: faster response, less manual work, better customer experience",
+      gradient: "from-blue-500 to-indigo-600",
     },
   ];
 
@@ -37,12 +39,12 @@ export function ServicesSection() {
     <section id="services" className="grain-section py-20 px-4 bg-slate-50/50">
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16">
-          <div className="section-eyebrow justify-center">What I Build</div>
+          <div className="section-eyebrow justify-center">Services</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Two services. <span className="text-primary">Real results.</span>
+            What I Help <span className="text-primary">You Improve</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            I keep it focused so every project gets my full attention.
+            Most businesses don&apos;t have a traffic problem — they have a conversion and efficiency problem. I fix both sides.
           </p>
         </div>
 
@@ -64,7 +66,7 @@ export function ServicesSection() {
               <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
-              <ul className="space-y-2.5">
+              <ul className="space-y-2.5 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
@@ -77,6 +79,9 @@ export function ServicesSection() {
                   </li>
                 ))}
               </ul>
+              <p className="text-sm font-semibold text-primary">
+                👉 {service.result}
+              </p>
             </div>
           ))}
         </div>

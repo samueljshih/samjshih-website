@@ -162,11 +162,10 @@ export function TestimonialSection() {
             Client Results
           </div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            What Clients <span className="text-primary">Say</span>
+            Real Systems. <span className="text-primary">Real Impact.</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Real feedback from businesses that transformed their operations with
-            AI automation
+            Here&apos;s what clients are saying.
           </p>
         </div>
 

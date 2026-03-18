@@ -62,25 +62,41 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8">
               <span className="text-base">⚡</span>
               <span className="text-sm font-semibold">
-                AI Automation Specialist
+                Website & AI Systems Specialist
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white text-balance mb-6 leading-[1.05] tracking-tight">
-              Hi, I&apos;m Sam
-              <br />
-              I Save Businesses
-              <br />
-              10+ Hours a Week
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight">
+              Use AI and Better Systems to Make More Money and Run Your Business More Efficiently
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-10 text-pretty leading-relaxed">
-              I help businesses eliminate repetitive tasks and scale operations
-              through custom AI solutions. From chatbots to automated workflows,
-              I build systems that work while you sleep.
+            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed">
+              I build high-converting websites and AI customer support systems that help you capture more customers, respond instantly, and eliminate repetitive work.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center">
+            {/* Pain bullets */}
+            <div className="mb-8 text-left max-w-md mx-auto lg:mx-0">
+              <p className="text-slate-400 text-sm mb-3">If you&apos;re currently:</p>
+              <ul className="space-y-2 mb-4">
+                {[
+                  "Getting website visitors but not enough conversions",
+                  "Missing messages or responding too slowly",
+                  "Spending time on repetitive tasks",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <span className="mt-0.5 w-4 h-4 rounded-full bg-cyan-900/60 border border-cyan-700/50 flex items-center justify-center flex-shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-cyan-400 text-sm font-semibold">
+                👉 There&apos;s a better way to run your business.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-10">
               <Button
                 size="lg"
                 className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-[0_8px_30px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.6)] transition-all duration-300"
@@ -90,7 +106,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Book Free 20-Min Call
+                Get Your Free Website & AI Audit
                 <span className="ml-2 text-xl">→</span>
               </Button>
 
@@ -108,21 +124,16 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Stats row */}
-            <div className="mt-10 grid grid-cols-3 gap-6 max-w-xs mx-auto lg:mx-0 lg:max-w-none">
+            {/* Trust strip */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/10">
               {[
-                { value: "5+", label: "Clients Automated" },
-                { value: "10+", label: "Hrs/Wk Saved" },
-                { value: "100%", label: "Satisfaction" },
-              ].map((stat) => (
-                <div key={stat.label} className="text-center lg:text-left">
-                  <div className="text-2xl md:text-3xl font-bold text-white">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs text-slate-400 mt-0.5 leading-tight">
-                    {stat.label}
-                  </div>
-                </div>
+                "Built for real businesses — not just demos",
+                "Focused on results: more conversions, less manual work",
+                "Fast execution. Clean systems. No fluff.",
+              ].map((item) => (
+                <p key={item} className="text-xs text-slate-400 leading-snug text-center lg:text-left">
+                  {item}
+                </p>
               ))}
             </div>
           </div>
@@ -134,7 +145,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-cyan-400/10 rounded-2xl blur-2xl -rotate-3 scale-105" />
               <Image
                 src="/sam-headshot.webp"
-                alt="Sam - AI Automation Specialist"
+                alt="Sam - Website & AI Systems Specialist"
                 width={320}
                 height={384}
                 priority

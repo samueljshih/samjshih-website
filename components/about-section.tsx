@@ -61,22 +61,19 @@ export function AboutSection() {
 
           <div className="flex-1 text-center md:text-left">
             <p className="text-lg font-semibold text-foreground mb-4">
-              Software engineer turned AI automation specialist.
+              I&apos;m Sam J Shih — a software engineer focused on helping businesses create leverage through better systems.
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              I&apos;m a software engineer with over five years in the tech
-              industry, passionate about building efficient systems that solve
-              real business problems. I specialize in creating automation
-              solutions that handle the busywork so business owners can focus on
-              growth and what they actually enjoy.
+              I specialize in building high-converting websites and AI-powered workflows that help businesses make more money and operate more efficiently.
+            </p>
+
+            <p className="text-base text-muted-foreground mb-6 leading-relaxed">
+              I don&apos;t believe in overcomplicated solutions. I focus on simple systems that actually get used and drive results.
             </p>
 
             <p className="text-base text-muted-foreground mb-10 leading-relaxed">
-              I work with modern technologies like React, Next.js, and AI tools
-              to build systems that are both powerful and user-friendly. When
-              I&apos;m not coding, you&apos;ll find me making music or exploring
-              new tech projects.
+              Outside of work, I&apos;m into music, martial arts, and exploring new ways to apply AI in real-world business.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">

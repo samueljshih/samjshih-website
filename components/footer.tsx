@@ -11,16 +11,16 @@ export function Footer() {
             Ready to start?
           </p>
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Let&apos;s save you 10+ hours a week.
+            Let&apos;s Find Where You&apos;re Losing Time and Missing Opportunities
           </h2>
-          <p className="text-slate-400 mb-8 max-w-sm mx-auto text-sm leading-relaxed">
-            No fluff, no templates. A custom AI system built around your workflow — live within days.
+          <p className="text-slate-400 mb-8 max-w-md mx-auto text-sm leading-relaxed">
+            I&apos;ll walk through your website and workflow and show you where you can improve conversions and automate key parts of your business. No pressure — just actionable insights.
           </p>
           <a
             href="#calendly"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold text-lg shadow-[0_8px_30px_rgba(37,99,235,0.35)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.5)] transition-all duration-300"
           >
-            Book a Free Call →
+            Book Your Free Audit →
           </a>
         </div>
 
@@ -46,10 +46,8 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 text-white">Services</h3>
             <ul className="space-y-2 text-sm text-slate-400">
-              <li>AI Chatbots</li>
-              <li>Lead Capture Systems</li>
-              <li>Email & SMS Automation</li>
-              <li>Custom Dashboards</li>
+              <li>High-Converting Websites</li>
+              <li>AI Customer Support Systems</li>
             </ul>
           </div>
 
@@ -58,10 +56,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-slate-400">
               <li>
                 <a
-                  href="#case-studies"
+                  href="#testimonials"
                   className="hover:text-white transition-colors"
                 >
-                  Case Studies
+                  Testimonials
                 </a>
               </li>
               <li>
@@ -73,13 +71,13 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
+                <a href="#projects" className="hover:text-white transition-colors">
                   Portfolio
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-white transition-colors">
-                  Resume
+                <a href="#about" className="hover:text-white transition-colors">
+                  About
                 </a>
               </li>
             </ul>
@@ -88,8 +86,10 @@ export function Footer() {
 
         <div className="border-t border-white/10 pt-8 text-center">
           <p className="text-sm text-slate-400">
-            © 2025 Sam Shih. All rights reserved. Built with passion for
-            automation.
+            AI systems and websites designed to help you make more money and work less.
+          </p>
+          <p className="text-xs text-slate-600 mt-2">
+            © 2025 Sam Shih. All rights reserved.
           </p>
         </div>
       </div>

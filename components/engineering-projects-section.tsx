@@ -50,9 +50,7 @@ export function EngineeringProjectsSection() {
             Engineering <span className="text-primary">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Full-stack web applications and platforms I&apos;ve built, from SaaS
-            products to nonprofit websites, focusing on performance, user
-            experience, and scalable architecture.
+            Real projects built for real businesses — focused on performance, usability, and results.
           </p>
         </div>
 
