@@ -54,8 +54,8 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="container max-w-6xl mx-auto relative z-10">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-6 items-start lg:items-center">
+      <div className="container max-w-5xl mx-auto relative z-10">
+        <div className="grid lg:grid-cols-[3fr_2fr] gap-8 lg:gap-10 items-center">
           {/* Content Column — pushed below photo on mobile */}
           <div className="order-last lg:order-first text-center lg:text-left">
             {/* Badge */}
@@ -138,7 +138,7 @@ export function HeroSection() {
           </div>
 
           {/* Headshot Column — shown first on mobile */}
-          <div className="hero-animate order-first lg:order-last flex justify-center lg:justify-start lg:pl-4" style={{ animationDelay: "0.3s" }}>
+          <div className="hero-animate order-first lg:order-last flex justify-center" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
               {/* Glow — isolated behind image with z-0 */}
               <div className="absolute inset-0 z-0 rounded-full bg-blue-500/20 blur-3xl scale-125" />
