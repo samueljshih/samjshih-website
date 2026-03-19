@@ -21,8 +21,8 @@ export function Navigation() {
   };
 
   const linkClass = scrolled
-    ? "text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
-    : "text-white/80 hover:text-white transition-colors text-lg font-medium";
+    ? "text-gray-700 hover:text-electric-blue-600 transition-colors text-sm font-medium"
+    : "text-white/80 hover:text-white transition-colors text-sm font-medium";
 
   const mobileLinkClass = scrolled
     ? "text-left text-gray-700 hover:text-electric-blue-600 transition-colors text-lg font-medium"
@@ -47,7 +47,7 @@ export function Navigation() {
           </button>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden lg:flex items-center space-x-6">
             <button onClick={() => scrollToSection("hero")} className={linkClass}>
               Home
             </button>
@@ -78,7 +78,7 @@ export function Navigation() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden p-2 ${scrolled ? "text-gray-700" : "text-white"}`}
+            className={`lg:hidden p-2 ${scrolled ? "text-gray-700" : "text-white"}`}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -87,7 +87,7 @@ export function Navigation() {
         {/* Mobile Navigation */}
         {isOpen && (
           <div
-            className={`md:hidden py-4 border-t ${
+            className={`lg:hidden py-4 border-t ${
               scrolled ? "border-gray-200/50 bg-white/95" : "border-white/10 bg-[#050b15]/95 backdrop-blur-md"
             }`}
           >
