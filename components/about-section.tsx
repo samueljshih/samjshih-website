@@ -66,15 +66,15 @@ export function AboutSection() {
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              I build high-converting websites and AI-powered workflows that help you capture more customers, respond faster, and operate more efficiently.
+              I build modern websites and simple AI-powered workflows that help businesses look more professional, respond faster, and operate more efficiently.
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              I focus on simple systems that actually get used — not overcomplicated setups that sit unused.
+              I focus on practical solutions that actually get used — not overcomplicated systems.
             </p>
 
             <p className="text-base text-muted-foreground mb-10 leading-relaxed">
-              Outside of work, I&apos;m into music, martial arts, and exploring practical ways to apply AI in real-world business.
+              Outside of work, I&apos;m into music, martial arts, and exploring real-world applications of AI.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">

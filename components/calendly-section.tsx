@@ -25,16 +25,16 @@ export function CalendlySection() {
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             Let&apos;s Find Where You&apos;re{" "}
-            <span className="text-primary">Losing Revenue</span>
+            <span className="text-primary">Losing Time and Opportunities</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
-            I&apos;ll review your website and workflow and show you exactly:
+            I&apos;ll review your website and workflow and show you:
           </p>
           <ul className="inline-flex flex-col items-start gap-3 text-left mx-auto mb-6">
             {[
-              "Where you're losing leads",
-              "What's slowing your business down",
-              "What to fix first for the biggest impact",
+              "Where your business looks outdated or unclear",
+              "Where you're losing potential customers",
+              "What you can improve quickly for the biggest impact",
             ].map((item) => (
               <li key={item} className="flex items-center gap-3 text-base text-slate-700">
                 <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -44,7 +44,7 @@ export function CalendlySection() {
               </li>
             ))}
           </ul>
-          <p className="text-base text-muted-foreground">No pressure. Just clarity.</p>
+          <p className="text-base text-muted-foreground">No pressure. Just actionable insight.</p>
         </div>
 
         <div className="bg-card rounded-2xl p-8 md:p-12">

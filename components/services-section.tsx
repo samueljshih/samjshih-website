@@ -1,6 +1,6 @@
 "use client";
 
-import { MessageSquare, Globe } from "lucide-react";
+import { MessageSquare, Globe, Zap } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export function ServicesSection() {
@@ -9,48 +9,61 @@ export function ServicesSection() {
   const services = [
     {
       icon: Globe,
-      title: "High-Converting Websites",
+      title: "Websites",
       description:
-        "Your website should bring you business — not just look good. I build modern, fast, conversion-focused websites that clearly communicate your value, guide visitors to take action, and increase trust and credibility instantly.",
+        "Modern, high-quality websites that make your business look credible and professional — so customers trust you and are more likely to reach out.",
       features: [
-        "Clearly communicates your value",
-        "Guides visitors to take action",
-        "Increases trust and credibility instantly",
+        "Clean, modern design",
+        "Clear messaging that builds trust",
+        "Built to convert visitors into customers",
       ],
-      result: "Result: more leads, more customers",
+      result: "Result: your business looks legit from the first click",
       gradient: "from-cyan-500 to-blue-500",
     },
     {
       icon: MessageSquare,
-      title: "AI Customer Support Systems",
+      title: "AI Systems",
       description:
-        "Never miss a message or opportunity again. I build AI systems that respond to customer inquiries instantly, handle repetitive questions automatically, and support your business 24/7.",
+        "AI-powered systems that respond to customer inquiries instantly and make sure you never miss an opportunity.",
       features: [
-        "Responds to inquiries instantly",
-        "Handles repetitive questions automatically",
-        "Supports your business 24/7",
+        "Responds to inquiries 24/7",
+        "Handles common questions automatically",
+        "Keeps customers engaged without extra effort",
       ],
-      result: "Result: faster response, less manual work, better customer experience",
+      result: "Result: faster response, no missed leads",
       gradient: "from-blue-500 to-indigo-600",
+    },
+    {
+      icon: Zap,
+      title: "Automations",
+      description:
+        "Simple automations that eliminate repetitive tasks and streamline your workflow — saving you time every week.",
+      features: [
+        "Automates manual, time-consuming tasks",
+        "Connects your tools so they work together",
+        "Frees you up to focus on what matters",
+      ],
+      result: "Result: less manual work, more time back",
+      gradient: "from-indigo-500 to-purple-600",
     },
   ];
 
   return (
     <section id="services" className="grain-section py-20 px-4 bg-slate-50/50">
-      <div className="container max-w-4xl mx-auto">
+      <div className="container max-w-5xl mx-auto">
         <div className="text-center mb-16">
           <div className="section-eyebrow justify-center">Services</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
             What I Help <span className="text-primary">You Improve</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Most businesses don&apos;t have a traffic problem — they have a conversion and efficiency problem. I fix both sides.
+            I help businesses look more legit and run more efficiently using websites, AI, and automation.
           </p>
         </div>
 
         <div
           ref={revealRef}
-          className="reveal-stagger grid md:grid-cols-2 gap-8"
+          className="reveal-stagger grid md:grid-cols-3 gap-8"
         >
           {services.map((service, index) => (
             <div
@@ -63,14 +76,14 @@ export function ServicesSection() {
                 <service.icon className="w-7 h-7 text-white" />
               </div>
               <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
+              <p className="text-base text-muted-foreground mb-6 leading-relaxed">
                 {service.description}
               </p>
               <ul className="space-y-2.5 mb-6">
                 {service.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-center gap-2.5 text-base text-slate-700"
+                    className="flex items-center gap-2.5 text-sm text-slate-700"
                   >
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />

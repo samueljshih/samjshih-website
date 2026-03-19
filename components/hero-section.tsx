@@ -67,11 +67,11 @@ export function HeroSection() {
             </div>
 
             <h1 className="hero-animate text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight" style={{ animationDelay: "0.25s" }}>
-              Turn Your Website Into a Revenue Machine Powered by AI
+              Make Your Business Look Legit — and Run Smoother with AI
             </h1>
 
             <p className="hero-animate text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed" style={{ animationDelay: "0.4s" }}>
-              I build high-converting websites and AI systems that capture leads, respond instantly, and run your business 24/7.
+              I build clean, modern websites and set up simple AI systems and automations that help your business look more credible, respond faster, and reduce repetitive work.
             </p>
 
             <div className="hero-animate flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-8" style={{ animationDelay: "0.55s" }}>
@@ -84,7 +84,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                👉 Get Your Free AI Audit
+                Get Your Free AI & Website Audit
                 <span className="ml-2 text-xl">→</span>
               </Button>
 
@@ -108,8 +108,8 @@ export function HeroSection() {
               <ul className="space-y-2 mb-4">
                 {[
                   "Getting traffic but not converting",
-                  "Responding too slowly (or missing leads)",
-                  "Wasting time on repetitive tasks",
+                  "Responding too slowly or missing messages",
+                  "Spending time on repetitive tasks",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
                     <span className="mt-0.5 w-4 h-4 rounded-full bg-cyan-900/60 border border-cyan-700/50 flex items-center justify-center flex-shrink-0">
@@ -127,7 +127,7 @@ export function HeroSection() {
             <div className="hero-animate grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/10" style={{ animationDelay: "0.7s" }}>
               {[
                 "Built for real businesses — not theory",
-                "Focused on outcomes: more revenue, less work",
+                "Focused on outcomes: better presentation, faster response, less manual work",
                 "Fast execution. Clean systems. No fluff.",
               ].map((item) => (
                 <p key={item} className="text-xs text-slate-400 leading-snug text-center lg:text-left">
