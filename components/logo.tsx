@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -21,50 +22,16 @@ export function Logo({ className = "", size = "md", variant = "dark" }: LogoProp
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      {/* Logo Icon - Modern Tech Design */}
-      <div className={`${sizeClasses[size]} relative group`}>
-        {/* Main container with gradient background */}
-        <div className="w-full h-full rounded-xl bg-gradient-to-br from-electric-blue-600 via-indigo-600 to-purple-600 flex items-center justify-center relative overflow-hidden shadow-lg">
-          {/* Inner geometric layers */}
-          <div className="absolute inset-1 rounded-lg bg-gradient-to-br from-white/10 to-transparent"></div>
-          <div className="absolute inset-2 rounded-lg bg-gradient-to-br from-white/20 to-transparent"></div>
-
-          {/* Stylized "S" with modern design */}
-          <div className="relative z-10 flex items-center justify-center">
-            <div className="w-4 h-4 relative">
-              {/* S shape using geometric elements */}
-              <div className="absolute top-0 left-0 w-2 h-1 bg-white rounded-full"></div>
-              <div className="absolute top-1 left-1 w-1 h-1 bg-white rounded-full"></div>
-              <div className="absolute top-2 left-0 w-2 h-1 bg-white rounded-full"></div>
-              <div className="absolute bottom-2 left-0 w-2 h-1 bg-white rounded-full"></div>
-              <div className="absolute bottom-1 left-1 w-1 h-1 bg-white rounded-full"></div>
-              <div className="absolute bottom-0 left-0 w-2 h-1 bg-white rounded-full"></div>
-            </div>
-          </div>
-
-          {/* Animated tech elements */}
-          <div className="absolute top-1 right-1 w-1 h-1 bg-cyan-300 rounded-full animate-pulse"></div>
-          <div
-            className="absolute bottom-1 left-1 w-1 h-1 bg-purple-300 rounded-full animate-pulse"
-            style={{ animationDelay: "0.7s" }}
-          ></div>
-
-          {/* Subtle glow effect */}
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-electric-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-        </div>
-
-        {/* Floating accent dots */}
-        <div
-          className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-bounce"
-          style={{ animationDelay: "0.3s" }}
-        ></div>
-        <div
-          className="absolute -bottom-0.5 -left-0.5 w-1 h-1 bg-purple-400 rounded-full animate-bounce"
-          style={{ animationDelay: "0.8s" }}
-        ></div>
+      <div className={`${sizeClasses[size]} flex-shrink-0`}>
+        <Image
+          src="/assets/samjshih_logo.jpeg"
+          alt="Sam J Shih logo"
+          width={48}
+          height={48}
+          className="w-full h-full object-contain rounded-lg"
+        />
       </div>
 
-      {/* Text with modern typography */}
       <div className="flex flex-col">
         <span
           className={`${textSizes[size]} font-bold bg-gradient-to-r ${
