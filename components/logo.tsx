@@ -47,7 +47,7 @@ export function Logo({ className = "", size = "md", variant = "dark" }: LogoProp
             variant === "light" ? "text-slate-300/70" : "text-muted-foreground"
           }`}
         >
-          AI AUTOMATION
+          AI SYSTEMS & WEBSITES
         </span>
       </div>
     </div>
