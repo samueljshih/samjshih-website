@@ -59,22 +59,22 @@ export function HeroSection() {
           {/* Content Column — pushed below photo on mobile */}
           <div className="order-last lg:order-first text-center lg:text-left">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8">
+            <div className="hero-animate inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8" style={{ animationDelay: "0.1s" }}>
               <span className="text-base">⚡</span>
               <span className="text-sm font-semibold">
                 Website & AI Systems Specialist
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight">
+            <h1 className="hero-animate text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight" style={{ animationDelay: "0.25s" }}>
               Use AI to Make More Money and Run Your Business More Efficiently
             </h1>
 
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed">
+            <p className="hero-animate text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed" style={{ animationDelay: "0.4s" }}>
               I build high-converting websites and AI customer support systems that help you capture more customers, respond instantly, and eliminate repetitive work.
             </p>
 
-            <div className="flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-8">
+            <div className="hero-animate flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-8" style={{ animationDelay: "0.55s" }}>
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-[0_8px_30px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.6)] transition-all duration-300"
@@ -125,7 +125,7 @@ export function HeroSection() {
             </div>
 
             {/* Trust strip */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/10">
+            <div className="hero-animate grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/10" style={{ animationDelay: "0.7s" }}>
               {[
                 "Built for real businesses — not just demos",
                 "Focused on results: more conversions, less manual work",
@@ -139,7 +139,7 @@ export function HeroSection() {
           </div>
 
           {/* Headshot Column — shown first on mobile */}
-          <div className="order-first lg:order-last flex justify-center lg:justify-end">
+          <div className="hero-animate order-first lg:order-last flex justify-center lg:justify-end" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
               <div className="absolute inset-0 bg-blue-500/20 rounded-2xl blur-3xl rotate-6 scale-110" />
               <div className="absolute inset-0 bg-cyan-400/10 rounded-2xl blur-2xl -rotate-3 scale-105" />
