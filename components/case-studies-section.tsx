@@ -37,7 +37,7 @@ const caseStudies = [
     testimonial: "This system gave me back hours every week.",
     author: "Coach Denney Choi",
     tools: ["Chatbase", "Twilio", "Zapier"],
-    image: "/baem_jitsu.jpg",
+    image: "/clients/baem_jitsu.jpg",
   },
   {
     id: 2,
@@ -56,7 +56,7 @@ const caseStudies = [
       "The automation ensures I'm never walking into a discovery call blind—it's like having a research team on call.",
     author: "Lia Garvin",
     tools: ["Calendly", "Apollo", "OpenAI", "Airtable", "Custom Integrations"],
-    image: "/lia-garvin-team-whisperer.svg",
+    image: "/clients/lia-garvin-team-whisperer.svg",
   },
 ];
 

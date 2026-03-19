@@ -16,7 +16,7 @@ const testimonials = [
     content:
       "Sam created an agent that connects my calendar, email, and industry news so anytime I have a new appointment, I have everything I need to blow that call out of the water. It's helped me feel more confident and connect with clients right away. He delivered a solution I can't live without now.",
     rating: 5,
-    image: "/lia.jpeg",
+    image: "/clients/lia.jpeg",
     videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/lia_garvin.mp4",
     videoStartTime: 1,
     caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/lia_garvin.pdf",
@@ -29,7 +29,7 @@ const testimonials = [
     content:
       "There's core functional things required as a business owner that I can't touch because I'm so limited in my time. Sam implemented chatbots that not only save me time, but give me more support than I could ever produce myself. I'm working less but producing more. That's a win-win.",
     rating: 5,
-    image: "/denney.jpeg",
+    image: "/clients/denney.jpeg",
     videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/denney.mp4",
     videoStartTime: 4,
     caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/baem_jiu_jitsu_case_study.pdf",
@@ -42,7 +42,7 @@ const testimonials = [
     content:
       "Sam jumped in right away wearing both the product and full-stack engineer hat. He took time to understand the problem and worked with me to develop the MVP. It was so easy to communicate with him. He brings genuine interest, high work ethic, and is really fun to work with.",
     rating: 5,
-    image: "/archana.jpeg",
+    image: "/clients/archana.jpeg",
     videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/archana.MP4",
     videoStartTime: 1,
   },

@@ -144,7 +144,7 @@ export function HeroSection() {
               <div className="absolute inset-0 bg-blue-500/20 rounded-2xl blur-3xl rotate-6 scale-110" />
               <div className="absolute inset-0 bg-cyan-400/10 rounded-2xl blur-2xl -rotate-3 scale-105" />
               <Image
-                src="/sam-headshot.webp"
+                src="/assets/sam-headshot.webp"
                 alt="Sam - Website & AI Systems Specialist"
                 width={320}
                 height={384}

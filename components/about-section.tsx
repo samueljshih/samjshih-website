@@ -48,7 +48,7 @@ export function AboutSection() {
           <div className="relative flex-shrink-0">
             <div className="absolute -inset-3 rounded-2xl border-2 border-primary/10" />
             <Image
-              src="/sam-headshot.webp"
+              src="/assets/sam-headshot.webp"
               alt="Sam J. Shih professional headshot"
               width={256}
               height={256}

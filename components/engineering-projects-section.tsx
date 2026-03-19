@@ -17,7 +17,7 @@ export function EngineeringProjectsSection() {
       category: "SaaS Platform",
       tech: ["React", "Next.js", "TypeScript"],
       headerGradient: "from-blue-600 to-indigo-700",
-      logo: "/top_logo.png",
+      logo: "/projects/top_logo.png",
     },
     {
       title: "Rapid Weight Loss USA",
@@ -27,7 +27,7 @@ export function EngineeringProjectsSection() {
       category: "Health Tech",
       tech: ["React", "Next.js", "Mobile-First"],
       headerGradient: "from-cyan-500 to-blue-500",
-      logo: "/rapid_weight_loss_logo.webp",
+      logo: "/projects/rapid_weight_loss_logo.webp",
     },
     {
       title: "Torchline AI",
@@ -37,7 +37,7 @@ export function EngineeringProjectsSection() {
       category: "AI SaaS",
       tech: ["Next.js", "AI/ML", "TypeScript"],
       headerGradient: "from-orange-500 to-rose-600",
-      logo: "/torchline_logo.png",
+      logo: "/projects/torchline_logo.png",
     },
     {
       title: "The Godfellas",
@@ -47,7 +47,7 @@ export function EngineeringProjectsSection() {
       category: "Nonprofit",
       tech: ["React", "UX Design", "Analytics"],
       headerGradient: "from-slate-700 to-slate-900",
-      logo: "/the_godfellas_logo.webp",
+      logo: "/projects/the_godfellas_logo.webp",
     },
   ];
 
