@@ -52,7 +52,7 @@ export function EngineeringProjectsSection() {
   ];
 
   return (
-    <section id="projects" className="grain-section py-20 px-4 bg-slate-50">
+    <section id="projects" className="grain-section py-20 px-4 bg-gradient-to-br from-slate-100 via-blue-50/40 to-indigo-50/50">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="section-eyebrow justify-center">Portfolio</div>

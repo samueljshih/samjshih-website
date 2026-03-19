@@ -133,8 +133,9 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-archivo);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-archivo-black);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -422,7 +423,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .hero-blob-1,
-  .hero-blob-2 {
+  .hero-Refblob-2 {
     animation: none;
   }
 }

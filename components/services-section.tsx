@@ -49,8 +49,16 @@ export function ServicesSection() {
   ];
 
   return (
-    <section id="services" className="grain-section py-20 px-4 bg-slate-50/50">
-      <div className="container max-w-5xl mx-auto">
+    <section id="services" className="grain-section py-20 px-4 bg-white relative overflow-hidden">
+      {/* Subtle dot grid */}
+      <div
+        className="absolute inset-0 opacity-[0.035] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(circle, #2563eb 1px, transparent 1px)",
+          backgroundSize: "28px 28px",
+        }}
+      />
+      <div className="container max-w-5xl mx-auto relative z-10">
         <div className="text-center mb-16">
           <div className="section-eyebrow justify-center">Services</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">

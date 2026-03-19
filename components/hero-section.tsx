@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { BinaryBackground } from "@/components/binary-background";
 
 export function HeroSection() {
   return (
@@ -11,34 +12,14 @@ export function HeroSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Dark base */}
-        <div className="absolute inset-0 bg-[#050b15]" />
+        {/* Binary rain canvas */}
+        <BinaryBackground />
 
-        {/* Blue glow — top left */}
+        {/* Radial vignette — darkens edges, keeps center readable */}
         <div
-          className="hero-blob-1 absolute -top-32 -left-32 w-[900px] h-[900px] rounded-full"
+          className="absolute inset-0 pointer-events-none"
           style={{
-            background:
-              "radial-gradient(circle, rgba(37,99,235,0.22) 0%, transparent 60%)",
-          }}
-        />
-
-        {/* Cyan glow — bottom right */}
-        <div
-          className="hero-blob-2 absolute -bottom-32 -right-10 w-[600px] h-[600px] rounded-full"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(6,182,212,0.14) 0%, transparent 60%)",
-          }}
-        />
-
-        {/* Subtle dot grid */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "radial-gradient(circle, #38bdf8 1px, transparent 1px)",
-            backgroundSize: "32px 32px",
+            background: "radial-gradient(ellipse at center, transparent 30%, rgba(5,11,21,0.75) 100%)",
           }}
         />
 
@@ -49,7 +30,7 @@ export function HeroSection() {
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E\")",
             backgroundSize: "200px 200px",
-            opacity: 0.035,
+            opacity: 0.04,
           }}
         />
       </div>
@@ -66,8 +47,25 @@ export function HeroSection() {
               </span>
             </div>
 
-            <h1 className="hero-animate text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight" style={{ animationDelay: "0.25s" }}>
-              Make Your Business Look Legit and Run Smoother with AI
+            <h1 className="flex flex-col items-center lg:items-start leading-none gap-1 mb-6 uppercase tracking-tight" style={{ fontFamily: "var(--font-archivo-black)" }}>
+              <span
+                className="hero-animate text-5xl md:text-6xl lg:text-7xl text-white"
+                style={{ animationDelay: "0.25s" }}
+              >
+                Look Legit.
+              </span>
+              <span
+                className="hero-animate text-5xl md:text-6xl lg:text-7xl"
+                style={{ animationDelay: "0.35s", fontStyle: "italic", WebkitTextStroke: "2px white", WebkitTextFillColor: "transparent" }}
+              >
+                Run Smoother.
+              </span>
+              <span
+                className="hero-animate text-5xl md:text-6xl lg:text-7xl text-cyan-400"
+                style={{ animationDelay: "0.45s" }}
+              >
+                With AI.
+              </span>
             </h1>
 
             <p className="hero-animate text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed" style={{ animationDelay: "0.4s" }}>

@@ -155,7 +155,7 @@ export function TestimonialSection() {
   );
 
   return (
-    <section id="testimonials" className="grain-section py-20 px-4 bg-white">
+    <section id="testimonials" className="grain-section py-20 px-4 bg-gradient-to-b from-slate-50 via-blue-50/30 to-white">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <div className="section-eyebrow justify-center">

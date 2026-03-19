@@ -28,7 +28,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="grain-section py-24 px-4 relative overflow-hidden bg-gradient-to-br from-white via-blue-50/20 to-cyan-50/15"
+      className="grain-section py-24 px-4 relative overflow-hidden bg-gradient-to-br from-white via-blue-50/50 to-indigo-100/40"
     >
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-16">
