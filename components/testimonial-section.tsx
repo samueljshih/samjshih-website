@@ -161,8 +161,8 @@ export function TestimonialSection() {
           <div className="section-eyebrow justify-center">
             Client Results
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Real Systems. <span className="text-primary">Real Impact.</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
+            Real Results From <span className="text-primary">Real Businesses.</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
             Here&apos;s what clients are saying.

@@ -62,7 +62,7 @@ export function HeroSection() {
             <div className="hero-animate inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8" style={{ animationDelay: "0.1s" }}>
               <span className="text-base">⚡</span>
               <span className="text-sm font-semibold">
-                Website & AI Systems Specialist
+                Website & AI Automation Engineer
               </span>
             </div>
 
@@ -104,12 +104,12 @@ export function HeroSection() {
 
             {/* Pain bullets — hidden on mobile to keep CTA above fold */}
             <div className="hidden sm:block mb-8 text-left max-w-md mx-auto lg:mx-0">
-              <p className="text-slate-400 text-sm mb-3">If you&apos;re currently:</p>
+              <p className="text-slate-400 text-sm mb-3">If your business is:</p>
               <ul className="space-y-2 mb-4">
                 {[
-                  "Getting website visitors but not enough conversions",
-                  "Missing messages or responding too slowly",
-                  "Spending time on repetitive tasks",
+                  "Getting traffic but not converting",
+                  "Responding too slowly (or missing leads)",
+                  "Wasting time on repetitive tasks",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
                     <span className="mt-0.5 w-4 h-4 rounded-full bg-cyan-900/60 border border-cyan-700/50 flex items-center justify-center flex-shrink-0">
@@ -119,16 +119,15 @@ export function HeroSection() {
                   </li>
                 ))}
               </ul>
-              <p className="text-cyan-400 text-sm font-semibold">
-                👉 There&apos;s a better way to run your business.
-              </p>
+              <p className="text-slate-300 text-sm mb-1">You don&apos;t need more effort.</p>
+              <p className="text-cyan-400 text-sm font-semibold">You need better systems.</p>
             </div>
 
             {/* Trust strip */}
             <div className="hero-animate grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/10" style={{ animationDelay: "0.7s" }}>
               {[
-                "Built for real businesses — not just demos",
-                "Focused on results: more conversions, less manual work",
+                "Built for real businesses — not theory",
+                "Focused on outcomes: more revenue, less work",
                 "Fast execution. Clean systems. No fluff.",
               ].map((item) => (
                 <p key={item} className="text-xs text-slate-400 leading-snug text-center lg:text-left">
