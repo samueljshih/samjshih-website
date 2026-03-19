@@ -88,8 +88,8 @@ export function EngineeringProjectsSection() {
               </div>
 
               <div className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center flex-shrink-0 -mt-8 ring-2 ring-white">
+                <div className="flex items-center gap-3 mb-4 mt-1">
+                  <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center flex-shrink-0">
                     <Image
                       src={project.logo}
                       alt={project.title}
@@ -98,9 +98,9 @@ export function EngineeringProjectsSection() {
                       className="w-7 h-7 object-contain"
                     />
                   </div>
-                  <div className="flex items-center gap-2 pt-1">
+                  <div className="flex flex-col gap-0.5">
                     <h3 className="text-lg font-bold leading-tight">{project.title}</h3>
-                    <span className="text-xs font-medium text-muted-foreground bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full whitespace-nowrap">
+                    <span className="text-xs font-medium text-muted-foreground bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full w-fit">
                       {project.category}
                     </span>
                   </div>

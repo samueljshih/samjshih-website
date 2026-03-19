@@ -74,29 +74,7 @@ export function HeroSection() {
               I build high-converting websites and AI customer support systems that help you capture more customers, respond instantly, and eliminate repetitive work.
             </p>
 
-            {/* Pain bullets */}
-            <div className="mb-8 text-left max-w-md mx-auto lg:mx-0">
-              <p className="text-slate-400 text-sm mb-3">If you&apos;re currently:</p>
-              <ul className="space-y-2 mb-4">
-                {[
-                  "Getting website visitors but not enough conversions",
-                  "Missing messages or responding too slowly",
-                  "Spending time on repetitive tasks",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
-                    <span className="mt-0.5 w-4 h-4 rounded-full bg-cyan-900/60 border border-cyan-700/50 flex items-center justify-center flex-shrink-0">
-                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
-                    </span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="text-cyan-400 text-sm font-semibold">
-                👉 There&apos;s a better way to run your business.
-              </p>
-            </div>
-
-            <div className="flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-10">
+            <div className="flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-8">
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-[0_8px_30px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.6)] transition-all duration-300"
@@ -122,6 +100,28 @@ export function HeroSection() {
               >
                 View Testimonials
               </Button>
+            </div>
+
+            {/* Pain bullets — hidden on mobile to keep CTA above fold */}
+            <div className="hidden sm:block mb-8 text-left max-w-md mx-auto lg:mx-0">
+              <p className="text-slate-400 text-sm mb-3">If you&apos;re currently:</p>
+              <ul className="space-y-2 mb-4">
+                {[
+                  "Getting website visitors but not enough conversions",
+                  "Missing messages or responding too slowly",
+                  "Spending time on repetitive tasks",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-sm text-slate-300">
+                    <span className="mt-0.5 w-4 h-4 rounded-full bg-cyan-900/60 border border-cyan-700/50 flex items-center justify-center flex-shrink-0">
+                      <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-cyan-400 text-sm font-semibold">
+                👉 There&apos;s a better way to run your business.
+              </p>
             </div>
 
             {/* Trust strip */}
