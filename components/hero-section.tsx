@@ -67,11 +67,11 @@ export function HeroSection() {
             </div>
 
             <h1 className="hero-animate text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight" style={{ animationDelay: "0.25s" }}>
-              Use AI to Make More Money and Run Your Business More Efficiently
+              Turn Your Website Into a Revenue Machine Powered by AI
             </h1>
 
             <p className="hero-animate text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed" style={{ animationDelay: "0.4s" }}>
-              I build high-converting websites and AI customer support systems that help you capture more customers, respond instantly, and eliminate repetitive work.
+              I build high-converting websites and AI systems that capture leads, respond instantly, and run your business 24/7.
             </p>
 
             <div className="hero-animate flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-8" style={{ animationDelay: "0.55s" }}>
@@ -84,7 +84,7 @@ export function HeroSection() {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                Get Your Free Website & AI Audit
+                👉 Get Your Free AI Audit
                 <span className="ml-2 text-xl">→</span>
               </Button>
 
@@ -156,7 +156,7 @@ export function HeroSection() {
               />
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Available now
+                Available for Projects
               </div>
             </div>
           </div>
