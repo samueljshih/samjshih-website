@@ -46,13 +46,14 @@ export function AboutSection() {
         >
           {/* Image with decorative frame */}
           <div className="relative flex-shrink-0">
-            <div className="absolute -inset-3 rounded-2xl border-2 border-primary/10" />
+            <div className="absolute -inset-3 rounded-full border-2 border-primary/10" />
+            <div className="absolute -inset-6 rounded-full border border-primary/5" />
             <Image
               src="/assets/sam_head_shot_pic.png"
               alt="Sam J. Shih professional headshot"
               width={256}
               height={256}
-              className="relative w-64 h-64 rounded-2xl object-cover shadow-xl"
+              className="relative w-56 h-56 rounded-full object-cover object-top shadow-xl"
             />
             <div className="absolute -bottom-3 -right-3 bg-white border border-slate-200 shadow-md px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-800 flex items-center gap-1.5">
               <span className="text-cyan-500">⚡</span> 5+ Years in Tech
