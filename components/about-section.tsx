@@ -49,7 +49,7 @@ export function AboutSection() {
             <div className="absolute -inset-3 rounded-full border-2 border-primary/10" />
             <div className="absolute -inset-6 rounded-full border border-primary/5" />
             <Image
-              src="/assets/sam_head_shot_pic.png"
+              src="/assets/sam_headshot_pic.png"
               alt="Sam J. Shih professional headshot"
               width={256}
               height={256}

@@ -147,7 +147,7 @@ export function HeroSection() {
               <div className="absolute -inset-2 rounded-full border border-white/10" />
               <div className="absolute -inset-4 rounded-full border border-white/5" />
               <Image
-                src="/assets/sam_head_shot_pic.png"
+                src="/assets/sam_headshot_pic.png"
                 alt="Sam - Website & AI Automation Engineer"
                 width={320}
                 height={320}
