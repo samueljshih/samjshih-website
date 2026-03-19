@@ -32,7 +32,7 @@ export function EngineeringProjectsSection() {
     {
       title: "Torchline AI",
       description:
-        "Torchline AI is a vision analytics platform that turns existing camera feeds into operational intelligence. I contributed to building the platform that helps frontline businesses detect safety violations, coach teams with AI-generated clips, and identify compliance gaps — all without new hardware.",
+        "Torchline AI is a vision analytics platform that turns existing camera feeds into operational intelligence. I contributed to building the platform that helps frontline businesses detect safety violations, coach teams with AI-generated clips, and identify compliance gaps. No new hardware required.",
       url: "https://www.torchline.ai/",
       category: "AI SaaS",
       tech: ["Next.js", "AI/ML", "TypeScript"],
@@ -60,7 +60,7 @@ export function EngineeringProjectsSection() {
             Engineering <span className="text-primary">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Real projects built for real businesses — focused on performance, usability, and results.
+            Real projects built for real businesses. Focused on performance, usability, and results.
           </p>
         </div>
 

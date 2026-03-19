@@ -56,13 +56,13 @@ export function AboutSection() {
               className="relative w-56 h-56 rounded-full object-cover object-top shadow-xl"
             />
             <div className="absolute -bottom-3 -right-3 bg-white border border-slate-200 shadow-md px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-800 flex items-center gap-1.5">
-              <span className="text-cyan-500">⚡</span> 5+ Years in Tech
+              <span className="text-cyan-500">⚡</span> 10+ Years in Tech
             </div>
           </div>
 
           <div className="flex-1 text-center md:text-left">
             <p className="text-lg font-semibold text-foreground mb-4">
-              I&apos;m Sam J Shih — a software engineer helping businesses create leverage through better systems.
+              I&apos;m Sam J Shih, a software engineer helping businesses create leverage through better systems.
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
@@ -70,7 +70,7 @@ export function AboutSection() {
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              I focus on practical solutions that actually get used — not overcomplicated systems.
+              I focus on practical solutions that actually get used. Not overcomplicated systems.
             </p>
 
             <p className="text-base text-muted-foreground mb-10 leading-relaxed">

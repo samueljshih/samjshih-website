@@ -11,7 +11,7 @@ export function ServicesSection() {
       icon: Globe,
       title: "Websites",
       description:
-        "Modern, high-quality websites that make your business look credible and professional — so customers trust you and are more likely to reach out.",
+        "Modern, high-quality websites that make your business look credible and professional. Customers trust you and are more likely to reach out.",
       features: [
         "Clean, modern design",
         "Clear messaging that builds trust",
@@ -37,7 +37,7 @@ export function ServicesSection() {
       icon: Zap,
       title: "Automations",
       description:
-        "Simple automations that eliminate repetitive tasks and streamline your workflow — saving you time every week.",
+        "Simple automations that eliminate repetitive tasks and streamline your workflow. Save time every week without extra effort.",
       features: [
         "Automates manual, time-consuming tasks",
         "Connects your tools so they work together",

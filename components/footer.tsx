@@ -14,7 +14,7 @@ export function Footer() {
             Let&apos;s Find Where You&apos;re Losing Time and Missing Opportunities
           </h2>
           <p className="text-slate-400 mb-8 max-w-md mx-auto text-sm leading-relaxed">
-            I&apos;ll walk through your website and workflow and show you where you can improve conversions and automate key parts of your business. No pressure — just actionable insights.
+            I&apos;ll walk through your website and workflow and show you where you can improve conversions and automate key parts of your business. No pressure. Just actionable insights.
           </p>
           <a
             href="#calendly"

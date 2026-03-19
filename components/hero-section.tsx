@@ -67,7 +67,7 @@ export function HeroSection() {
             </div>
 
             <h1 className="hero-animate text-4xl md:text-5xl lg:text-6xl font-bold text-white text-balance mb-6 leading-[1.08] tracking-tight" style={{ animationDelay: "0.25s" }}>
-              Make Your Business Look Legit — and Run Smoother with AI
+              Make Your Business Look Legit and Run Smoother with AI
             </h1>
 
             <p className="hero-animate text-lg md:text-xl text-slate-400 max-w-2xl mx-auto lg:mx-0 mb-8 text-pretty leading-relaxed" style={{ animationDelay: "0.4s" }}>
@@ -126,7 +126,7 @@ export function HeroSection() {
             {/* Trust strip */}
             <div className="hero-animate grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-md mx-auto lg:mx-0 pt-6 border-t border-white/10" style={{ animationDelay: "0.7s" }}>
               {[
-                "Built for real businesses — not theory",
+                "Built for real businesses, not theory",
                 "Focused on outcomes: better presentation, faster response, less manual work",
                 "Fast execution. Clean systems. No fluff.",
               ].map((item) => (
