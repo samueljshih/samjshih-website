@@ -62,19 +62,19 @@ export function AboutSection() {
 
           <div className="flex-1 text-center md:text-left">
             <p className="text-lg font-semibold text-foreground mb-4">
-              I&apos;m Sam J Shih — a software engineer focused on helping businesses create leverage through better systems.
+              I&apos;m Sam J Shih — a software engineer helping businesses create leverage through better systems.
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              I specialize in building high-converting websites and AI-powered workflows that help businesses make more money and operate more efficiently.
+              I build high-converting websites and AI-powered workflows that help you capture more customers, respond faster, and operate more efficiently.
             </p>
 
             <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-              I don&apos;t believe in overcomplicated solutions. I focus on simple systems that actually get used and drive results.
+              I focus on simple systems that actually get used — not overcomplicated setups that sit unused.
             </p>
 
             <p className="text-base text-muted-foreground mb-10 leading-relaxed">
-              Outside of work, I&apos;m into music, martial arts, and exploring new ways to apply AI in real-world business.
+              Outside of work, I&apos;m into music, martial arts, and exploring practical ways to apply AI in real-world business.
             </p>
 
             <div className="flex flex-wrap gap-3 justify-center md:justify-start">

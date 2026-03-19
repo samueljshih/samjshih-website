@@ -1,19 +1,15 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { Calendar, Clock, CheckCircle } from "lucide-react";
 import { useEffect } from "react";
 
 export function CalendlySection() {
   useEffect(() => {
-    // Load Calendly script
     const script = document.createElement("script");
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     document.head.appendChild(script);
 
     return () => {
-      // Cleanup script on unmount
       const existingScript = document.querySelector(
         'script[src="https://assets.calendly.com/assets/external/widget.js"]'
       );
@@ -28,53 +24,45 @@ export function CalendlySection() {
       <div className="container max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            Ready to Automate Your Business?
+            Let&apos;s Find Where You&apos;re{" "}
+            <span className="text-primary">Losing Revenue</span>
           </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-pretty">
-            Book a free 20-minute consultation to discuss your automation needs
-            and see how I can help you save time and increase revenue.
+          <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-6">
+            I&apos;ll review your website and workflow and show you exactly:
           </p>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
-              <Calendar className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Free Consultation</h3>
-            <p className="text-base text-muted-foreground">
-              30-minute strategy session to identify automation opportunities
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-lg bg-secondary/20 flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-6 h-6 text-secondary" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Quick Turnaround</h3>
-            <p className="text-base text-muted-foreground">
-              Most projects completed within 2-4 weeks
-            </p>
-          </div>
-
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center mx-auto mb-4">
-              <CheckCircle className="w-6 h-6 text-accent" />
-            </div>
-            <h3 className="text-lg font-semibold mb-2">Quality Focused</h3>
-            <p className="text-base text-muted-foreground">
-              Dedicated to delivering measurable results
-            </p>
-          </div>
+          <ul className="inline-flex flex-col items-start gap-3 text-left mx-auto mb-6">
+            {[
+              "Where you're losing leads",
+              "What's slowing your business down",
+              "What to fix first for the biggest impact",
+            ].map((item) => (
+              <li key={item} className="flex items-center gap-3 text-base text-slate-700">
+                <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                </div>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p className="text-base text-muted-foreground">No pressure. Just clarity.</p>
         </div>
 
         <div className="bg-card rounded-2xl p-8 md:p-12">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold mb-6">Schedule Your Free Call</h3>
-            <p className="text-lg text-muted-foreground">
-              Choose a time that works for you. No sales pitch - just valuable
-              insights about your automation potential.
+            <h3 className="text-2xl font-bold mb-3">Free AI &amp; Website Audit</h3>
+            <p className="text-base text-muted-foreground max-w-md mx-auto mb-5">
+              20-minute call where I identify your biggest opportunities for:
             </p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {["More conversions", "Faster response times", "Less manual work"].map((item) => (
+                <span
+                  key={item}
+                  className="text-sm bg-blue-50 text-primary border border-primary/20 px-3 py-1 rounded-full font-medium"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
           </div>
 
           {/* Calendly embed */}
@@ -87,15 +75,12 @@ export function CalendlySection() {
           </div>
 
           <div className="text-center">
-            <p className="text-sm text-muted-foreground mb-4">
-              Can't find a time that works?{" "}
-              <a
-                href="mailto:hello@samjshih.com"
-                className="text-primary hover:underline"
-              >
+            <p className="text-sm text-muted-foreground">
+              Can&apos;t find a time?{" "}
+              <a href="mailto:samjshih@gmail.com" className="text-primary hover:underline">
                 Send me an email
               </a>{" "}
-              and I'll work with your schedule.
+              and I&apos;ll work around your schedule.
             </p>
           </div>
         </div>
