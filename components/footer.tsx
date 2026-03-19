@@ -46,8 +46,9 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4 text-white">Services</h3>
             <ul className="space-y-2 text-sm text-slate-400 flex flex-col items-center md:items-start">
-              <li>High-Converting Websites</li>
-              <li>AI Customer Support Systems</li>
+              <li>Websites</li>
+              <li>AI Systems</li>
+              <li>Automations</li>
             </ul>
           </div>
 
