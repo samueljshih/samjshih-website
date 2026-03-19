@@ -140,21 +140,25 @@ export function HeroSection() {
           {/* Headshot Column — shown first on mobile */}
           <div className="hero-animate order-first lg:order-last flex justify-center lg:justify-end" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
-              {/* Glow rings */}
-              <div className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl scale-125" />
-              <div className="absolute inset-0 rounded-full bg-cyan-400/15 blur-2xl scale-110" />
-              {/* Decorative ring */}
-              <div className="absolute -inset-2 rounded-full border border-white/10" />
-              <div className="absolute -inset-4 rounded-full border border-white/5" />
-              <Image
-                src="/assets/sam_headshot_pic.png"
-                alt="Sam - Website & AI Automation Engineer"
-                width={320}
-                height={320}
-                priority
-                className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 object-cover object-top rounded-full shadow-2xl border-4 border-white/15"
-              />
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white whitespace-nowrap">
+              {/* Glow — isolated behind image with z-0 */}
+              <div className="absolute inset-0 z-0 rounded-full bg-blue-500/20 blur-3xl scale-125" />
+              <div className="absolute inset-0 z-0 rounded-full bg-cyan-400/15 blur-2xl scale-110" />
+              {/* Decorative rings — also behind */}
+              <div className="absolute -inset-2 z-0 rounded-full border border-white/10" />
+              <div className="absolute -inset-4 z-0 rounded-full border border-white/5" />
+              {/* Image — isolated on z-10 so blurs can't touch it */}
+              <div className="relative z-10">
+                <Image
+                  src="/assets/sam_headshot_pic.png"
+                  alt="Sam - Website & AI Automation Engineer"
+                  width={288}
+                  height={288}
+                  priority
+                  quality={100}
+                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 object-cover object-top rounded-full shadow-2xl border-4 border-white/15"
+                />
+              </div>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Available for Projects
               </div>
