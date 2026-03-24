@@ -49,6 +49,16 @@ export function EngineeringProjectsSection() {
       headerGradient: "from-slate-700 to-slate-900",
       logo: "/projects/the_godfellas_logo.webp",
     },
+    {
+      title: "Easy Taiwan Citizenship",
+      description:
+        "Easy Taiwan Citizenship is a guided service helping individuals navigate the Taiwan citizenship and residency process. I built a clear, informative website that walks users through eligibility, documentation, and next steps to simplify a complex legal journey.",
+      url: "https://easytaiwancitizenship.com/",
+      category: "Legal Services",
+      tech: ["Next.js", "TypeScript", "UX Design"],
+      headerGradient: "from-red-500 to-rose-700",
+      logo: null,
+    },
   ];
 
   return (
@@ -90,13 +100,19 @@ export function EngineeringProjectsSection() {
               <div className="p-6">
                 <div className="flex items-center gap-3 mb-4 mt-1">
                   <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center flex-shrink-0">
-                    <Image
-                      src={project.logo}
-                      alt={project.title}
-                      width={28}
-                      height={28}
-                      className="w-7 h-7 object-contain"
-                    />
+                    {project.logo ? (
+                      <Image
+                        src={project.logo}
+                        alt={project.title}
+                        width={28}
+                        height={28}
+                        className="w-7 h-7 object-contain"
+                      />
+                    ) : (
+                      <span className="text-xs font-bold text-slate-500">
+                        {project.title.split(" ").map(w => w[0]).join("").slice(0, 3)}
+                      </span>
+                    )}
                   </div>
                   <div className="flex flex-col gap-0.5">
                     <h3 className="text-lg font-bold leading-tight">{project.title}</h3>
