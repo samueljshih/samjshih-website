@@ -50,6 +50,16 @@ export function EngineeringProjectsSection() {
       logo: "/projects/the_godfellas_logo.webp",
     },
     {
+      title: "Daddy's Dining Group",
+      description:
+        "Daddy's Dining Group develops and operates distinctive American restaurant brands built for the Taiwan market. I designed and built their marketing site to showcase their portfolio of concepts with a premium, editorial feel.",
+      url: "https://daddysdininggroup.com/",
+      category: "Restaurant Group",
+      tech: ["Next.js", "TypeScript", "Framer Motion"],
+      headerGradient: "from-yellow-700 to-stone-800",
+      logo: null,
+    },
+    {
       title: "Easy Taiwan Citizenship",
       description:
         "Easy Taiwan Citizenship is a guided service helping individuals navigate the Taiwan citizenship and residency process. I built a clear, informative website that walks users through eligibility, documentation, and next steps to simplify a complex legal journey.",
