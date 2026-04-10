@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Star, ChevronLeft, ChevronRight, Play, Pause, Volume2, VolumeX, FileText } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight, FileText } from "lucide-react";
 
 const testimonials = [
   {
@@ -17,8 +17,7 @@ const testimonials = [
       "Sam created an agent that connects my calendar, email, and industry news so anytime I have a new appointment, I have everything I need to blow that call out of the water. It's helped me feel more confident and connect with clients right away. He delivered a solution I can't live without now.",
     rating: 5,
     image: "/clients/lia.jpeg",
-    videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/lia_garvin.mp4",
-    videoStartTime: 1,
+    youtubeId: "AjtF8fFIrpg",
     caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/lia_garvin.pdf",
   },
   {
@@ -30,8 +29,7 @@ const testimonials = [
       "There's core functional things required as a business owner that I can't touch because I'm so limited in my time. Sam implemented chatbots that not only save me time, but give me more support than I could ever produce myself. I'm working less but producing more. That's a win-win.",
     rating: 5,
     image: "/clients/denney.jpeg",
-    videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/denney.mp4",
-    videoStartTime: 4,
+    youtubeId: "a5EGHrQ_r7A",
     caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/baem_jiu_jitsu_case_study.pdf",
   },
   {
@@ -43,103 +41,20 @@ const testimonials = [
       "Sam jumped in right away wearing both the product and full-stack engineer hat. He took time to understand the problem and worked with me to develop the MVP. It was so easy to communicate with him. He brings genuine interest, high work ethic, and is really fun to work with.",
     rating: 5,
     image: "/clients/archana.jpeg",
-    videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/archana.MP4",
-    videoStartTime: 1,
+    youtubeId: "5T12pxs-JQ8",
   },
 ];
 
-function VideoPlayer({ videoUrl, name, startTime = 1 }: { videoUrl: string; name: string; startTime?: number }) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [showControls, setShowControls] = useState(false);
-  const [isReady, setIsReady] = useState(false);
-
-  const togglePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const toggleMute = () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-  };
-
-  // Seek to startTime when video can be seeked
-  const handleLoadedData = () => {
-    if (videoRef.current) {
-      videoRef.current.currentTime = startTime;
-      setIsReady(true);
-    }
-  };
-
+function YouTubePlayer({ youtubeId, name }: { youtubeId: string; name: string }) {
   return (
-    <div 
-      className="relative w-full aspect-[9/16] bg-black rounded-lg overflow-hidden mb-4 group"
-      onMouseEnter={() => setShowControls(true)}
-      onMouseLeave={() => setShowControls(false)}
-    >
-      <video
-        ref={videoRef}
-        src={`${videoUrl}#t=${startTime}`}
-        className={`w-full h-full object-cover transition-opacity duration-300 ${isReady ? 'opacity-100' : 'opacity-0'}`}
-        muted={isMuted}
-        playsInline
-        loop
-        preload="auto"
-        onLoadedData={handleLoadedData}
-        onEnded={() => setIsPlaying(false)}
+    <div className="relative w-full aspect-[9/16] rounded-lg overflow-hidden mb-4">
+      <iframe
+        src={`https://www.youtube.com/embed/${youtubeId}?rel=0&modestbranding=1&playsinline=1`}
+        title={`${name} testimonial`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        className="w-full h-full border-0"
       />
-      
-      {/* Play/Pause overlay */}
-      <div 
-        className={`absolute inset-0 flex items-center justify-center bg-black/30 transition-opacity duration-300 cursor-pointer ${
-          showControls || !isPlaying ? 'opacity-100' : 'opacity-0'
-        }`}
-        onClick={togglePlay}
-      >
-        {!isPlaying && (
-          <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:bg-white transition-colors">
-            <Play className="w-8 h-8 text-primary ml-1" fill="currentColor" />
-          </div>
-        )}
-      </div>
-
-      {/* Bottom controls */}
-      <div className={`absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent transition-opacity duration-300 ${
-        showControls ? 'opacity-100' : 'opacity-0'
-      }`}>
-        <div className="flex items-center justify-between">
-          <button 
-            onClick={togglePlay}
-            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-          >
-            {isPlaying ? (
-              <Pause className="w-4 h-4 text-white" />
-            ) : (
-              <Play className="w-4 h-4 text-white ml-0.5" />
-            )}
-          </button>
-          <button 
-            onClick={toggleMute}
-            className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition-colors"
-          >
-            {isMuted ? (
-              <VolumeX className="w-4 h-4 text-white" />
-            ) : (
-              <Volume2 className="w-4 h-4 text-white" />
-            )}
-          </button>
-        </div>
-      </div>
     </div>
   );
 }
@@ -175,11 +90,10 @@ export function TestimonialSection() {
               <Card className="glow-card brand-card-shadow overflow-hidden !py-0 !gap-0 h-full">
                 <CardContent className="p-6 flex flex-col h-full">
                 {/* Video Player */}
-                {testimonial.videoUrl && (
-                  <VideoPlayer 
-                    videoUrl={testimonial.videoUrl} 
-                    name={testimonial.name} 
-                    startTime={testimonial.videoStartTime}
+                {testimonial.youtubeId && (
+                  <YouTubePlayer
+                    youtubeId={testimonial.youtubeId}
+                    name={testimonial.name}
                   />
                 )}
 
