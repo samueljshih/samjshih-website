@@ -17,6 +17,7 @@ export default function HomePage() {
       <TestimonialSection />
       <ServicesSection />
       <EngineeringProjectsSection />
+      <div className="h-16 bg-gradient-to-b from-indigo-50/50 to-[#060d1c]" />
       <CalendlySection />
       <AboutSection />
       <Footer />

@@ -20,7 +20,7 @@ export function CalendlySection() {
   }, []);
 
   return (
-    <section id="calendly" className="grain-section py-20 px-4 bg-[#060d1c] relative overflow-hidden">
+    <section id="calendly" className="grain-section pt-12 pb-20 px-4 bg-[#060d1c] relative overflow-hidden">
       {/* Radial blue glow */}
       <div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] pointer-events-none"
