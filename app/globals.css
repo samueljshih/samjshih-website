@@ -6,6 +6,15 @@
   contain: layout style paint;
 }
 
+/* Carousel slide-in fade */
+@keyframes carouselFade {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.carousel-fade {
+  animation: carouselFade 0.25s ease both;
+}
+
 /* Optimize font loading */
 @font-face {
   font-family: "Geist Sans";
