@@ -69,6 +69,16 @@ export function EngineeringProjectsSection() {
       headerGradient: "from-red-500 to-rose-700",
       logo: null,
     },
+    {
+      title: "Radiance Luxury Living",
+      description:
+        "Radiance Luxury Living is a luxury real estate agency showcasing premium properties. I built a high-end, visually striking website with property listings, immersive imagery, and seamless inquiry flows designed to attract serious buyers and build instant credibility.",
+      url: "https://radianceluxuryliving.com/",
+      category: "Real Estate",
+      tech: ["Next.js", "TypeScript", "UX Design"],
+      headerGradient: "from-amber-400 to-rose-500",
+      logo: null,
+    },
   ];
 
   return (
