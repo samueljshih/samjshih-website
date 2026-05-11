@@ -1,11 +1,91 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { BinaryBackground } from "@/components/binary-background";
 import { ChevronDown } from "lucide-react";
 
 export function HeroSection() {
+  // Parallax layer refs — ordered back-to-front
+  const glowOuterRef = useRef<HTMLDivElement>(null);
+  const glowInnerRef = useRef<HTMLDivElement>(null);
+  const ring1Ref = useRef<HTMLDivElement>(null);
+  const ring2Ref = useRef<HTMLDivElement>(null);
+  const imageWrapRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const layers = [
+      { ref: glowOuterRef, xf: 20, yf: 14 },
+      { ref: glowInnerRef, xf: 14, yf: 10 },
+      { ref: ring1Ref,     xf: 5,  yf: 4  },
+      { ref: ring2Ref,     xf: 7,  yf: 5  },
+      { ref: imageWrapRef, xf: 3,  yf: 2  },
+    ];
+
+    const target = { x: 0, y: 0 };
+    const current = { x: 0, y: 0 };
+    const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+    const clamp = (v: number, lo: number, hi: number) => Math.max(lo, Math.min(hi, v));
+
+    let raf: number;
+    const tick = () => {
+      current.x = lerp(current.x, target.x, 0.07);
+      current.y = lerp(current.y, target.y, 0.07);
+      for (const { ref, xf, yf } of layers) {
+        if (ref.current) {
+          ref.current.style.transform = `translate(${current.x * xf}px, ${current.y * yf}px)`;
+        }
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+
+    const isTouchDevice = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    let cleanup: () => void;
+
+    if (isTouchDevice) {
+      // iOS 13+ needs explicit permission — request on first touch (a valid user gesture)
+      document.addEventListener(
+        "touchstart",
+        () => {
+          if (
+            typeof DeviceOrientationEvent !== "undefined" &&
+            typeof (DeviceOrientationEvent as any).requestPermission === "function"
+          ) {
+            (DeviceOrientationEvent as any).requestPermission().catch(() => {});
+          }
+        },
+        { once: true }
+      );
+
+      const onOrient = (e: DeviceOrientationEvent) => {
+        // gamma = left/right tilt (-90..90), beta = forward/back, offset 30° for natural hold angle
+        target.x = clamp((e.gamma ?? 0) / 20, -1, 1);
+        target.y = clamp(((e.beta ?? 0) - 30) / 20, -1, 1);
+      };
+      window.addEventListener("deviceorientation", onOrient);
+      cleanup = () => window.removeEventListener("deviceorientation", onOrient);
+    } else {
+      const onMove = (e: MouseEvent) => {
+        target.x = clamp((e.clientX - window.innerWidth / 2) / (window.innerWidth / 2), -1, 1);
+        target.y = clamp((e.clientY - window.innerHeight / 2) / (window.innerHeight / 2), -1, 1);
+      };
+      const onLeave = () => { target.x = 0; target.y = 0; };
+      window.addEventListener("mousemove", onMove);
+      window.addEventListener("mouseleave", onLeave);
+      cleanup = () => {
+        window.removeEventListener("mousemove", onMove);
+        window.removeEventListener("mouseleave", onLeave);
+      };
+    }
+
+    return () => {
+      cancelAnimationFrame(raf);
+      cleanup?.();
+    };
+  }, []);
+
   return (
     <section
       id="hero"
@@ -35,19 +115,13 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-[3fr_2fr] gap-8 lg:gap-10 items-center">
           {/* Content Column */}
           <div className="order-last lg:order-first text-center lg:text-left">
-            {/* Badge */}
             <div className="hero-animate inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8" style={{ animationDelay: "0.1s" }}>
               <span className="text-base">⚡</span>
-              <span className="text-sm font-semibold">
-                Website & AI Automation Engineer
-              </span>
+              <span className="text-sm font-semibold">Website & AI Automation Engineer</span>
             </div>
 
             <h1 className="flex flex-col items-center lg:items-start leading-none gap-1 mb-6 uppercase tracking-tight" style={{ fontFamily: "var(--font-archivo-black)" }}>
-              <span
-                className="hero-animate text-5xl md:text-6xl lg:text-7xl text-white"
-                style={{ animationDelay: "0.25s" }}
-              >
+              <span className="hero-animate text-5xl md:text-6xl lg:text-7xl text-white" style={{ animationDelay: "0.25s" }}>
                 Look Legit.
               </span>
               <span
@@ -56,10 +130,7 @@ export function HeroSection() {
               >
                 Run Smoother.
               </span>
-              <span
-                className="hero-animate text-5xl md:text-6xl lg:text-7xl text-cyan-400"
-                style={{ animationDelay: "0.45s" }}
-              >
+              <span className="hero-animate text-5xl md:text-6xl lg:text-7xl text-cyan-400 shimmer-text" style={{ animationDelay: "0.45s" }}>
                 With AI.
               </span>
             </h1>
@@ -96,11 +167,7 @@ export function HeroSection() {
               <Button
                 size="lg"
                 className="w-full sm:w-auto bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-4 text-lg font-semibold shadow-[0_8px_30px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.6)] transition-all duration-300"
-                onClick={() =>
-                  document
-                    .getElementById("calendly")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("calendly")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Get Your Free AI & Website Audit
                 <span className="ml-2 text-xl">→</span>
@@ -110,17 +177,13 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="px-8 py-4 text-lg bg-transparent border-2 border-white/25 text-white/90 hover:bg-white/10 hover:border-white/50 transition-all duration-300 font-semibold"
-                onClick={() =>
-                  document
-                    .getElementById("testimonials")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })}
               >
                 View Testimonials
               </Button>
             </div>
 
-            {/* Pain bullets — now visible on all screen sizes */}
+            {/* Pain bullets */}
             <div className="mb-8 text-left max-w-md mx-auto lg:mx-0">
               <p className="text-slate-400 text-sm mb-3">If your business is:</p>
               <ul className="space-y-2 mb-4">
@@ -155,25 +218,49 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Headshot Column */}
+          {/* Headshot Column — parallax layers */}
           <div className="hero-animate order-first lg:order-last flex justify-center" style={{ animationDelay: "0.3s" }}>
-            <div className="relative">
-              <div className="absolute inset-0 z-0 rounded-full bg-blue-500/20 blur-3xl scale-125" />
-              <div className="absolute inset-0 z-0 rounded-full bg-cyan-400/15 blur-2xl scale-110" />
-              <div className="absolute -inset-2 z-0 rounded-full border border-white/10" />
-              <div className="absolute -inset-4 z-0 rounded-full border border-white/5" />
-              <div className="relative z-10">
+            {/* Outer container — this stays fixed as the anchor point */}
+            <div className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72">
+
+              {/* Layer 1: outer glow blur — moves the most */}
+              <div
+                ref={glowOuterRef}
+                className="absolute inset-0 rounded-full bg-blue-500/20 blur-3xl scale-150 will-change-transform"
+              />
+
+              {/* Layer 2: inner glow blur */}
+              <div
+                ref={glowInnerRef}
+                className="absolute inset-0 rounded-full bg-cyan-400/20 blur-2xl scale-125 will-change-transform"
+              />
+
+              {/* Layer 3: outer decorative ring */}
+              <div
+                ref={ring2Ref}
+                className="absolute -inset-6 rounded-full border border-white/8 will-change-transform"
+              />
+
+              {/* Layer 4: inner decorative ring */}
+              <div
+                ref={ring1Ref}
+                className="absolute -inset-3 rounded-full border border-white/12 will-change-transform"
+              />
+
+              {/* Layer 5: headshot image — moves the least */}
+              <div ref={imageWrapRef} className="absolute inset-0 will-change-transform">
                 <Image
                   src="/assets/sam_headshot_pic.png"
                   alt="Sam - Website & AI Automation Engineer"
-                  width={288}
-                  height={288}
+                  fill
                   priority
                   quality={100}
-                  className="w-48 h-48 sm:w-56 sm:h-56 lg:w-72 lg:h-72 object-cover object-top rounded-full shadow-2xl border-4 border-white/15"
+                  className="object-cover object-top rounded-full shadow-2xl border-4 border-white/15 headshot-pulse"
                 />
               </div>
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white whitespace-nowrap">
+
+              {/* Badge — fixed to bottom of anchor, not parallaxed */}
+              <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                 Accepting New Clients
               </div>
@@ -184,9 +271,7 @@ export function HeroSection() {
 
       {/* Scroll indicator */}
       <button
-        onClick={() =>
-          document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })
-        }
+        onClick={() => document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-50 hover:opacity-90 transition-opacity cursor-pointer"
         aria-label="Scroll to testimonials"
       >
