@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { BinaryBackground } from "@/components/binary-background";
+import { ChevronDown } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -12,18 +13,13 @@ export function HeroSection() {
     >
       {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Binary rain canvas */}
         <BinaryBackground />
-
-        {/* Radial vignette — darkens edges, keeps center readable */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
             background: "radial-gradient(ellipse at center, transparent 30%, rgba(5,11,21,0.75) 100%)",
           }}
         />
-
-        {/* Grain texture */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -37,7 +33,7 @@ export function HeroSection() {
 
       <div className="container max-w-5xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-[3fr_2fr] gap-8 lg:gap-10 items-center">
-          {/* Content Column — pushed below photo on mobile */}
+          {/* Content Column */}
           <div className="order-last lg:order-first text-center lg:text-left">
             {/* Badge */}
             <div className="hero-animate inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cyan-950/50 border border-cyan-700/50 text-cyan-300 mb-8" style={{ animationDelay: "0.1s" }}>
@@ -72,6 +68,30 @@ export function HeroSection() {
               I build clean, modern websites and set up simple AI systems and automations that help your business look more credible, respond faster, and reduce repetitive work.
             </p>
 
+            {/* Social proof strip */}
+            <div className="hero-animate flex items-center justify-center lg:justify-start gap-3 mb-8" style={{ animationDelay: "0.45s" }}>
+              <div className="flex -space-x-2">
+                {["/clients/lia.jpeg", "/clients/denney.jpeg", "/clients/archana.jpeg"].map((src, i) => (
+                  <Image
+                    key={i}
+                    src={src}
+                    alt="client"
+                    width={28}
+                    height={28}
+                    className="w-7 h-7 rounded-full object-cover border-2 border-[#050b15]"
+                  />
+                ))}
+              </div>
+              <div className="flex items-center gap-1.5 text-sm text-slate-300">
+                <span className="flex gap-0.5">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i} className="text-yellow-400 text-xs">★</span>
+                  ))}
+                </span>
+                <span className="text-slate-400">Trusted by 3+ businesses · 5.0 avg rating</span>
+              </div>
+            </div>
+
             <div className="hero-animate flex flex-col gap-4 justify-center lg:justify-start items-stretch sm:items-center sm:flex-row mb-8" style={{ animationDelay: "0.55s" }}>
               <Button
                 size="lg"
@@ -100,8 +120,8 @@ export function HeroSection() {
               </Button>
             </div>
 
-            {/* Pain bullets — hidden on mobile to keep CTA above fold */}
-            <div className="hidden sm:block mb-8 text-left max-w-md mx-auto lg:mx-0">
+            {/* Pain bullets — now visible on all screen sizes */}
+            <div className="mb-8 text-left max-w-md mx-auto lg:mx-0">
               <p className="text-slate-400 text-sm mb-3">If your business is:</p>
               <ul className="space-y-2 mb-4">
                 {[
@@ -135,16 +155,13 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Headshot Column — shown first on mobile */}
+          {/* Headshot Column */}
           <div className="hero-animate order-first lg:order-last flex justify-center" style={{ animationDelay: "0.3s" }}>
             <div className="relative">
-              {/* Glow — isolated behind image with z-0 */}
               <div className="absolute inset-0 z-0 rounded-full bg-blue-500/20 blur-3xl scale-125" />
               <div className="absolute inset-0 z-0 rounded-full bg-cyan-400/15 blur-2xl scale-110" />
-              {/* Decorative rings — also behind */}
               <div className="absolute -inset-2 z-0 rounded-full border border-white/10" />
               <div className="absolute -inset-4 z-0 rounded-full border border-white/5" />
-              {/* Image — isolated on z-10 so blurs can't touch it */}
               <div className="relative z-10">
                 <Image
                   src="/assets/sam_headshot_pic.png"
@@ -158,12 +175,24 @@ export function HeroSection() {
               </div>
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-3 py-2 rounded-full text-xs font-semibold shadow-lg text-white whitespace-nowrap">
                 <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                Available for Projects
+                Accepting New Clients
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <button
+        onClick={() =>
+          document.getElementById("testimonials")?.scrollIntoView({ behavior: "smooth" })
+        }
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1 opacity-50 hover:opacity-90 transition-opacity cursor-pointer"
+        aria-label="Scroll to testimonials"
+      >
+        <span className="text-xs text-white/60 tracking-wide">See client results</span>
+        <ChevronDown className="w-5 h-5 text-white/60 animate-bounce" />
+      </button>
     </section>
   );
 }

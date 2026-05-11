@@ -1,6 +1,7 @@
 "use client";
 
 import { MessageSquare, Globe, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 export function ServicesSection() {
@@ -105,6 +106,22 @@ export function ServicesSection() {
               </p>
             </div>
           ))}
+        </div>
+
+        {/* Mid-page CTA */}
+        <div className="text-center mt-14 pt-10 border-t border-slate-200">
+          <p className="text-lg font-semibold mb-2 text-foreground">Ready to see what&apos;s possible for your business?</p>
+          <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
+            Book a free audit and get a personalized breakdown of your biggest opportunities.
+          </p>
+          <Button
+            className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-3 font-semibold text-base shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.5)] transition-all duration-300"
+            onClick={() =>
+              document.getElementById("calendly")?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Get Your Free Audit →
+          </Button>
         </div>
       </div>
     </section>

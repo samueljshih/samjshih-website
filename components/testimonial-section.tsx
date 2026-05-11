@@ -1,11 +1,23 @@
 "use client";
 
-import { useState } from "react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Star, ChevronLeft, ChevronRight, FileText } from "lucide-react";
+import { Star, FileText } from "lucide-react";
+
+const stats = [
+  { value: "3", label: "Businesses Transformed" },
+  { value: "5.0 ★", label: "Average Rating" },
+  { value: "100%", label: "Referral-Based" },
+];
+
+const heroQuote = {
+  text: "I'm working less but producing more. That's a win-win.",
+  author: "Coach Denney Choi",
+  title: "Owner, Baem Jiu Jitsu",
+  image: "/clients/denney.jpeg",
+};
 
 const testimonials = [
   {
@@ -13,6 +25,7 @@ const testimonials = [
     name: "Lia Garvin",
     title: "Team Management Consultant & Speaker",
     project: "Call Prep Automation",
+    challenge: "Walking into discovery calls without client context",
     content:
       "Sam created an agent that connects my calendar, email, and industry news so anytime I have a new appointment, I have everything I need to blow that call out of the water. It's helped me feel more confident and connect with clients right away. He delivered a solution I can't live without now.",
     rating: 5,
@@ -25,6 +38,7 @@ const testimonials = [
     name: "Coach Denney Choi",
     title: "Owner, Baem Jiu Jitsu",
     project: "AI-Powered Lead Follow-Up System",
+    challenge: "Missing leads from missed calls with no time to follow up",
     content:
       "There's core functional things required as a business owner that I can't touch because I'm so limited in my time. Sam implemented chatbots that not only save me time, but give me more support than I could ever produce myself. I'm working less but producing more. That's a win-win.",
     rating: 5,
@@ -37,6 +51,7 @@ const testimonials = [
     name: "Archana Kannan",
     title: "Founder, tinytask.ai",
     project: "MVP Development",
+    challenge: "Needed a technical co-founder to ship an MVP fast",
     content:
       "Sam jumped in right away wearing both the product and full-stack engineer hat. He took time to understand the problem and worked with me to develop the MVP. It was so easy to communicate with him. He brings genuine interest, high work ethic, and is really fun to work with.",
     rating: 5,
@@ -60,22 +75,15 @@ function YouTubePlayer({ youtubeId, name }: { youtubeId: string; name: string })
 }
 
 export function TestimonialSection() {
-  const [currentPage, setCurrentPage] = useState(0);
   const revealRef = useScrollReveal();
-  const itemsPerPage = 3;
-  const totalPages = Math.ceil(testimonials.length / itemsPerPage);
-  const currentTestimonials = testimonials.slice(
-    currentPage * itemsPerPage,
-    (currentPage + 1) * itemsPerPage
-  );
 
   return (
     <section id="testimonials" className="grain-section py-20 px-4 bg-gradient-to-b from-slate-50 via-blue-50/30 to-white">
       <div className="container max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <div className="section-eyebrow justify-center">
-            Client Results
-          </div>
+
+        {/* Section Header */}
+        <div className="text-center mb-10">
+          <div className="section-eyebrow justify-center">Client Results</div>
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-balance">
             Real Results From <span className="text-primary">Real Businesses.</span>
           </h2>
@@ -84,112 +92,124 @@ export function TestimonialSection() {
           </p>
         </div>
 
-        <div ref={revealRef} className="reveal-stagger grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8 auto-rows-fr">
-          {currentTestimonials.map((testimonial) => (
+        {/* Stats Strip */}
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 mb-14 py-6 border-y border-slate-200/80">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-3xl font-bold text-primary mb-1">{stat.value}</div>
+              <div className="text-sm text-muted-foreground uppercase tracking-wide">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* Hero Pull Quote */}
+        <div className="relative mb-14 max-w-2xl mx-auto text-center px-4">
+          <div className="text-7xl text-primary/15 font-serif leading-none select-none mb-0 -mb-4">&ldquo;</div>
+          <blockquote className="text-2xl md:text-3xl font-semibold text-foreground leading-snug mb-6">
+            {heroQuote.text}
+          </blockquote>
+          <div className="flex items-center justify-center gap-3">
+            <Image
+              src={heroQuote.image}
+              alt={heroQuote.author}
+              width={44}
+              height={44}
+              className="w-11 h-11 rounded-full object-cover ring-2 ring-primary/20"
+            />
+            <div className="text-left">
+              <div className="text-sm font-semibold text-foreground">{heroQuote.author}</div>
+              <div className="text-xs text-muted-foreground">{heroQuote.title}</div>
+            </div>
+          </div>
+        </div>
+
+        {/* Testimonial Cards */}
+        <div ref={revealRef} className="reveal-stagger grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 auto-rows-fr">
+          {testimonials.map((testimonial) => (
             <div key={testimonial.id} className="h-full">
               <Card className="glow-card brand-card-shadow overflow-hidden !py-0 !gap-0 h-full">
                 <CardContent className="p-6 flex flex-col h-full">
-                {/* Video Player */}
-                {testimonial.youtubeId && (
-                  <YouTubePlayer
-                    youtubeId={testimonial.youtubeId}
-                    name={testimonial.name}
-                  />
-                )}
 
-                <div className="flex justify-center mb-2">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-yellow-400 text-yellow-400"
-                    />
-                  ))}
-                </div>
+                  {/* Video Player */}
+                  {testimonial.youtubeId && (
+                    <YouTubePlayer youtubeId={testimonial.youtubeId} name={testimonial.name} />
+                  )}
 
-                <blockquote className="text-sm text-muted-foreground text-pretty leading-relaxed mb-4">
-                  &ldquo;{testimonial.content}&rdquo;
-                </blockquote>
+                  {/* Challenge badge */}
+                  <div className="flex items-start gap-2 mb-3">
+                    <span className="text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">
+                      Before
+                    </span>
+                    <span className="text-xs text-muted-foreground leading-snug">
+                      {testimonial.challenge}
+                    </span>
+                  </div>
 
-                <div className="mt-auto pt-4 border-t border-gray-100">
-                  <div className="flex items-center justify-between mb-3">
+                  {/* Stars — larger */}
+                  <div className="flex justify-center mb-3">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                    ))}
+                  </div>
+
+                  <blockquote className="text-sm text-muted-foreground text-pretty leading-relaxed mb-4">
+                    &ldquo;{testimonial.content}&rdquo;
+                  </blockquote>
+
+                  <div className="mt-auto pt-4 border-t border-gray-100 space-y-3">
                     <div className="inline-flex bg-blue-50 text-blue-700 text-xs font-medium px-2 py-0.5 rounded-full">
                       {testimonial.project}
                     </div>
+
+                    {/* Case study as a full-width button */}
                     {testimonial.caseStudyUrl && (
                       <a
                         href={testimonial.caseStudyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-medium text-primary hover:text-primary/80 transition-colors"
+                        className="flex items-center justify-center gap-1.5 w-full text-xs font-semibold text-primary border border-primary/30 bg-primary/5 hover:bg-primary/10 px-3 py-2 rounded-lg transition-colors"
                       >
                         <FileText className="w-3.5 h-3.5" />
-                        View Case Study
+                        View Full Case Study
                       </a>
                     )}
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Image
-                      src={testimonial.image || "/placeholder.svg"}
-                      alt={testimonial.name}
-                      width={48}
-                      height={48}
-                      className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-offset-2 ring-cyan-200"
-                    />
-                    <div>
-                      <div className="font-semibold text-base">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-sm text-muted-foreground">
-                        {testimonial.title}
+
+                    <div className="flex items-center gap-3">
+                      <Image
+                        src={testimonial.image || "/placeholder.svg"}
+                        alt={testimonial.name}
+                        width={48}
+                        height={48}
+                        className="w-12 h-12 rounded-full object-cover flex-shrink-0 ring-2 ring-offset-2 ring-cyan-200"
+                      />
+                      <div>
+                        <div className="font-semibold text-base">{testimonial.name}</div>
+                        <div className="text-sm text-muted-foreground">{testimonial.title}</div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
+            </div>
           ))}
         </div>
 
-        {totalPages > 1 && (
-          <div className="flex items-center justify-center gap-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setCurrentPage(Math.max(0, currentPage - 1))}
-              disabled={currentPage === 0}
-            >
-              <ChevronLeft className="w-4 h-4 mr-1" />
-              Previous
-            </Button>
-
-            <div className="flex gap-2">
-              {Array.from({ length: totalPages }).map((_, index) => (
-                <Button
-                  key={index}
-                  variant={index === currentPage ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setCurrentPage(index)}
-                  className="w-8 h-8 p-0"
-                >
-                  {index + 1}
-                </Button>
-              ))}
-            </div>
-
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() =>
-                setCurrentPage(Math.min(totalPages - 1, currentPage + 1))
-              }
-              disabled={currentPage === totalPages - 1}
-            >
-              Next
-              <ChevronRight className="w-4 h-4 ml-1" />
-            </Button>
-          </div>
-        )}
+        {/* Post-testimonial CTA */}
+        <div className="text-center pt-10 border-t border-gray-200">
+          <p className="text-2xl md:text-3xl font-bold mb-3">Convinced? Let&apos;s talk.</p>
+          <p className="text-muted-foreground mb-8 max-w-md mx-auto">
+            Book a free 20-minute audit and I&apos;ll show you exactly where your business can improve.
+          </p>
+          <Button
+            size="lg"
+            className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-10 py-4 text-lg font-semibold shadow-[0_8px_30px_rgba(37,99,235,0.4)] hover:shadow-[0_12px_40px_rgba(37,99,235,0.6)] transition-all duration-300"
+            onClick={() =>
+              document.getElementById("calendly")?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            Book a Free Audit →
+          </Button>
+        </div>
       </div>
     </section>
   );

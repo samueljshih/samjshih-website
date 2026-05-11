@@ -5,6 +5,7 @@ import { ServicesSection } from "@/components/services-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { CalendlySection } from "@/components/calendly-section"
 import { AboutSection } from "@/components/about-section"
+import { FloatingCta } from "@/components/floating-cta"
 import { Footer } from "@/components/footer"
 
 export default function HomePage() {
@@ -19,6 +20,7 @@ export default function HomePage() {
       <CalendlySection />
       <AboutSection />
       <Footer />
+      <FloatingCta />
     </main>
   )
 }
