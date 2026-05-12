@@ -8,48 +8,15 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const projects = [
   {
-    title: "Top One Percenter",
+    title: "Radiance Luxury Living",
     description:
-      "Top One Percenter is a sales coaching academy and SaaS platform that helps teams train like their top 1% performers. I optimized their onboarding flow and redesigned key pages to create a smoother, more engaging training experience.",
-    url: "https://toponepercenter.com/",
-    category: "SaaS Platform",
-    tech: ["React", "Next.js", "TypeScript"],
-    headerGradient: "from-blue-600 to-indigo-700",
-    logo: "/projects/top_logo.png",
-    screenshot: null,
-  },
-  {
-    title: "Rapid Weight Loss USA",
-    description:
-      "Rapid Weight Loss USA is a medically supervised weight loss clinic offering FDA-approved treatments. I built a clean, mobile-first website with clear CTAs, treatment education, and easy appointment booking to guide patients from discovery to consultation.",
-    url: "https://rapidweightlossusa.com/",
-    category: "Health Tech",
-    tech: ["React", "Next.js", "Mobile-First"],
-    headerGradient: "from-cyan-500 to-blue-500",
-    logo: "/projects/rapid_weight_loss_logo.webp",
-    screenshot: null,
-  },
-  {
-    title: "Torchline AI",
-    description:
-      "Torchline AI is a vision analytics platform that turns existing camera feeds into operational intelligence. I contributed to building the platform that helps frontline businesses detect safety violations, coach teams with AI-generated clips, and identify compliance gaps. No new hardware required.",
-    url: "https://www.torchline.ai/",
-    category: "AI SaaS",
-    tech: ["Next.js", "AI/ML", "TypeScript"],
-    headerGradient: "from-orange-500 to-rose-600",
-    logo: "/projects/torchline_logo.png",
-    screenshot: null,
-  },
-  {
-    title: "The Godfellas",
-    description:
-      "The Godfellas is a nonprofit focused on empowering marginalized communities worldwide. I led the development of their modern, story-driven website with donation flows and newsletter signup, helping them grow their movement and share their impact.",
-    url: "https://thegodfellas.com/",
-    category: "Nonprofit",
-    tech: ["React", "UX Design", "Analytics"],
-    headerGradient: "from-slate-700 to-slate-900",
-    logo: "/projects/the_godfellas_logo.webp",
-    screenshot: null,
+      "Radiance Luxury Living is a luxury real estate agency showcasing premium properties. I built a high-end, visually striking website with property listings, immersive imagery, and seamless inquiry flows designed to attract serious buyers and build instant credibility.",
+    url: "https://radiancelivingkaty.com/",
+    category: "Real Estate",
+    tech: ["Next.js", "TypeScript", "UX Design"],
+    headerGradient: "from-amber-400 to-rose-500",
+    logo: null,
+    screenshot: "/projects/screenshots/radianceluxuryliving.webp",
   },
   {
     title: "Daddy's Dining Group",
@@ -60,7 +27,40 @@ const projects = [
     tech: ["Next.js", "TypeScript", "Framer Motion"],
     headerGradient: "from-yellow-700 to-stone-800",
     logo: null,
-    screenshot: null,
+    screenshot: "/projects/screenshots/daddysdininggroup.webp",
+  },
+  {
+    title: "Top One Percenter",
+    description:
+      "Top One Percenter is a sales coaching academy and SaaS platform that helps teams train like their top 1% performers. I optimized their onboarding flow and redesigned key pages to create a smoother, more engaging training experience.",
+    url: "https://toponepercenter.com/",
+    category: "SaaS Platform",
+    tech: ["React", "Next.js", "TypeScript"],
+    headerGradient: "from-blue-600 to-indigo-700",
+    logo: "/projects/top_logo.png",
+    screenshot: "/projects/screenshots/toponepercenter.webp",
+  },
+  {
+    title: "Torchline AI",
+    description:
+      "Torchline AI is a vision analytics platform that turns existing camera feeds into operational intelligence. I contributed to building the platform that helps frontline businesses detect safety violations, coach teams with AI-generated clips, and identify compliance gaps. No new hardware required.",
+    url: "https://www.torchline.ai/",
+    category: "AI SaaS",
+    tech: ["Next.js", "AI/ML", "TypeScript"],
+    headerGradient: "from-orange-500 to-rose-600",
+    logo: "/projects/torchline_logo.png",
+    screenshot: "/projects/screenshots/torchlineai.webp",
+  },
+  {
+    title: "The Godfellas",
+    description:
+      "The Godfellas is a nonprofit focused on empowering marginalized communities worldwide. I led the development of their modern, story-driven website with donation flows and newsletter signup, helping them grow their movement and share their impact.",
+    url: "https://thegodfellas.com/",
+    category: "Nonprofit",
+    tech: ["React", "UX Design", "Analytics"],
+    headerGradient: "from-slate-700 to-slate-900",
+    logo: "/projects/the_godfellas_logo.webp",
+    screenshot: "/projects/screenshots/godfellas.webp",
   },
   {
     title: "Easy Taiwan Citizenship",
@@ -71,18 +71,7 @@ const projects = [
     tech: ["Next.js", "TypeScript", "UX Design"],
     headerGradient: "from-red-500 to-rose-700",
     logo: null,
-    screenshot: null,
-  },
-  {
-    title: "Radiance Luxury Living",
-    description:
-      "Radiance Luxury Living is a luxury real estate agency showcasing premium properties. I built a high-end, visually striking website with property listings, immersive imagery, and seamless inquiry flows designed to attract serious buyers and build instant credibility.",
-    url: "https://radianceluxuryliving.com/",
-    category: "Real Estate",
-    tech: ["Next.js", "TypeScript", "UX Design"],
-    headerGradient: "from-amber-400 to-rose-500",
-    logo: null,
-    screenshot: null,
+    screenshot: "/projects/screenshots/easytaiwancitizenship.webp",
   },
 ];
 
