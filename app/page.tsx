@@ -15,9 +15,9 @@ export default function HomePage() {
       <HeroSection />
       <div className="h-24 bg-gradient-to-b from-[#050b15] to-white" />
       <TestimonialSection />
-      <ServicesSection />
       <EngineeringProjectsSection />
-      <div className="h-16 bg-gradient-to-b from-indigo-50/50 to-[#060d1c]" />
+      <ServicesSection />
+      <div className="h-16 bg-gradient-to-b from-slate-50/50 to-[#060d1c]" />
       <CalendlySection />
       <AboutSection />
       <Footer />

@@ -488,6 +488,15 @@
   z-index: 2;
 }
 
+/* ─── Hide scrollbar (mobile swipe carousels) ─── */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* ─── Floating card shadow ─── */
 .brand-card-shadow {
   box-shadow:

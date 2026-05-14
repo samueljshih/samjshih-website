@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
-import { Button } from "@/components/ui/button";
+import { useState } from "react";
 import { ExternalLink, ChevronLeft, ChevronRight, Zap } from "lucide-react";
 import Image from "next/image";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
@@ -75,6 +74,10 @@ const projects = [
   },
 ];
 
+const PAGE_SIZE = 6;
+
+type Project = (typeof projects)[0];
+
 function BrowserFrame({
   gradient,
   url,
@@ -87,22 +90,20 @@ function BrowserFrame({
   title: string;
 }) {
   return (
-    <div className="w-full rounded-xl overflow-hidden border border-slate-200 shadow-2xl">
-      {/* Browser chrome */}
-      <div className="h-9 bg-slate-100 border-b border-slate-200 flex items-center px-3 gap-2 flex-shrink-0">
-        <div className="flex gap-1.5">
-          <div className="w-3 h-3 rounded-full bg-red-400" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400" />
-          <div className="w-3 h-3 rounded-full bg-green-400" />
+    <div className="w-full overflow-hidden border-b border-slate-200">
+      <div className="h-7 bg-slate-100 border-b border-slate-200 flex items-center px-3 gap-2 flex-shrink-0">
+        <div className="flex gap-1">
+          <div className="w-2 h-2 rounded-full bg-red-400" />
+          <div className="w-2 h-2 rounded-full bg-yellow-400" />
+          <div className="w-2 h-2 rounded-full bg-green-400" />
         </div>
-        <div className="flex-1 mx-2 h-5 bg-white rounded-full border border-slate-200 flex items-center px-3 overflow-hidden">
-          <span className="text-[11px] text-slate-400 truncate">
+        <div className="flex-1 mx-2 h-4 bg-white rounded-full border border-slate-200 flex items-center px-2 overflow-hidden">
+          <span className="text-[10px] text-slate-400 truncate">
             {url.replace("https://", "").replace("http://", "")}
           </span>
         </div>
       </div>
 
-      {/* Content: screenshot or placeholder */}
       {screenshot ? (
         <div className="aspect-[16/9] relative">
           <Image
@@ -114,49 +115,83 @@ function BrowserFrame({
         </div>
       ) : (
         <div
-          className={`aspect-[16/9] bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-3`}
+          className={`aspect-[16/9] bg-gradient-to-br ${gradient} flex flex-col items-center justify-center gap-2`}
         >
-          <div className="w-16 h-16 rounded-2xl bg-white/15 border border-white/25 flex items-center justify-center">
-            <span className="text-3xl">🖥️</span>
+          <div className="w-10 h-10 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center">
+            <span className="text-xl">🖥️</span>
           </div>
-          <p className="text-sm font-medium text-white/70">Screenshot coming soon</p>
+          <p className="text-xs font-medium text-white/70">Screenshot coming soon</p>
         </div>
       )}
     </div>
   );
 }
 
+function ProjectCard({ project }: { project: Project }) {
+  return (
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group block h-full"
+    >
+      <div className="flex flex-col h-full bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+        <BrowserFrame
+          gradient={project.headerGradient}
+          url={project.url}
+          screenshot={project.screenshot}
+          title={project.title}
+        />
+
+        <div className="flex flex-col flex-1 p-4 md:p-5">
+          <div className="flex items-center gap-2 mb-2">
+            {project.logo && (
+              <Image
+                src={project.logo}
+                alt={project.title}
+                width={20}
+                height={20}
+                className="w-5 h-5 object-contain flex-shrink-0"
+              />
+            )}
+            <span className="text-xs font-medium text-muted-foreground bg-slate-100 border border-slate-200 px-2 py-0.5 rounded-full">
+              {project.category}
+            </span>
+          </div>
+
+          <h3 className="font-bold text-base mb-1 leading-snug">{project.title}</h3>
+
+          <p className="text-sm text-muted-foreground line-clamp-2 leading-relaxed flex-1 mb-3">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-1 mb-3">
+            {project.tech.map((t) => (
+              <span
+                key={t}
+                className="text-[11px] bg-blue-50 border border-blue-200 text-blue-700 px-2 py-0.5 rounded-md"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex items-center gap-1 text-xs font-semibold text-primary group-hover:underline underline-offset-2 mt-auto">
+            <ExternalLink className="w-3 h-3 flex-shrink-0" />
+            View Live Site
+          </div>
+        </div>
+      </div>
+    </a>
+  );
+}
+
 export function EngineeringProjectsSection() {
   const revealRef = useScrollReveal();
-  const [current, setCurrent] = useState(0);
-  const [animKey, setAnimKey] = useState(0);
+  const [page, setPage] = useState(0);
 
-  const goTo = useCallback((index: number) => {
-    setCurrent(index);
-    setAnimKey((k) => k + 1);
-  }, []);
-
-  const prev = useCallback(
-    () => goTo((current - 1 + projects.length) % projects.length),
-    [current, goTo]
-  );
-
-  const next = useCallback(
-    () => goTo((current + 1) % projects.length),
-    [current, goTo]
-  );
-
-  // Keyboard navigation
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "ArrowLeft") prev();
-      if (e.key === "ArrowRight") next();
-    };
-    window.addEventListener("keydown", onKey);
-    return () => window.removeEventListener("keydown", onKey);
-  }, [prev, next]);
-
-  const project = projects[current];
+  const totalPages = Math.ceil(projects.length / PAGE_SIZE);
+  const visible = projects.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   return (
     <section
@@ -176,129 +211,54 @@ export function EngineeringProjectsSection() {
         </div>
 
         <div ref={revealRef} className="reveal-up">
-          {/* Main carousel card */}
-          <div className="bg-white rounded-2xl border border-slate-200 p-6 md:p-8 glow-card brand-card-shadow">
-            <div
-              key={animKey}
-              className="grid lg:grid-cols-[3fr_2fr] gap-8 items-center carousel-fade"
-            >
-              {/* Screenshot */}
-              <div className="relative">
-                {/* Prev/Next on screenshot */}
-                <button
-                  onClick={prev}
-                  aria-label="Previous project"
-                  className="absolute -left-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center hover:bg-slate-50 transition-colors"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-                <button
-                  onClick={next}
-                  aria-label="Next project"
-                  className="absolute -right-3 top-1/2 -translate-y-1/2 z-10 w-9 h-9 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center hover:bg-slate-50 transition-colors"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-
-                <BrowserFrame
-                  gradient={project.headerGradient}
-                  url={project.url}
-                  screenshot={project.screenshot}
-                  title={project.title}
-                />
+          {/* Mobile: horizontal swipe carousel (hidden on sm+) */}
+          <div className="sm:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
+            {visible.map((project) => (
+              <div
+                key={project.title}
+                className="flex-shrink-0 w-[82vw] snap-start"
+              >
+                <ProjectCard project={project} />
               </div>
-
-              {/* Project info */}
-              <div className="flex flex-col">
-                <div className="flex items-center gap-2 mb-4">
-                  {project.logo && (
-                    <div className="w-10 h-10 rounded-lg bg-white border border-slate-200 shadow-sm flex items-center justify-center flex-shrink-0">
-                      <Image
-                        src={project.logo}
-                        alt={project.title}
-                        width={28}
-                        height={28}
-                        className="w-7 h-7 object-contain"
-                      />
-                    </div>
-                  )}
-                  <span className="text-xs font-medium text-muted-foreground bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full">
-                    {project.category}
-                  </span>
-                </div>
-
-                <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
-                <p className="text-muted-foreground text-sm mb-6 leading-relaxed">
-                  {project.description}
-                </p>
-
-                <div className="flex flex-wrap gap-2 mb-8">
-                  {project.tech.map((tech, i) => (
-                    <span
-                      key={i}
-                      className="text-xs bg-blue-50 border border-blue-200 text-blue-700 px-2 py-1 rounded-md"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="w-full hover:bg-primary hover:text-white hover:border-primary hover:shadow-[0_4px_16px_rgba(37,99,235,0.3)] transition-all bg-transparent"
-                  asChild
-                >
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    View Live Site
-                  </a>
-                </Button>
-              </div>
-            </div>
-          </div>
-
-          {/* Dot navigation */}
-          <div className="flex items-center justify-center gap-2 mt-6">
-            <button
-              onClick={prev}
-              aria-label="Previous"
-              className="p-1.5 rounded-full hover:bg-slate-200 transition-colors"
-            >
-              <ChevronLeft className="w-4 h-4 text-slate-500" />
-            </button>
-
-            {projects.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => goTo(i)}
-                aria-label={`Go to project ${i + 1}`}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  i === current
-                    ? "bg-primary w-6"
-                    : "bg-slate-300 hover:bg-slate-400 w-2"
-                }`}
-              />
             ))}
-
-            <button
-              onClick={next}
-              aria-label="Next"
-              className="p-1.5 rounded-full hover:bg-slate-200 transition-colors"
-            >
-              <ChevronRight className="w-4 h-4 text-slate-500" />
-            </button>
           </div>
 
-          <div className="text-center mt-2">
-            <span className="text-xs text-slate-400">
-              {current + 1} / {projects.length}
-            </span>
+          {/* Mobile swipe hint */}
+          <p className="sm:hidden text-center text-xs text-slate-400 mt-3 mb-0">
+            Swipe to explore all projects →
+          </p>
+
+          {/* Desktop: 3-column grid (hidden on mobile) */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+            {visible.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
           </div>
+
+          {/* Pagination (desktop, only when multiple pages) */}
+          {totalPages > 1 && (
+            <div className="hidden sm:flex items-center justify-center gap-3 mt-8">
+              <button
+                onClick={() => setPage((p) => p - 1)}
+                disabled={page === 0}
+                aria-label="Previous page"
+                className="w-9 h-9 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <span className="text-sm text-slate-500">
+                {page + 1} / {totalPages}
+              </span>
+              <button
+                onClick={() => setPage((p) => p + 1)}
+                disabled={page === totalPages - 1}
+                aria-label="Next page"
+                className="w-9 h-9 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          )}
         </div>
 
         <div className="text-center mt-10">
