@@ -28,15 +28,15 @@ const projects = [
     screenshot: "/projects/screenshots/daddysdininggroup.webp",
   },
   {
-    title: "Top One Percenter",
+    title: "Easy Taiwan Citizenship",
     description:
-      "Onboarding redesign for a sales coaching platform helping teams train like their top 1%.",
-    url: "https://toponepercenter.com/",
-    category: "SaaS Platform",
-    tech: ["React", "Next.js", "TypeScript"],
-    headerGradient: "from-blue-600 to-indigo-700",
-    logo: "/projects/top_logo.png",
-    screenshot: "/projects/screenshots/toponepercenter.webp",
+      "Informational website guiding users through Taiwan citizenship and residency.",
+    url: "https://easytaiwancitizenship.com/",
+    category: "Legal Services",
+    tech: ["Next.js", "TypeScript", "UX Design"],
+    headerGradient: "from-red-500 to-rose-700",
+    logo: null,
+    screenshot: "/projects/screenshots/easytaiwancitizenship.webp",
   },
   {
     title: "Torchline AI",
@@ -72,15 +72,15 @@ const projects = [
     screenshot: "/projects/screenshots/ninkataninjas.webp",
   },
   {
-    title: "Easy Taiwan Citizenship",
+    title: "Top One Percenter",
     description:
-      "Informational website guiding users through Taiwan citizenship and residency.",
-    url: "https://easytaiwancitizenship.com/",
-    category: "Legal Services",
-    tech: ["Next.js", "TypeScript", "UX Design"],
-    headerGradient: "from-red-500 to-rose-700",
-    logo: null,
-    screenshot: "/projects/screenshots/easytaiwancitizenship.webp",
+      "Onboarding redesign for a sales coaching platform helping teams train like their top 1%.",
+    url: "https://toponepercenter.com/",
+    category: "SaaS Platform",
+    tech: ["React", "Next.js", "TypeScript"],
+    headerGradient: "from-blue-600 to-indigo-700",
+    logo: "/projects/top_logo.png",
+    screenshot: "/projects/screenshots/toponepercenter.webp",
   },
 ];
 
