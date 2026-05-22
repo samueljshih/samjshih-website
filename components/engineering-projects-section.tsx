@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Radiance Luxury Living",
     description:
-      "I built a high-end website for a luxury real estate agency with property listings, immersive imagery, and inquiry flows designed to attract serious buyers.",
+      "High-end website for a luxury real estate agency with listings and inquiry flows.",
     url: "https://radiancelivingkaty.com/",
     category: "Real Estate",
     tech: ["Next.js", "TypeScript", "UX Design"],
@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Daddy's Dining Group",
     description:
-      "I designed and built the marketing site for a restaurant group developing distinctive American brands for the Taiwan market.",
+      "Marketing site for an American restaurant group operating in Taiwan.",
     url: "https://daddysdininggroup.com/",
     category: "Restaurant Group",
     tech: ["Next.js", "TypeScript", "Framer Motion"],
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Top One Percenter",
     description:
-      "I optimized the onboarding flow and redesigned key pages for a sales coaching platform that helps teams train like their top 1% performers.",
+      "Onboarding redesign for a sales coaching platform helping teams train like their top 1%.",
     url: "https://toponepercenter.com/",
     category: "SaaS Platform",
     tech: ["React", "Next.js", "TypeScript"],
@@ -41,7 +41,7 @@ const projects = [
   {
     title: "Torchline AI",
     description:
-      "I helped build a vision analytics platform that turns existing camera feeds into operational intelligence — safety violations, coaching clips, compliance gaps, no new hardware.",
+      "Vision analytics platform turning existing camera feeds into operational intelligence.",
     url: "https://www.torchline.ai/",
     category: "AI SaaS",
     tech: ["Next.js", "AI/ML", "TypeScript"],
@@ -52,7 +52,7 @@ const projects = [
   {
     title: "The Godfellas",
     description:
-      "I built the story-driven website for a nonprofit empowering marginalized communities, with donation flows and newsletter signup to help them grow their movement.",
+      "Story-driven nonprofit website with donation flows and newsletter signup.",
     url: "https://thegodfellas.com/",
     category: "Nonprofit",
     tech: ["React", "UX Design", "Analytics"],
@@ -63,7 +63,7 @@ const projects = [
   {
     title: "Ninkata Ninjas",
     description:
-      "I built the brand website for Ninkata Ninjas, an animated health-and-wellness series for kids ages 4-8 — characters, pilot episode, shop, and a partner pitch hub.",
+      "Brand website for an animated health-and-wellness kids series ages 4-8.",
     url: "https://www.ninkataninjas.com/",
     category: "Kids Entertainment",
     tech: ["Next.js", "TypeScript", "Framer Motion"],
@@ -74,7 +74,7 @@ const projects = [
   {
     title: "Easy Taiwan Citizenship",
     description:
-      "I built a clear, informative website that walks users through eligibility, documentation, and next steps for Taiwan citizenship and residency.",
+      "Informational website guiding users through Taiwan citizenship and residency.",
     url: "https://easytaiwancitizenship.com/",
     category: "Legal Services",
     tech: ["Next.js", "TypeScript", "UX Design"],
