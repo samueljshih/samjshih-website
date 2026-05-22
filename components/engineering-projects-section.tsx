@@ -1,7 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { ExternalLink, ChevronLeft, ChevronRight, Zap } from "lucide-react";
+import { ExternalLink, Zap } from "lucide-react";
 import Image from "next/image";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
@@ -62,6 +61,17 @@ const projects = [
     screenshot: "/projects/screenshots/godfellas.webp",
   },
   {
+    title: "Ninkata Ninjas",
+    description:
+      "Ninkata Ninjas is a kids entertainment and learning brand built around four original characters: Kai, Nova, Zen, and Shadow. I designed and built the full brand website to showcase the characters, episodes, and shop, creating a vibrant and immersive world that appeals to both kids and parents.",
+    url: "https://www.ninkataninjas.com/",
+    category: "Kids Entertainment",
+    tech: ["Next.js", "TypeScript", "Framer Motion"],
+    headerGradient: "from-blue-500 to-violet-600",
+    logo: null,
+    screenshot: "/projects/screenshots/ninkataninjas.webp",
+  },
+  {
     title: "Easy Taiwan Citizenship",
     description:
       "Easy Taiwan Citizenship is a guided service helping individuals navigate the Taiwan citizenship and residency process. I built a clear, informative website that walks users through eligibility, documentation, and next steps to simplify a complex legal journey.",
@@ -73,8 +83,6 @@ const projects = [
     screenshot: "/projects/screenshots/easytaiwancitizenship.webp",
   },
 ];
-
-const PAGE_SIZE = 6;
 
 type Project = (typeof projects)[0];
 
@@ -188,10 +196,6 @@ function ProjectCard({ project }: { project: Project }) {
 
 export function EngineeringProjectsSection() {
   const revealRef = useScrollReveal();
-  const [page, setPage] = useState(0);
-
-  const totalPages = Math.ceil(projects.length / PAGE_SIZE);
-  const visible = projects.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
 
   return (
     <section
@@ -213,7 +217,7 @@ export function EngineeringProjectsSection() {
         <div ref={revealRef} className="reveal-up">
           {/* Mobile: horizontal swipe carousel (hidden on sm+) */}
           <div className="sm:hidden flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 -mx-4 px-4 scrollbar-hide">
-            {visible.map((project) => (
+            {projects.map((project) => (
               <div
                 key={project.title}
                 className="flex-shrink-0 w-[82vw] snap-start"
@@ -230,35 +234,10 @@ export function EngineeringProjectsSection() {
 
           {/* Desktop: 3-column grid (hidden on mobile) */}
           <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
-            {visible.map((project) => (
+            {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
-
-          {/* Pagination (desktop, only when multiple pages) */}
-          {totalPages > 1 && (
-            <div className="hidden sm:flex items-center justify-center gap-3 mt-8">
-              <button
-                onClick={() => setPage((p) => p - 1)}
-                disabled={page === 0}
-                aria-label="Previous page"
-                className="w-9 h-9 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <span className="text-sm text-slate-500">
-                {page + 1} / {totalPages}
-              </span>
-              <button
-                onClick={() => setPage((p) => p + 1)}
-                disabled={page === totalPages - 1}
-                aria-label="Next page"
-                className="w-9 h-9 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            </div>
-          )}
         </div>
 
         <div className="text-center mt-10">

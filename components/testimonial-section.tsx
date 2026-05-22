@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Star, FileText } from "lucide-react";
 
 const stats = [
-  { value: "3", label: "Businesses Transformed" },
+  { value: "4", label: "Businesses Transformed" },
   { value: "5.0 ★", label: "Average Rating" },
   { value: "100%", label: "Referral-Based" },
 ];
@@ -46,6 +46,18 @@ const testimonials = [
     image: "/clients/denney.jpeg",
     youtubeId: "a5EGHrQ_r7A",
     caseStudyUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/baem_jiu_jitsu_case_study.pdf",
+  },
+  {
+    id: 4,
+    name: "Stephen Brown",
+    title: "Owner, Godfellas",
+    project: "Nonprofit Website",
+    challenge: "Didn't know where to start with building an online presence",
+    content:
+      "When we first started, we weren't sure where to begin. Samuel helped guide us through the process from start to finish: website strategy, design concepts, layout, and launch. The final website helped us present our mission more clearly, start receiving donations, and create a stronger foundation for our nonprofit.",
+    rating: 5,
+    image: "/clients/stephen.jpeg",
+    youtubeId: "lJgbZilXWBc",
   },
   {
     id: 3,
