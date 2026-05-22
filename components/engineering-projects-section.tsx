@@ -8,7 +8,7 @@ const projects = [
   {
     title: "Radiance Luxury Living",
     description:
-      "Radiance Luxury Living is a luxury real estate agency showcasing premium properties. I built a high-end, visually striking website with property listings, immersive imagery, and seamless inquiry flows designed to attract serious buyers and build instant credibility.",
+      "I built a high-end website for a luxury real estate agency with property listings, immersive imagery, and inquiry flows designed to attract serious buyers.",
     url: "https://radiancelivingkaty.com/",
     category: "Real Estate",
     tech: ["Next.js", "TypeScript", "UX Design"],
@@ -19,7 +19,7 @@ const projects = [
   {
     title: "Daddy's Dining Group",
     description:
-      "Daddy's Dining Group develops and operates distinctive American restaurant brands built for the Taiwan market. I designed and built their marketing site to showcase their portfolio of concepts with a premium, editorial feel.",
+      "I designed and built the marketing site for a restaurant group developing distinctive American brands for the Taiwan market.",
     url: "https://daddysdininggroup.com/",
     category: "Restaurant Group",
     tech: ["Next.js", "TypeScript", "Framer Motion"],
@@ -30,7 +30,7 @@ const projects = [
   {
     title: "Top One Percenter",
     description:
-      "Top One Percenter is a sales coaching academy and SaaS platform that helps teams train like their top 1% performers. I optimized their onboarding flow and redesigned key pages to create a smoother, more engaging training experience.",
+      "I optimized the onboarding flow and redesigned key pages for a sales coaching platform that helps teams train like their top 1% performers.",
     url: "https://toponepercenter.com/",
     category: "SaaS Platform",
     tech: ["React", "Next.js", "TypeScript"],
@@ -41,7 +41,7 @@ const projects = [
   {
     title: "Torchline AI",
     description:
-      "Torchline AI is a vision analytics platform that turns existing camera feeds into operational intelligence. I contributed to building the platform that helps frontline businesses detect safety violations, coach teams with AI-generated clips, and identify compliance gaps. No new hardware required.",
+      "I helped build a vision analytics platform that turns existing camera feeds into operational intelligence — safety violations, coaching clips, compliance gaps, no new hardware.",
     url: "https://www.torchline.ai/",
     category: "AI SaaS",
     tech: ["Next.js", "AI/ML", "TypeScript"],
@@ -52,7 +52,7 @@ const projects = [
   {
     title: "The Godfellas",
     description:
-      "The Godfellas is a nonprofit focused on empowering marginalized communities worldwide. I led the development of their modern, story-driven website with donation flows and newsletter signup, helping them grow their movement and share their impact.",
+      "I built the story-driven website for a nonprofit empowering marginalized communities, with donation flows and newsletter signup to help them grow their movement.",
     url: "https://thegodfellas.com/",
     category: "Nonprofit",
     tech: ["React", "UX Design", "Analytics"],
@@ -63,7 +63,7 @@ const projects = [
   {
     title: "Ninkata Ninjas",
     description:
-      "Ninkata Ninjas is a kids entertainment and learning brand built around four original characters: Kai, Nova, Zen, and Shadow. I designed and built the full brand website to showcase the characters, episodes, and shop, creating a vibrant and immersive world that appeals to both kids and parents.",
+      "I built the brand website for Ninkata Ninjas, an animated health-and-wellness series for kids ages 4-8 — characters, pilot episode, shop, and a partner pitch hub.",
     url: "https://www.ninkataninjas.com/",
     category: "Kids Entertainment",
     tech: ["Next.js", "TypeScript", "Framer Motion"],
@@ -74,7 +74,7 @@ const projects = [
   {
     title: "Easy Taiwan Citizenship",
     description:
-      "Easy Taiwan Citizenship is a guided service helping individuals navigate the Taiwan citizenship and residency process. I built a clear, informative website that walks users through eligibility, documentation, and next steps to simplify a complex legal journey.",
+      "I built a clear, informative website that walks users through eligibility, documentation, and next steps for Taiwan citizenship and residency.",
     url: "https://easytaiwancitizenship.com/",
     category: "Legal Services",
     tech: ["Next.js", "TypeScript", "UX Design"],
