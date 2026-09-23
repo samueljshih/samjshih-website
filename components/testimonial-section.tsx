@@ -8,7 +8,7 @@ import Image from "next/image";
 import { Star, FileText } from "lucide-react";
 
 const stats = [
-  { value: "4", label: "Businesses Transformed" },
+  { value: "5", label: "Businesses Transformed" },
   { value: "5.0 ★", label: "Average Rating" },
   { value: "100%", label: "Referral-Based" },
 ];
@@ -71,21 +71,57 @@ const testimonials = [
     image: "/clients/archana.jpeg",
     youtubeId: "5T12pxs-JQ8",
   },
+  {
+    id: 5,
+    name: "William Chung",
+    title: "Founder, Top 25 Strategy Lab",
+    project: "College Admissions Web App",
+    challenge: "Had a product idea for advising students but no way to build it",
+    content:
+      "I wanted to build a web app to better advise students on the path to their dream colleges. Sam understood exactly what I was trying to accomplish and turned what started as just an idea into a really polished, easy to use product. He was extremely responsive, listened closely, and was quick to make adjustments along the way. I would definitely recommend Sam to anyone looking to bring a software product or business idea to life.",
+    rating: 5,
+    image: "/clients/will.jpeg",
+    videoUrl: "https://rmhgbx0fotzcnj6l.public.blob.vercel-storage.com/samjshih_testimonials/will_chung_testimonial.mp4",
+    videoPoster: "/clients/will_poster.jpeg",
+  },
 ];
 
-function VideoThumbnail({ youtubeId, name }: { youtubeId: string; name: string }) {
+type Testimonial = (typeof testimonials)[number] & {
+  youtubeId?: string;
+  videoUrl?: string;
+  videoPoster?: string;
+  caseStudyUrl?: string;
+};
+
+function VideoThumbnail({ testimonial }: { testimonial: Testimonial }) {
   const [playing, setPlaying] = useState(false);
+  const { youtubeId, videoUrl, videoPoster, name } = testimonial;
+  const poster = videoPoster ?? (youtubeId ? `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg` : null);
+
+  if (!poster) return null;
 
   if (playing) {
     return (
-      <div className={`relative w-full rounded-xl overflow-hidden mb-4 ${playing ? "aspect-[9/16]" : "h-48 md:h-auto md:aspect-[9/16]"}`}>
-        <iframe
-          src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
-          title={`${name} testimonial`}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="w-full h-full border-0"
-        />
+      <div className="relative w-full aspect-[9/16] rounded-xl overflow-hidden mb-4 bg-black">
+        {videoUrl ? (
+          <video
+            src={videoUrl}
+            poster={videoPoster}
+            title={`${name} testimonial`}
+            autoPlay
+            controls
+            playsInline
+            className="w-full h-full object-contain"
+          />
+        ) : (
+          <iframe
+            src={`https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`}
+            title={`${name} testimonial`}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full border-0"
+          />
+        )}
       </div>
     );
   }
@@ -97,7 +133,7 @@ function VideoThumbnail({ youtubeId, name }: { youtubeId: string; name: string }
       className="relative w-full aspect-[9/16] rounded-xl overflow-hidden mb-4 group/video block"
     >
       <Image
-        src={`https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`}
+        src={poster}
         alt={`${name} testimonial`}
         fill
         className="object-cover"
@@ -173,9 +209,7 @@ export function TestimonialSection() {
                   <CardContent className="p-4 flex flex-col h-full">
 
                   {/* Video Player */}
-                  {testimonial.youtubeId && (
-                    <VideoThumbnail youtubeId={testimonial.youtubeId} name={testimonial.name} />
-                  )}
+                  <VideoThumbnail testimonial={testimonial} />
 
                   {/* Challenge badge */}
                   <div className="flex items-start gap-2 mb-3">
@@ -247,9 +281,7 @@ export function TestimonialSection() {
               <div key={testimonial.id} className="h-full">
                 <Card className="glow-card brand-card-shadow overflow-hidden !py-0 !gap-0 h-full">
                   <CardContent className="p-6 flex flex-col h-full">
-                    {testimonial.youtubeId && (
-                      <VideoThumbnail youtubeId={testimonial.youtubeId} name={testimonial.name} />
-                    )}
+                    <VideoThumbnail testimonial={testimonial} />
                     <div className="flex items-start gap-2 mb-3">
                       <span className="text-xs font-semibold text-amber-700 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded-full flex-shrink-0 mt-0.5">
                         Before
