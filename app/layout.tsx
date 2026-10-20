@@ -1,39 +1,30 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import { Archivo_Black, Archivo } from "next/font/google";
+import { Instrument_Serif } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const archivoBlack = Archivo_Black({
+const instrumentSerif = Instrument_Serif({
   weight: "400",
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-archivo-black",
-  display: "swap",
-});
-
-const archivo = Archivo({
-  weight: ["400", "500", "600"],
-  subsets: ["latin"],
-  variable: "--font-archivo",
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Sam Shih - AI Automation Specialist",
+  title: "Sam Shih - Turn Your Idea Into a Product",
   description:
-    "Professional AI automation consultant helping businesses save 20+ hours per week through custom AI solutions, chatbots, and automated workflows.",
+    "Product engineer helping founders turn ideas into MVPs, web apps and AI-powered tools, designed and built end to end.",
   keywords:
-    "AI automation, chatbots, business automation, AI consultant, workflow automation, lead generation",
+    "MVP development, product engineer, web app development, startup MVP, AI tools, website design, founders",
   authors: [{ name: "Sam Shih" }],
   creator: "Sam Shih",
   icons: {
     icon: [{ url: "/assets/samjshih_logo.jpeg", type: "image/jpeg" }],
     shortcut: "/assets/samjshih_logo.jpeg",
     apple: "/assets/samjshih_logo.jpeg",
-  },
-  other: {
-    "font-display": "swap",
   },
 };
 
@@ -44,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${archivoBlack.variable} ${archivo.variable}`}>
+      <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable} ${instrumentSerif.variable}`}>
         {children}
         <Analytics />
       </body>

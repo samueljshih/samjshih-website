@@ -1,127 +1,73 @@
 "use client";
 
-import { MessageSquare, Globe, Zap } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Check, Globe, Rocket, Sparkles } from "lucide-react";
+import { SectionHeader } from "@/components/section-header";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+
+const services = [
+  {
+    icon: Rocket,
+    title: "Product & MVP builds",
+    description:
+      "Take your idea from a sketch to a launched web app. I handle scoping, design and the full-stack build, so you have a real product in front of real users.",
+    features: ["Lean scope for a fast first version", "Thoughtful UX and polished design", "Full-stack build, launch and iteration"],
+    result: "A working product you can sell, demo or raise on",
+  },
+  {
+    icon: Globe,
+    title: "Websites",
+    description:
+      "Credible, modern websites that explain what you do clearly and turn visitors into conversations.",
+    features: ["Clean, modern design", "Messaging that builds trust", "Built to convert"],
+    result: "A brand that looks legit from the first click",
+  },
+  {
+    icon: Sparkles,
+    title: "AI systems & automation",
+    description:
+      "AI assistants and automations that answer customers, follow up on leads and take repetitive work off your plate.",
+    features: ["Assistants that respond 24/7", "Automated lead follow-up", "Your tools connected and working together"],
+    result: "Faster responses and hours back every week",
+  },
+];
 
 export function ServicesSection() {
   const revealRef = useScrollReveal();
 
-  const services = [
-    {
-      icon: Globe,
-      title: "Websites",
-      description:
-        "Modern, high-quality websites that make your business look credible and professional. Customers trust you and are more likely to reach out.",
-      features: [
-        "Clean, modern design",
-        "Clear messaging that builds trust",
-        "Built to convert visitors into customers",
-      ],
-      result: "Result: your business looks legit from the first click",
-      gradient: "from-cyan-500 to-blue-500",
-    },
-    {
-      icon: MessageSquare,
-      title: "AI Systems",
-      description:
-        "AI-powered systems that respond to customer inquiries instantly and make sure you never miss an opportunity.",
-      features: [
-        "Responds to inquiries 24/7",
-        "Handles common questions automatically",
-        "Keeps customers engaged without extra effort",
-      ],
-      result: "Result: faster response, no missed leads",
-      gradient: "from-blue-500 to-indigo-600",
-    },
-    {
-      icon: Zap,
-      title: "Automations",
-      description:
-        "Simple automations that eliminate repetitive tasks and streamline your workflow. Save time every week without extra effort.",
-      features: [
-        "Automates manual, time-consuming tasks",
-        "Connects your tools so they work together",
-        "Frees you up to focus on what matters",
-      ],
-      result: "Result: less manual work, more time back",
-      gradient: "from-indigo-500 to-purple-600",
-    },
-  ];
-
   return (
-    <section id="services" className="grain-section py-20 px-4 bg-white relative overflow-hidden">
-      {/* Subtle dot grid */}
-      <div
-        className="absolute inset-0 opacity-[0.035] pointer-events-none"
-        style={{
-          backgroundImage: "radial-gradient(circle, #2563eb 1px, transparent 1px)",
-          backgroundSize: "28px 28px",
-        }}
-      />
-      <div className="container max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-16">
-          <div className="section-eyebrow justify-center">Services</div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-balance">
-            What I Help <span className="text-primary">You Improve</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto text-pretty">
-            I help businesses look more legit and run more efficiently using websites, AI, and automation.
-          </p>
-        </div>
+    <section id="services" className="px-4 py-24 md:py-32">
+      <div className="mx-auto max-w-6xl">
+        <SectionHeader
+          eyebrow="Services"
+          title={
+            <>
+              From first idea to <em>launched product</em>
+            </>
+          }
+          lede="Building products is the core of what I do. Websites and AI systems help them reach people and run smoothly."
+        />
 
-        <div
-          ref={revealRef}
-          className="reveal-stagger grid md:grid-cols-3 gap-8"
-        >
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="group rounded-2xl bg-white border border-slate-200 p-8 glow-card brand-card-shadow cursor-default"
-            >
-              <div
-                className={`w-14 h-14 rounded-xl bg-gradient-to-br ${service.gradient} flex items-center justify-center mb-6 shadow-md`}
-              >
-                <service.icon className="w-7 h-7 text-white" />
+        <div ref={revealRef} className="reveal-stagger grid gap-6 md:grid-cols-3">
+          {services.map((service) => (
+            <div key={service.title} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft">
+              <div className="mb-7 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-muted">
+                <service.icon className="h-5 w-5 text-foreground" strokeWidth={1.75} />
               </div>
-              <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-              <p className="text-base text-muted-foreground mb-6 leading-relaxed">
-                {service.description}
-              </p>
-              <ul className="space-y-2.5 mb-6">
-                {service.features.map((feature, featureIndex) => (
-                  <li
-                    key={featureIndex}
-                    className="flex items-center gap-2.5 text-sm text-slate-700"
-                  >
-                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                      <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    </div>
+              <h3 className="font-serif text-[1.75rem] leading-tight">{service.title}</h3>
+              <p className="mt-3 leading-relaxed text-muted-foreground">{service.description}</p>
+              <ul className="mt-6 mb-8 space-y-2.5">
+                {service.features.map((feature) => (
+                  <li key={feature} className="flex items-start gap-2.5 text-sm">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={2} />
                     {feature}
                   </li>
                 ))}
               </ul>
-              <p className="text-sm font-semibold text-primary">
-                👉 {service.result}
+              <p className="mt-auto border-t border-border pt-5 text-sm font-medium text-foreground">
+                {service.result}
               </p>
             </div>
           ))}
-        </div>
-
-        {/* Mid-page CTA */}
-        <div className="text-center mt-14 pt-10 border-t border-slate-200">
-          <p className="text-lg font-semibold mb-2 text-foreground">Ready to see what&apos;s possible for your business?</p>
-          <p className="text-muted-foreground text-sm mb-6 max-w-md mx-auto">
-            Book a free audit and get a personalized breakdown of your biggest opportunities.
-          </p>
-          <Button
-            className="bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white px-8 py-3 font-semibold text-base shadow-[0_4px_20px_rgba(37,99,235,0.3)] hover:shadow-[0_8px_30px_rgba(37,99,235,0.5)] transition-all duration-300"
-            onClick={() =>
-              document.getElementById("calendly")?.scrollIntoView({ behavior: "smooth" })
-            }
-          >
-            Get Your Free Audit →
-          </Button>
         </div>
       </div>
     </section>

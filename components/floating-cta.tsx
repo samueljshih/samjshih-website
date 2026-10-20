@@ -1,34 +1,45 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { BookCallButton } from "@/components/book-call-button";
 
 export function FloatingCta() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setVisible(window.scrollY > 500);
+    const booking = document.getElementById("calendly");
+    let pastHero = false;
+    let bookingInView = false;
+    const update = () => setVisible(pastHero && !bookingInView);
+
+    const onScroll = () => {
+      pastHero = window.scrollY > 600;
+      update();
+    };
+    // Hide while the booking widget itself is on screen.
+    const observer = new IntersectionObserver(([entry]) => {
+      bookingInView = entry.isIntersecting;
+      update();
+    });
+    if (booking) observer.observe(booking);
+
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      observer.disconnect();
+    };
   }, []);
 
   return (
     <div
-      className={`fixed bottom-0 left-0 right-0 z-40 lg:hidden transition-transform duration-300 ${
+      className={`fixed inset-x-0 bottom-0 z-40 transition-transform duration-500 ease-[var(--ease-out-expo)] lg:hidden ${
         visible ? "translate-y-0" : "translate-y-full"
       }`}
+      aria-hidden={!visible}
     >
-      <div className="p-4 bg-white/95 backdrop-blur-md border-t border-gray-200/60 shadow-lg">
-        <Button
-          className="w-full bg-gradient-to-r from-electric-blue-600 to-indigo-600 hover:from-electric-blue-700 hover:to-indigo-700 text-white font-semibold py-4 text-base"
-          onClick={() =>
-            document
-              .getElementById("calendly")
-              ?.scrollIntoView({ behavior: "smooth" })
-          }
-        >
-          Book Your Free Audit →
-        </Button>
+      <div className="border-t border-border bg-background/90 p-3 backdrop-blur-md">
+        <BookCallButton className="w-full" />
       </div>
     </div>
   );

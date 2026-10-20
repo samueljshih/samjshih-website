@@ -1,8 +1,8 @@
 "use client";
 import { useEffect, useRef } from "react";
 
-export function useScrollReveal(threshold = 0.12) {
-  const ref = useRef<HTMLDivElement>(null);
+export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(threshold = 0.12) {
+  const ref = useRef<T>(null);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
