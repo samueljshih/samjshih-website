@@ -1,8 +1,9 @@
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { EngineeringProjectsSection } from "@/components/engineering-projects-section"
-import { ServicesSection } from "@/components/services-section"
 import { TestimonialSection } from "@/components/testimonial-section"
+import { ServicesSection } from "@/components/services-section"
+import { ProcessSection } from "@/components/process-section"
 import { CalendlySection } from "@/components/calendly-section"
 import { AboutSection } from "@/components/about-section"
 import { FloatingCta } from "@/components/floating-cta"
@@ -13,11 +14,10 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navigation />
       <HeroSection />
-      <div className="h-24 bg-gradient-to-b from-[#050b15] to-white" />
-      <TestimonialSection />
       <EngineeringProjectsSection />
+      <TestimonialSection />
       <ServicesSection />
-      <div className="h-16 bg-gradient-to-b from-slate-50/50 to-[#060d1c]" />
+      <ProcessSection />
       <CalendlySection />
       <AboutSection />
       <Footer />
