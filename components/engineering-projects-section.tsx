@@ -6,16 +6,16 @@ import { SectionHeader } from "@/components/section-header";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { projects, type Project } from "@/lib/projects";
 
-// 6-column grid: two featured product builds, three sites, then two wide.
-// On 2-column tablets the odd last card is centered.
+// 6-column grid: two featured product builds, then two rows of three.
 const spans = [
   "lg:col-span-3",
   "lg:col-span-3",
   "lg:col-span-2",
   "lg:col-span-2",
   "lg:col-span-2",
-  "lg:col-span-3",
-  "sm:col-span-2 sm:w-[calc(50%-1rem)] sm:justify-self-center lg:col-span-3 lg:w-full lg:justify-self-stretch",
+  "lg:col-span-2",
+  "lg:col-span-2",
+  "lg:col-span-2",
 ];
 
 function ProjectCard({ project }: { project: Project }) {

@@ -23,6 +23,13 @@ export const projects: Project[] = [
     screenshot: "/projects/screenshots/toponepercenter.webp",
   },
   {
+    title: "Top 25 Strategy Lab",
+    description: "Admissions platform grading student profiles against Ivy and Top-25 admits.",
+    url: "https://top25-strategy-lab.vercel.app/",
+    category: "EdTech product",
+    screenshot: "/projects/screenshots/top25strategylab.webp",
+  },
+  {
     title: "Radiance Luxury Living",
     description: "High-end website for a luxury real estate agency with listings and inquiry flows.",
     url: "https://radiancelivingkaty.com/",
