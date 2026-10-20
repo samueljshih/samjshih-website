@@ -16,9 +16,11 @@ const clientAvatars = [
 
 // Back-to-front. Position, tilt and parallax depth per card.
 const stack = [
-  { title: "Easy Taiwan Citizenship", position: "top-0 right-0 w-[76%]", rotate: "rotate-[3deg]", depth: 18, delay: "0s" },
-  { title: "Radiance Luxury Living", position: "top-[22%] left-0 w-[74%]", rotate: "-rotate-[3deg]", depth: 10, delay: "-2.5s" },
-  { title: "Torchline AI", position: "bottom-0 right-[6%] w-[78%]", rotate: "rotate-[1deg]", depth: 5, delay: "-5s" },
+  { title: "Ninkata Ninjas", position: "top-0 left-0 w-[56%]", rotate: "-rotate-[5deg]", depth: 24, delay: "0s" },
+  { title: "Daddy's Dining Group", position: "top-[3%] right-0 w-[56%]", rotate: "rotate-[4deg]", depth: 20, delay: "-1.5s" },
+  { title: "Radiance Luxury Living", position: "top-[36%] -left-[1%] w-[60%]", rotate: "-rotate-[3deg]", depth: 14, delay: "-3s" },
+  { title: "Easy Taiwan Citizenship", position: "top-[33%] -right-[1%] w-[60%]", rotate: "rotate-[2deg]", depth: 10, delay: "-4.5s" },
+  { title: "Torchline AI", position: "bottom-0 left-[16%] w-[68%]", rotate: "rotate-[0.5deg]", depth: 5, delay: "-6s" },
 ];
 
 function ScreenshotStack() {
@@ -29,7 +31,7 @@ function ScreenshotStack() {
       ref={parallaxRef}
       href="#projects"
       aria-label="See my work"
-      className="relative mx-auto block aspect-[6/5] w-full max-w-[480px] lg:max-w-[560px]"
+      className="relative mx-auto block aspect-square w-full max-w-[480px] lg:max-w-[560px]"
     >
       {stack.map(({ title, position, rotate, depth, delay }, i) => {
         const project = projects.find((p) => p.title === title)!;
