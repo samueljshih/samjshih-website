@@ -8,8 +8,8 @@ type BookCallButtonProps = {
 };
 
 const sizes = {
-  md: "h-10 px-5 text-sm",
-  lg: "h-12 px-7 text-base",
+  md: "h-11 px-5 text-[15px]",
+  lg: "h-14 px-8 text-lg",
 };
 
 export function BookCallButton({

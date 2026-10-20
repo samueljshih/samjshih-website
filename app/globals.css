@@ -14,7 +14,7 @@
   --secondary: #f2f0ea;
   --secondary-foreground: #0b1b33;
   --muted: #f2f0ea;
-  --muted-foreground: #5b6576;
+  --muted-foreground: #4b5565;
   --accent: #f2f0ea;
   --accent-foreground: #0b1b33;
   --destructive: #dc2626;
@@ -88,7 +88,7 @@
   display: inline-flex;
   align-items: center;
   gap: 0.625rem;
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;

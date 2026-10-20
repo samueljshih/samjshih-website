@@ -44,7 +44,7 @@ export function Navigation() {
               <a
                 key={href}
                 href={href}
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="py-3 text-[15px] text-muted-foreground transition-colors hover:text-foreground"
               >
                 {label}
               </a>
@@ -65,7 +65,7 @@ export function Navigation() {
         {isOpen && (
           <div className="flex flex-col gap-1 border-t border-border pt-3 pb-5 lg:hidden">
             {links.map(({ href, label }) => (
-              <a key={href} href={href} onClick={close} className="py-2.5 text-lg text-foreground">
+              <a key={href} href={href} onClick={close} className="py-2.5 text-xl text-foreground">
                 {label}
               </a>
             ))}

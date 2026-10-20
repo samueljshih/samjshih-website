@@ -8,7 +8,7 @@ import { SectionHeader } from "@/components/section-header";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const stats = [
-  { value: "5+", label: "Products & systems shipped" },
+  { value: "10+", label: "Products & systems shipped" },
   { value: "5.0", label: "Average client rating" },
   { value: "100%", label: "Referral-based" },
 ];
@@ -159,12 +159,12 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         ))}
       </div>
 
-      <blockquote className="mt-3 text-[15px] leading-relaxed text-foreground/80 text-pretty">
+      <blockquote className="mt-3 text-[17px] leading-relaxed text-foreground/80 text-pretty">
         &ldquo;{testimonial.content}&rdquo;
       </blockquote>
 
       <div className="mt-auto space-y-4 pt-6">
-        <dl className="space-y-1 border-t border-border pt-4 text-xs">
+        <dl className="space-y-1 border-t border-border pt-4 text-sm">
           <div className="flex gap-1.5">
             <dt className="font-medium text-foreground">Project:</dt>
             <dd className="text-muted-foreground">{testimonial.project}</dd>
@@ -180,7 +180,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             href={testimonial.caseStudyUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline underline-offset-4"
+            className="-my-2 inline-flex items-center gap-1.5 py-2.5 text-base font-medium text-primary hover:underline underline-offset-4"
           >
             <FileText className="h-4 w-4" />
             Read the case study
@@ -196,8 +196,8 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
             className="h-11 w-11 flex-shrink-0 rounded-full object-cover"
           />
           <div>
-            <div className="font-medium">{testimonial.name}</div>
-            <div className="text-sm text-muted-foreground">{testimonial.title}</div>
+            <div className="text-lg font-medium">{testimonial.name}</div>
+            <div className="text-[15px] text-muted-foreground">{testimonial.title}</div>
           </div>
         </div>
       </div>
@@ -233,7 +233,7 @@ export function TestimonialSection() {
               height={40}
               className="h-10 w-10 rounded-full object-cover"
             />
-            <div className="text-left text-sm">
+            <div className="text-left text-base">
               <div className="font-medium">{pullQuote.author}</div>
               <div className="text-muted-foreground">{pullQuote.title}</div>
             </div>
@@ -245,8 +245,8 @@ export function TestimonialSection() {
           {stats.map((stat) => (
             <div key={stat.label} className="px-2 py-6 text-center">
               <dt className="sr-only">{stat.label}</dt>
-              <dd className="font-serif text-4xl md:text-5xl">{stat.value}</dd>
-              <dd className="mt-1 text-xs text-muted-foreground md:text-sm">{stat.label}</dd>
+              <dd className="font-serif text-5xl md:text-6xl">{stat.value}</dd>
+              <dd className="mt-1 text-sm text-muted-foreground md:text-base">{stat.label}</dd>
             </div>
           ))}
         </dl>
@@ -260,7 +260,7 @@ export function TestimonialSection() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-center text-xs text-muted-foreground md:hidden">Swipe to see more →</p>
+          <p className="mt-4 text-center text-sm text-muted-foreground md:hidden">Swipe to see more →</p>
 
           {/* Flex-wrap so an odd last row stays centered */}
           <div className="hidden flex-wrap justify-center gap-6 md:flex">
@@ -273,8 +273,8 @@ export function TestimonialSection() {
         </div>
 
         <div className="mt-16 text-center">
-          <p className="font-serif text-3xl">Have an idea of your own?</p>
-          <p className="mx-auto mt-2 mb-7 max-w-md text-muted-foreground">
+          <p className="font-serif text-4xl">Have an idea of your own?</p>
+          <p className="mx-auto mt-2 mb-8 max-w-md text-lg text-muted-foreground">
             Let&apos;s talk it through. 20 minutes, no pressure.
           </p>
           <BookCallButton />

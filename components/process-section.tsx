@@ -29,9 +29,9 @@ export function ProcessSection() {
         <ol ref={revealRef} className="reveal-stagger grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           {steps.map((step, i) => (
             <li key={step.title} className="border-t border-foreground/80 pt-6">
-              <span className="font-serif text-2xl text-primary">{String(i + 1).padStart(2, "0")}</span>
-              <h3 className="mt-3 text-lg font-medium">{step.title}</h3>
-              <p className="mt-2 leading-relaxed text-muted-foreground">{step.description}</p>
+              <span className="font-serif text-3xl text-primary">{String(i + 1).padStart(2, "0")}</span>
+              <h3 className="mt-3 text-xl font-medium">{step.title}</h3>
+              <p className="mt-2 text-lg leading-relaxed text-muted-foreground">{step.description}</p>
             </li>
           ))}
         </ol>

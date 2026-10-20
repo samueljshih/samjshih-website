@@ -7,7 +7,6 @@ const navLinks = [
   { href: "#services", label: "Services" },
   { href: "#process", label: "Process" },
   { href: "#about", label: "About" },
-  { href: "#calendly", label: "Book a call" },
 ];
 
 export function Footer() {
@@ -18,7 +17,7 @@ export function Footer() {
           <h2 className="font-serif text-4xl leading-[1.08] text-balance md:text-6xl">
             Have an idea? <em className="text-primary">Let&apos;s build it.</em>
           </h2>
-          <p className="mx-auto mt-5 mb-9 max-w-md text-lg text-muted-foreground">
+          <p className="mx-auto mt-5 mb-9 max-w-lg text-xl text-muted-foreground">
             Tell me what you&apos;re imagining. I&apos;ll help you find the simplest way to bring it to life.
           </p>
           <BookCallButton />
@@ -26,10 +25,10 @@ export function Footer() {
 
         <div className="mt-24 flex flex-col items-center gap-8 border-t border-border pt-10 md:flex-row md:justify-between">
           <Logo />
-          <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+          <ul className="flex flex-wrap justify-center gap-x-6 text-base text-muted-foreground">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
-                <a href={href} className="transition-colors hover:text-foreground">
+                <a href={href} className="inline-block py-2.5 transition-colors hover:text-foreground">
                   {label}
                 </a>
               </li>
@@ -37,8 +36,8 @@ export function Footer() {
           </ul>
         </div>
 
-        <div className="mt-8 flex flex-col items-center gap-2 text-sm text-muted-foreground md:flex-row md:justify-between">
-          <a href="mailto:samjshih@gmail.com" className="transition-colors hover:text-foreground">
+        <div className="mt-4 flex flex-col items-center gap-1 text-base text-muted-foreground md:flex-row md:justify-between">
+          <a href="mailto:samjshih@gmail.com" className="inline-block py-2.5 transition-colors hover:text-foreground">
             samjshih@gmail.com
           </a>
           <p>San Francisco, CA · © {new Date().getFullYear()} Sam Shih</p>

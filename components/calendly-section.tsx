@@ -36,7 +36,7 @@ export function CalendlySection() {
 
         <ul className="-mt-4 mb-12 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
           {outcomes.map((item) => (
-            <li key={item} className="flex items-center gap-2 text-sm">
+            <li key={item} className="flex items-center gap-2 text-base">
               <Check className="h-4 w-4 text-primary" strokeWidth={2} />
               {item}
             </li>
@@ -47,7 +47,7 @@ export function CalendlySection() {
           <div className="calendly-inline-widget" data-url={CALENDLY_URL} />
         </div>
 
-        <p className="mt-6 text-center text-sm text-muted-foreground">
+        <p className="mt-6 text-center text-base text-muted-foreground">
           Can&apos;t find a time?{" "}
           <a
             href="mailto:samjshih@gmail.com"

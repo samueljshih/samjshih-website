@@ -47,23 +47,23 @@ export function ServicesSection() {
           lede="Building products is the core of what I do. Websites and AI systems help them reach people and run smoothly."
         />
 
-        <div ref={revealRef} className="reveal-stagger grid gap-6 md:grid-cols-3">
+        <div ref={revealRef} className="reveal-stagger mx-auto grid max-w-2xl gap-6 lg:max-w-none lg:grid-cols-3">
           {services.map((service) => (
             <div key={service.title} className="flex flex-col rounded-2xl border border-border bg-card p-8 shadow-soft">
               <div className="mb-7 flex h-11 w-11 items-center justify-center rounded-xl border border-border bg-muted">
                 <service.icon className="h-5 w-5 text-foreground" strokeWidth={1.75} />
               </div>
-              <h3 className="font-serif text-[1.75rem] leading-tight">{service.title}</h3>
-              <p className="mt-3 leading-relaxed text-muted-foreground">{service.description}</p>
+              <h3 className="font-serif text-[2rem] leading-tight">{service.title}</h3>
+              <p className="mt-3 text-lg leading-relaxed text-muted-foreground">{service.description}</p>
               <ul className="mt-6 mb-8 space-y-2.5">
                 {service.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2.5 text-sm">
+                  <li key={feature} className="flex items-start gap-2.5 text-base">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={2} />
                     {feature}
                   </li>
                 ))}
               </ul>
-              <p className="mt-auto border-t border-border pt-5 text-sm font-medium text-foreground">
+              <p className="mt-auto border-t border-border pt-5 text-base font-medium text-foreground">
                 {service.result}
               </p>
             </div>

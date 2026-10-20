@@ -16,16 +16,21 @@ const clientAvatars = [
 
 // Back-to-front. Position, tilt and parallax depth per card.
 const stack = [
-  { title: "Top One Percenter", position: "top-0 right-0 w-[76%]", rotate: "rotate-[3deg]", depth: 18, delay: "0s" },
+  { title: "Easy Taiwan Citizenship", position: "top-0 right-0 w-[76%]", rotate: "rotate-[3deg]", depth: 18, delay: "0s" },
   { title: "Radiance Luxury Living", position: "top-[22%] left-0 w-[74%]", rotate: "-rotate-[3deg]", depth: 10, delay: "-2.5s" },
   { title: "Torchline AI", position: "bottom-0 right-[6%] w-[78%]", rotate: "rotate-[1deg]", depth: 5, delay: "-5s" },
 ];
 
 function ScreenshotStack() {
-  const parallaxRef = usePointerParallax<HTMLDivElement>();
+  const parallaxRef = usePointerParallax<HTMLAnchorElement>();
 
   return (
-    <div ref={parallaxRef} className="relative mx-auto aspect-[6/5] w-full max-w-[560px]">
+    <a
+      ref={parallaxRef}
+      href="#projects"
+      aria-label="See my work"
+      className="relative mx-auto block aspect-[6/5] w-full max-w-[480px] lg:max-w-[560px]"
+    >
       {stack.map(({ title, position, rotate, depth, delay }, i) => {
         const project = projects.find((p) => p.title === title)!;
         return (
@@ -43,7 +48,7 @@ function ScreenshotStack() {
           </div>
         );
       })}
-    </div>
+    </a>
   );
 }
 
@@ -74,31 +79,32 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[1.15fr_1fr] lg:gap-12">
+      <div className="relative mx-auto grid w-full max-w-6xl items-center gap-16 lg:grid-cols-[1.2fr_1fr] lg:gap-12">
         <div className="text-center lg:text-left">
-          <div className="hero-animate mb-8 inline-flex items-center gap-3.5 text-left">
+          <div className="hero-animate mb-9 flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-6 lg:justify-start">
             <div className="relative flex-shrink-0">
               <Image
                 src="/assets/sam-headshot-blue.jpg"
                 alt="Sam Shih"
-                width={64}
-                height={64}
+                width={160}
+                height={160}
                 priority
-                className="h-16 w-16 rounded-full object-cover shadow-soft ring-4 ring-card"
+                className="h-32 w-32 rounded-full object-cover shadow-lift ring-[6px] ring-card sm:h-36 sm:w-36 lg:h-40 lg:w-40"
               />
               <span
-                className="absolute right-0 bottom-0.5 h-3.5 w-3.5 rounded-full bg-emerald-500 ring-[3px] ring-background"
+                className="absolute right-2 bottom-2 h-5 w-5 rounded-full bg-emerald-500 ring-4 ring-background"
                 aria-hidden
               />
             </div>
-            <div>
-              <p className="font-serif text-2xl leading-none">Hi, I&apos;m Sam Shih</p>
-              <p className="mt-1.5 text-sm text-muted-foreground">Product engineer for founders<span className="hidden sm:inline"> · Taking new projects</span></p>
+            <div className="text-center sm:text-left">
+              <p className="font-serif text-3xl md:text-4xl">Hi, I&apos;m Sam Shih</p>
+              <p className="mt-1.5 text-base text-muted-foreground">Product engineer for founders</p>
+              <p className="mt-1 text-sm font-medium text-emerald-700">Taking new projects</p>
             </div>
           </div>
 
           <h1
-            className="hero-animate font-serif text-[2.6rem] leading-[1.04] sm:text-6xl lg:text-[3.6rem] xl:text-[4rem]"
+            className="hero-animate font-serif text-[2.75rem] leading-[1.04] sm:text-6xl lg:text-[3.6rem] xl:text-[4.1rem]"
             style={{ animationDelay: "0.08s" }}
           >
             You have the idea.
@@ -107,7 +113,7 @@ export function HeroSection() {
           </h1>
 
           <p
-            className="hero-animate mx-auto mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty lg:mx-0"
+            className="hero-animate mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted-foreground text-pretty lg:mx-0"
             style={{ animationDelay: "0.16s" }}
           >
             I design and build MVPs, web apps and AI-powered tools end to end, so you can launch, get real users and
@@ -121,7 +127,7 @@ export function HeroSection() {
             <BookCallButton className="w-full sm:w-auto" />
             <a
               href="#projects"
-              className="group inline-flex h-12 items-center gap-1.5 px-2 text-base font-medium text-foreground transition-colors hover:text-primary"
+              className="group inline-flex h-14 items-center gap-1.5 px-2 text-lg font-medium text-foreground transition-colors hover:text-primary"
             >
               See my work
               <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
@@ -132,7 +138,7 @@ export function HeroSection() {
             className="hero-animate mt-10 flex items-center justify-center gap-3 lg:justify-start"
             style={{ animationDelay: "0.32s" }}
           >
-            <div className="flex -space-x-2">
+            <div className="flex flex-shrink-0 -space-x-2">
               {clientAvatars.map(({ src, name }) => (
                 <Image
                   key={src}
@@ -144,7 +150,7 @@ export function HeroSection() {
                 />
               ))}
             </div>
-            <div className="text-left text-sm">
+            <div className="text-left text-base">
               <div className="flex gap-0.5" aria-label="5 out of 5 stars">
                 {[...Array(5)].map((_, i) => (
                   <Star key={i} className="h-3.5 w-3.5 fill-foreground text-foreground" />

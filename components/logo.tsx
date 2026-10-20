@@ -11,8 +11,8 @@ export function Logo({ className = "" }: { className?: string }) {
         className="h-9 w-9 rounded-lg border border-border object-contain"
       />
       <div className="flex flex-col text-left leading-none">
-        <span className="font-serif text-xl">Sam J Shih</span>
-        <span className="mt-1 text-[10px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
+        <span className="font-serif text-2xl">Sam J Shih</span>
+        <span className="mt-1 text-[11px] font-medium uppercase tracking-[0.16em] text-muted-foreground">
           Product engineer
         </span>
       </div>

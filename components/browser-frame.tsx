@@ -27,7 +27,7 @@ export function BrowserFrame({
           <span className="h-2 w-2 rounded-full bg-foreground/15" />
           <span className="h-2 w-2 rounded-full bg-foreground/15" />
         </div>
-        <span className="truncate text-[10px] text-muted-foreground">
+        <span className="truncate text-[11px] text-muted-foreground">
           {url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
         </span>
       </div>

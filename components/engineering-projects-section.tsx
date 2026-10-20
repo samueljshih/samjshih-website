@@ -33,9 +33,9 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
       <div className="mt-5 flex items-start justify-between gap-4">
         <div>
-          <p className="text-xs font-medium uppercase tracking-[0.14em] text-muted-foreground">{project.category}</p>
-          <h3 className="mt-1.5 text-lg font-medium">{project.title}</h3>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{project.description}</p>
+          <p className="text-[13px] font-medium uppercase tracking-[0.14em] text-muted-foreground">{project.category}</p>
+          <h3 className="mt-1.5 text-xl font-medium">{project.title}</h3>
+          <p className="mt-1.5 text-base leading-relaxed text-muted-foreground">{project.description}</p>
         </div>
         <ArrowUpRight className="mt-6 h-5 w-5 flex-shrink-0 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary" />
       </div>
@@ -68,7 +68,7 @@ export function EngineeringProjectsSection() {
               </div>
             ))}
           </div>
-          <p className="mt-4 text-center text-xs text-muted-foreground sm:hidden">Swipe to see more →</p>
+          <p className="mt-4 text-center text-sm text-muted-foreground sm:hidden">Swipe to see more →</p>
 
           <div className="hidden gap-x-8 gap-y-14 sm:grid sm:grid-cols-2 lg:grid-cols-6">
             {projects.map((project, i) => (
