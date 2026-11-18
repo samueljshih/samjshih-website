@@ -30,6 +30,13 @@ export const projects: Project[] = [
     screenshot: "/projects/screenshots/top25strategylab.webp",
   },
   {
+    title: "Pet Meets Owner",
+    description: "AI holiday portraits placing you and your pet together from two photos.",
+    url: "https://www.petmeetsowner.com/",
+    category: "AI product",
+    screenshot: "/projects/screenshots/petmeetsowner.webp",
+  },
+  {
     title: "Radiance Luxury Living",
     description: "High-end website for a luxury real estate agency with listings and inquiry flows.",
     url: "https://radiancelivingkaty.com/",
