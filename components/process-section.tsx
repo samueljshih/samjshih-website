@@ -4,10 +4,22 @@ import { SectionHeader } from "@/components/section-header";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
-  { title: "Idea", description: "We talk through your idea, who it's for and what success looks like." },
-  { title: "Plan", description: "I scope a lean first version and map the fastest path to launch." },
-  { title: "Build", description: "I design and build it end to end, with regular demos so you always see progress." },
-  { title: "Launch & grow", description: "We ship to real users, then improve it based on what they actually do." },
+  {
+    title: "Free product call",
+    description: "20 minutes on your idea, who it's for, and an honest range for time and cost.",
+  },
+  {
+    title: "Blueprint (week 1)",
+    description: "A written scope, a clickable prototype of the key screens and a fixed price.",
+  },
+  {
+    title: "Build (6 to 8 weeks)",
+    description: "I design and build it end to end. You get a weekly demo and a live preview link.",
+  },
+  {
+    title: "Launch & grow",
+    description: "We ship to real users. 30 days of fixes included, then care or new features monthly.",
+  },
 ];
 
 export function ProcessSection() {

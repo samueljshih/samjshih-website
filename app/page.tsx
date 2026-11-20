@@ -4,6 +4,8 @@ import { EngineeringProjectsSection } from "@/components/engineering-projects-se
 import { TestimonialSection } from "@/components/testimonial-section"
 import { ServicesSection } from "@/components/services-section"
 import { ProcessSection } from "@/components/process-section"
+import { ExpertsSection } from "@/components/experts-section"
+import { PricingSection } from "@/components/pricing-section"
 import { CalendlySection } from "@/components/calendly-section"
 import { AboutSection } from "@/components/about-section"
 import { FloatingCta } from "@/components/floating-cta"
@@ -17,7 +19,9 @@ export default function HomePage() {
       <EngineeringProjectsSection />
       <TestimonialSection />
       <ServicesSection />
+      <ExpertsSection />
       <ProcessSection />
+      <PricingSection />
       <CalendlySection />
       <AboutSection />
       <Footer />

@@ -8,7 +8,7 @@ const CALENDLY_SCRIPT = "https://assets.calendly.com/assets/external/widget.js";
 const CALENDLY_URL =
   "https://calendly.com/samuels-shih/20min?hide_gdpr_banner=1&background_color=ffffff&text_color=0b1b33&primary_color=1d4ed8";
 
-const outcomes = ["A focused scope for your first version", "The fastest path to launch", "An honest take on time and cost"];
+const outcomes = ["What to build first", "An honest time and cost estimate", "Whether a Blueprint makes sense"];
 
 export function CalendlySection() {
   useEffect(() => {
@@ -31,7 +31,7 @@ export function CalendlySection() {
               Bring your idea. Let&apos;s <em>map it out</em>.
             </>
           }
-          lede="In 20 minutes, I'll help you figure out what to build first and what it would take to get it live."
+          lede="In 20 minutes, you'll know what to build first, roughly what it costs and how long it takes to go live. No pitch, no pressure."
         />
 
         <ul className="-mt-4 mb-12 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
