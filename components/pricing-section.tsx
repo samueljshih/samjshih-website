@@ -13,6 +13,7 @@ type Plan = {
   description: string;
   features: string[];
   featured?: boolean;
+  example?: string;
 };
 
 const plans: Plan[] = [
@@ -58,17 +59,20 @@ const plans: Plan[] = [
       "Weekly demo and a live preview link",
     ],
     featured: true,
+    example: "Example build: Top 25 Strategy Lab",
   },
   {
-    name: "Care & Partner",
-    price: "From $300",
-    priceNote: "Per month, after launch",
-    timeline: "Month to month",
-    description: "Keep it running, then keep it growing.",
+    name: "Launch Sprint: Complete",
+    price: "$20,000+",
+    priceNote: "Fixed price, quoted from your Blueprint",
+    timeline: "10 to 16 weeks",
+    description: "A full platform for multiple user types, integrations and deeper AI.",
     features: [
-      "Care ($300/mo): hosting, monitoring, small fixes",
-      "Partner ($1,500/mo): new features every month",
-      "Cancel anytime",
+      "Everything in Core",
+      "Multiple user roles and permissions",
+      "Integrations with your existing tools",
+      "Advanced AI workflows and reporting",
+      "60 days of post-launch support",
     ],
   },
 ];
@@ -105,7 +109,7 @@ export function PricingSection() {
             >
               {plan.featured && (
                 <span className="absolute -top-3 left-7 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                  Most popular
+                  Recommended
                 </span>
               )}
               <h3 className="text-lg font-medium">{plan.name}</h3>
@@ -113,7 +117,7 @@ export function PricingSection() {
               <p className="mt-2 text-sm text-muted-foreground">{plan.priceNote}</p>
               <p className="mt-1 text-sm font-medium text-foreground">{plan.timeline}</p>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">{plan.description}</p>
-              <ul className="mt-6 space-y-2.5">
+              <ul className="mt-6 mb-6 space-y-2.5">
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5 text-[15px]">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={2} />
@@ -121,13 +125,16 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
+              {plan.example && (
+                <p className="mt-auto border-t border-border pt-4 text-sm text-muted-foreground">{plan.example}</p>
+              )}
             </div>
           ))}
         </div>
 
         <p className="mt-8 text-center text-base text-muted-foreground">
-          Bigger build? Larger products (multiple user types, integrations, more AI) start at $20,000, quoted from your
-          Blueprint.
+          <span className="font-medium text-foreground">After launch:</span> Care plan $300/mo (hosting, monitoring,
+          small fixes) or Product Partner $1,500/mo (new features every month). Cancel anytime.
         </p>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-border bg-muted/60 p-7">
@@ -146,7 +153,9 @@ export function PricingSection() {
 
         <div className="mt-12 flex flex-col items-center gap-3 text-center">
           <BookCallButton label="Get your free build estimate" />
-          <p className="text-sm text-muted-foreground">I take on 2 builds at a time, so start dates fill up.</p>
+          <p className="text-sm text-muted-foreground">
+            50% to start, 50% at launch. Payment plans available. I take on 2 builds at a time, so start dates fill up.
+          </p>
         </div>
       </div>
     </section>
