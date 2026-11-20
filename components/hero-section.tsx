@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Star } from "lucide-react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import { BookCallButton } from "@/components/book-call-button";
 import { BrowserFrame } from "@/components/browser-frame";
 import { usePointerParallax } from "@/hooks/use-pointer-parallax";
@@ -122,11 +122,25 @@ export function HeroSection() {
             grow without hiring a team.
           </p>
 
+          <ul
+            className="hero-animate mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-x-5 gap-y-2 text-base font-medium text-foreground lg:mx-0 lg:justify-start"
+            style={{ animationDelay: "0.2s" }}
+          >
+            {["Fixed price", "Clickable prototype in week 1", "Live in 6 to 8 weeks", "You own everything"].map(
+              (item) => (
+                <li key={item} className="flex items-center gap-1.5">
+                  <Check className="h-4 w-4 text-primary" strokeWidth={2} />
+                  {item}
+                </li>
+              ),
+            )}
+          </ul>
+
           <div
             className="hero-animate mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
             style={{ animationDelay: "0.24s" }}
           >
-            <BookCallButton className="w-full sm:w-auto" />
+            <BookCallButton label="Get your free build estimate" className="w-full sm:w-auto" />
             <a
               href="#projects"
               className="group inline-flex h-14 items-center gap-1.5 px-2 text-lg font-medium text-foreground transition-colors hover:text-primary"
