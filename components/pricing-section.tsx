@@ -136,6 +136,10 @@ export function PricingSection() {
           <span className="font-medium text-foreground">After launch:</span> Care plan $300/mo (hosting, monitoring,
           small fixes) or Product Partner $1,500/mo (new features every month). Cancel anytime.
         </p>
+        <p className="mt-2 text-center text-base text-muted-foreground">
+          <span className="font-medium text-foreground">Also available:</span> websites and AI automations. Ask on the
+          call.
+        </p>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-border bg-muted/60 p-7">
           <div className="flex items-center gap-2.5">

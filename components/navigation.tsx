@@ -8,7 +8,6 @@ import { BookCallButton } from "@/components/book-call-button";
 const links = [
   { href: "#projects", label: "Work" },
   { href: "#testimonials", label: "Clients" },
-  { href: "#services", label: "Services" },
   { href: "#process", label: "Process" },
   { href: "#pricing", label: "Pricing" },
   { href: "#about", label: "About" },

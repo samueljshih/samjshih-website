@@ -2,7 +2,6 @@ import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { EngineeringProjectsSection } from "@/components/engineering-projects-section"
 import { TestimonialSection } from "@/components/testimonial-section"
-import { ServicesSection } from "@/components/services-section"
 import { ProcessSection } from "@/components/process-section"
 import { ExpertsSection } from "@/components/experts-section"
 import { PricingSection } from "@/components/pricing-section"
@@ -18,7 +17,6 @@ export default function HomePage() {
       <HeroSection />
       <EngineeringProjectsSection />
       <TestimonialSection />
-      <ServicesSection />
       <ExpertsSection />
       <ProcessSection />
       <PricingSection />
