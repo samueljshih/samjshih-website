@@ -15,7 +15,7 @@ const instrumentSerif = Instrument_Serif({
 
 const title = "Sam Shih - Turn Your Idea Into a Product";
 const description =
-  "I build your MVP and get it live in 21 days, fixed price, so you can start selling to your clients without hiring a dev team.";
+  "I build your MVP and get it live in 21 days, fixed price, so you can start getting real customers without hiring a dev team.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://samjshih.com"),

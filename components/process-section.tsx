@@ -6,22 +6,21 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 const steps = [
   {
     title: "Fit check",
-    description: "15 minutes to see if a 21-Day MVP Launch fits, and which tier matches what you want to ship.",
+    description: "20 minutes on your idea: what to build first, which tier fits, and when you could be live.",
   },
   {
     title: "Deposit",
-    description:
-      "A 50% deposit locks the start date. Launch + Grow is 50/25/25. Code, domain, and accounts are in your name.",
+    description: "A 50% deposit locks your start date. The code, domain, and accounts are set up in your name.",
   },
   {
     title: "Build",
     description:
-      "Proof Sprint is live in 14 days, Launch MVP in 21, and Launch + Grow in 28. A working first version, with real users.",
+      "Proof Sprint goes live in 14 days, Launch MVP in 21, and Launch + Grow in 28. You get a real product, not a prototype.",
   },
   {
     title: "Launch",
     description:
-      "The balance is due on launch day. Your fix window starts then. Growth Partner can keep shipping after that.",
+      "The other 50% is due on launch day, and your included fixes start. After that, Growth Partner or Care keeps it running.",
   },
 ];
 

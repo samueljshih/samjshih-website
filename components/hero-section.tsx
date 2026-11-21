@@ -118,7 +118,7 @@ export function HeroSection() {
             className="hero-animate mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted-foreground text-pretty lg:mx-0"
             style={{ animationDelay: "0.16s" }}
           >
-            I build your MVP and get it live in 21 days, fixed price, so you can start selling to your clients without
+            I build your MVP and get it live in 21 days, fixed price, so you can start getting real customers without
             hiring a dev team.
           </p>
 
@@ -126,7 +126,7 @@ export function HeroSection() {
             className="hero-animate mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-x-5 gap-y-2 text-base font-medium text-foreground lg:mx-0 lg:justify-start"
             style={{ animationDelay: "0.2s" }}
           >
-            {["Fixed price", "Live in 21 days", "You own the code", "Real users on your domain"].map(
+            {["A real product, not a prototype", "You own the code", "Live on your own domain"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-primary" strokeWidth={2} />

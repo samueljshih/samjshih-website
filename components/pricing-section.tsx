@@ -8,67 +8,89 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 type Plan = {
   name: string;
   price: string;
-  priceNote: string;
   timeline: string;
   description: string;
+  includes?: string;
   features: string[];
+  example: string;
   featured?: boolean;
 };
 
+// Listed in desktop order. The featured plan moves first on phones and spans the
+// full row on tablets, so the remaining two cards sit side by side below it.
 const plans: Plan[] = [
-  {
-    name: "Launch MVP",
-    price: "$7,500",
-    priceNote: "Fixed price",
-    timeline: "Live in 21 days",
-    description: "Up to 3 core workflows, with payments and an admin side, live in 21 days.",
-    features: [
-      "Up to 3 core workflows",
-      "Login, database, and deploy",
-      "Stripe payments",
-      "Admin dashboard and emails",
-      "One AI feature",
-      "User and admin roles",
-      "1 integration",
-      "30-day fix window",
-    ],
-    featured: true,
-  },
   {
     name: "Proof Sprint",
     price: "$3,500",
-    priceNote: "Fixed price",
     timeline: "Live in 14 days",
-    description: "One core workflow, live in 14 days, so you can put it in front of real users.",
+    description: "One core workflow, so you can put it in front of real users.",
     features: [
       "1 core workflow",
       "Login, database, and deploy on your domain",
       "1 user role",
       "Optional AI feature",
-      "14-day fix window",
+      "14 days of fixes included",
     ],
+    example: "Pet Meets Owner",
+  },
+  {
+    name: "Launch MVP",
+    price: "$7,500",
+    timeline: "Live in 21 days",
+    description: "Up to 3 core workflows, with payments and an admin side.",
+    features: [
+      "Up to 3 core workflows",
+      "Login, database, and deploy on your domain",
+      "Stripe payments",
+      "Admin dashboard and emails",
+      "One AI feature",
+      "User and admin roles",
+      "1 integration",
+      "30 days of fixes included",
+    ],
+    example: "Top 25 Strategy Lab",
+    featured: true,
   },
   {
     name: "Launch + Grow",
     price: "$12,000",
-    priceNote: "Fixed price",
     timeline: "Live in 28 days",
-    description: "Up to 5 workflows, live in 28 days, plus 2 months of Growth Partner.",
+    description: "Up to 5 workflows, plus 2 months of Growth Partner to keep improving it.",
+    includes: "Everything in Launch MVP, plus:",
     features: [
-      "Up to 5 workflows",
-      "Everything in Launch MVP",
-      "Multiple roles",
+      "Up to 5 core workflows",
+      "Multiple user roles",
       "2 integrations",
-      "60-day fix window",
+      "60 days of fixes included",
       "2 months of Growth Partner included",
     ],
+    example: "Torchline AI",
   },
 ];
 
 const promises = [
   "Fixed price. The price on this page is the price.",
   "You own the code. The domain and accounts are in your name.",
-  "A fix window after launch: 14, 30, or 60 days, by tier.",
+  "Live on the promised day, or your next month of Growth Partner is free.",
+];
+
+const notes = [
+  {
+    label: "What's a workflow?",
+    text: "One thing your users do from start to finish, like sign up, book a session, and pay.",
+  },
+  {
+    label: "After launch:",
+    text: "Growth Partner, $2,000/month with a 2-month minimum. One improvement shipped every week, hosting and error monitoring, fixes within 1 business day, and a monthly roadmap call. Or Care, $300/month for hosting, monitoring, and small fixes.",
+  },
+  {
+    label: "Not included:",
+    text: "native App Store apps, HIPAA or SOC 2 compliance, data migration, and marketing or ads.",
+  },
+  {
+    label: "Also available:",
+    text: "websites and AI automations. Ask on the fit check.",
+  },
 ];
 
 export function PricingSection() {
@@ -84,16 +106,18 @@ export function PricingSection() {
               The 21-Day <em>MVP Launch</em>
             </>
           }
-          lede="A real, working first version of your product, live with real users in 21 days. Fixed price. You own the code. Launch MVP is the recommended start."
+          lede="A real, working first version of your product, live with real users in 21 days. Fixed price. You own the code."
         />
 
-        <div ref={revealRef} className="reveal-stagger grid gap-6 lg:grid-cols-3">
+        <div ref={revealRef} className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border bg-card p-7 shadow-soft ${
-                plan.featured ? "border-primary ring-1 ring-primary" : "border-border"
-              } ${plan.name === "Proof Sprint" ? "lg:order-first" : ""}`}
+                plan.featured
+                  ? "order-first border-primary ring-1 ring-primary sm:col-span-2 lg:order-none lg:col-span-1"
+                  : "border-border"
+              }`}
             >
               {plan.featured && (
                 <span className="absolute -top-3 left-7 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
@@ -102,10 +126,11 @@ export function PricingSection() {
               )}
               <h3 className="text-lg font-medium">{plan.name}</h3>
               <p className="mt-4 font-serif text-5xl leading-none">{plan.price}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{plan.priceNote}</p>
+              <p className="mt-2 text-sm text-muted-foreground">Fixed price</p>
               <p className="mt-1 text-sm font-medium text-foreground">{plan.timeline}</p>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">{plan.description}</p>
-              <ul className="mt-6 mb-6 space-y-2.5">
+              {plan.includes && <p className="mt-6 text-[15px] font-medium">{plan.includes}</p>}
+              <ul className={`${plan.includes ? "mt-3" : "mt-6"} mb-6 space-y-2.5`}>
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5 text-[15px]">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={2} />
@@ -113,23 +138,20 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-auto border-t border-border pt-4 text-sm text-muted-foreground">
+                Example build: <span className="text-foreground">{plan.example}</span>
+              </p>
             </div>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-base text-muted-foreground">
-          <span className="font-medium text-foreground">Growth Partner:</span> $2,000/month, 2-month minimum, then month
-          to month. One improvement shipped every week, hosting and error monitoring, fixes within 1 business day, and a
-          monthly roadmap call.
-        </p>
-        <p className="mt-2 text-center text-base text-muted-foreground">
-          <span className="font-medium text-foreground">Not included:</span> native App Store apps, HIPAA or SOC 2
-          compliance, data migration, and marketing or ads.
-        </p>
-        <p className="mt-2 text-center text-base text-muted-foreground">
-          <span className="font-medium text-foreground">Also available:</span> websites and AI automations. Ask on the
-          fit check.
-        </p>
+        <div className="mx-auto mt-10 max-w-4xl space-y-2">
+          {notes.map((note) => (
+            <p key={note.label} className="text-center text-base text-muted-foreground">
+              <span className="font-medium text-foreground">{note.label}</span> {note.text}
+            </p>
+          ))}
+        </div>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-border bg-muted/60 p-7">
           <div className="flex items-center gap-2.5">
@@ -147,9 +169,7 @@ export function PricingSection() {
 
         <div className="mt-12 flex flex-col items-center gap-3 text-center">
           <BookCallButton />
-          <p className="text-sm text-muted-foreground">
-            50% deposit locks the start date. The balance is due on launch day. Launch + Grow is 50/25/25.
-          </p>
+          <p className="text-sm text-muted-foreground">50% to start, 50% on launch day.</p>
         </div>
       </div>
     </section>
