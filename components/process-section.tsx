@@ -5,20 +5,23 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    title: "Free product call",
-    description: "20 minutes on your idea, who it's for, and an honest range for time and cost.",
+    title: "Fit check",
+    description: "15 minutes to see if a 21-Day MVP Launch fits, and which tier matches what you want to ship.",
   },
   {
-    title: "Blueprint (week 1)",
-    description: "A written scope, a clickable prototype of the key screens and a fixed price.",
+    title: "Deposit",
+    description:
+      "A 50% deposit locks the start date. Launch + Grow is 50/25/25. Code, domain, and accounts are in your name.",
   },
   {
-    title: "Build (6 to 8 weeks)",
-    description: "I design and build it end to end. You get a weekly demo and a live preview link.",
+    title: "Build",
+    description:
+      "Proof Sprint is live in 14 days, Launch MVP in 21, and Launch + Grow in 28. A working first version, with real users.",
   },
   {
-    title: "Launch & grow",
-    description: "We ship to real users. 30 days of fixes included, then care or new features monthly.",
+    title: "Launch",
+    description:
+      "The balance is due on launch day. Your fix window starts then. Growth Partner can keep shipping after that.",
   },
 ];
 

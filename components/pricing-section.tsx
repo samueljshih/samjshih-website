@@ -13,74 +13,62 @@ type Plan = {
   description: string;
   features: string[];
   featured?: boolean;
-  example?: string;
 };
 
 const plans: Plan[] = [
   {
-    name: "Product Blueprint",
-    price: "$1,500",
-    priceNote: "100% credited to your build",
-    timeline: "5 to 7 days",
-    description: "See your idea as a clickable app before you commit to the build.",
-    features: [
-      "60-minute deep-dive session",
-      "Written scope: users, core flow, what's in v1",
-      "Clickable prototype of the key screens",
-      "Fixed price and build plan",
-      "Yours to keep, whoever builds it",
-    ],
-  },
-  {
-    name: "Launch Sprint: Starter",
-    price: "$6,000",
+    name: "Launch MVP",
+    price: "$7,500",
     priceNote: "Fixed price",
-    timeline: "3 to 4 weeks",
-    description: "One core flow, built for real and live, so you can test it with users.",
+    timeline: "Live in 21 days",
+    description: "Up to 3 core workflows, with payments and an admin side, live in 21 days.",
     features: [
-      "One core user flow, end to end",
-      "Logins and accounts",
-      "Designed from your approved prototype",
-      "Deployed on your domain",
-      "30 days of bug fixes",
-    ],
-  },
-  {
-    name: "Launch Sprint: Core",
-    price: "$12,000",
-    priceNote: "Fixed price",
-    timeline: "6 to 8 weeks",
-    description: "A launched product with an AI layer built around how you work.",
-    features: [
-      "Everything in Starter",
-      "AI built on your method or knowledge base",
-      "Admin dashboard for you",
-      "Landing page and analytics to launch",
-      "Weekly demo and a live preview link",
+      "Up to 3 core workflows",
+      "Login, database, and deploy",
+      "Stripe payments",
+      "Admin dashboard and emails",
+      "One AI feature",
+      "User and admin roles",
+      "1 integration",
+      "30-day fix window",
     ],
     featured: true,
-    example: "Example build: Top 25 Strategy Lab",
   },
   {
-    name: "Launch Sprint: Complete",
-    price: "$20,000+",
-    priceNote: "Fixed price, quoted from your Blueprint",
-    timeline: "10 to 16 weeks",
-    description: "A full platform for multiple user types, integrations and deeper AI.",
+    name: "Proof Sprint",
+    price: "$3,500",
+    priceNote: "Fixed price",
+    timeline: "Live in 14 days",
+    description: "One core workflow, live in 14 days, so you can put it in front of real users.",
     features: [
-      "Everything in Core",
-      "Multiple user roles and permissions",
-      "Integrations with your existing tools",
-      "Advanced AI workflows and reporting",
-      "60 days of post-launch support",
+      "1 core workflow",
+      "Login, database, and deploy on your domain",
+      "1 user role",
+      "Optional AI feature",
+      "14-day fix window",
+    ],
+  },
+  {
+    name: "Launch + Grow",
+    price: "$12,000",
+    priceNote: "Fixed price",
+    timeline: "Live in 28 days",
+    description: "Up to 5 workflows, live in 28 days, plus 2 months of Growth Partner.",
+    features: [
+      "Up to 5 workflows",
+      "Everything in Launch MVP",
+      "Multiple roles",
+      "2 integrations",
+      "60-day fix window",
+      "2 months of Growth Partner included",
     ],
   },
 ];
 
 const promises = [
-  "Fixed price. The quote is the price, no surprise invoices.",
-  "You own everything: code, domain and accounts in your name.",
-  "Don't love your Blueprint prototype? Full refund.",
+  "Fixed price. The price on this page is the price.",
+  "You own the code. The domain and accounts are in your name.",
+  "A fix window after launch: 14, 30, or 60 days, by tier.",
 ];
 
 export function PricingSection() {
@@ -93,19 +81,19 @@ export function PricingSection() {
           eyebrow="Pricing"
           title={
             <>
-              Clear prices. <em>No surprises.</em>
+              The 21-Day <em>MVP Launch</em>
             </>
           }
-          lede="Start with a Blueprint to see your idea as a clickable app. If you build with me, the fee comes off your build."
+          lede="A real, working first version of your product, live with real users in 21 days. Fixed price. You own the code. Launch MVP is the recommended start."
         />
 
-        <div ref={revealRef} className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={revealRef} className="reveal-stagger grid gap-6 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border bg-card p-7 shadow-soft ${
                 plan.featured ? "border-primary ring-1 ring-primary" : "border-border"
-              }`}
+              } ${plan.name === "Proof Sprint" ? "lg:order-first" : ""}`}
             >
               {plan.featured && (
                 <span className="absolute -top-3 left-7 rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
@@ -125,20 +113,22 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              {plan.example && (
-                <p className="mt-auto border-t border-border pt-4 text-sm text-muted-foreground">{plan.example}</p>
-              )}
             </div>
           ))}
         </div>
 
         <p className="mt-8 text-center text-base text-muted-foreground">
-          <span className="font-medium text-foreground">After launch:</span> Care plan $300/mo (hosting, monitoring,
-          small fixes) or Product Partner $1,500/mo (new features every month). Cancel anytime.
+          <span className="font-medium text-foreground">Growth Partner:</span> $2,000/month, 2-month minimum, then month
+          to month. One improvement shipped every week, hosting and error monitoring, fixes within 1 business day, and a
+          monthly roadmap call.
+        </p>
+        <p className="mt-2 text-center text-base text-muted-foreground">
+          <span className="font-medium text-foreground">Not included:</span> native App Store apps, HIPAA or SOC 2
+          compliance, data migration, and marketing or ads.
         </p>
         <p className="mt-2 text-center text-base text-muted-foreground">
           <span className="font-medium text-foreground">Also available:</span> websites and AI automations. Ask on the
-          call.
+          fit check.
         </p>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-border bg-muted/60 p-7">
@@ -156,9 +146,9 @@ export function PricingSection() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-3 text-center">
-          <BookCallButton label="Get your free build estimate" />
+          <BookCallButton />
           <p className="text-sm text-muted-foreground">
-            50% to start, 50% at launch. Payment plans available. I take on 2 builds at a time, so start dates fill up.
+            50% deposit locks the start date. The balance is due on launch day. Launch + Grow is 50/25/25.
           </p>
         </div>
       </div>

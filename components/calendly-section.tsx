@@ -8,7 +8,7 @@ const CALENDLY_SCRIPT = "https://assets.calendly.com/assets/external/widget.js";
 const CALENDLY_URL =
   "https://calendly.com/samuels-shih/20min?hide_gdpr_banner=1&background_color=ffffff&text_color=0b1b33&primary_color=1d4ed8";
 
-const outcomes = ["What to build first", "An honest time and cost estimate", "Whether a Blueprint makes sense"];
+const outcomes = ["Whether this is a fit", "Which tier matches", "What launch day looks like"];
 
 export function CalendlySection() {
   useEffect(() => {
@@ -25,13 +25,13 @@ export function CalendlySection() {
     <section id="calendly" className="px-4 py-24 md:py-32">
       <div className="mx-auto max-w-4xl">
         <SectionHeader
-          eyebrow="Free product call"
+          eyebrow="Free fit check"
           title={
             <>
-              Bring your idea. Let&apos;s <em>map it out</em>.
+              Bring your idea. Let&apos;s see if it&apos;s a <em>fit</em>.
             </>
           }
-          lede="In 20 minutes, you'll know what to build first, roughly what it costs and how long it takes to go live. No pitch, no pressure."
+          lede="In 15 minutes, you'll know if a 21-Day MVP Launch fits, which tier matches, and what launch day looks like. No pitch, no pressure."
         />
 
         <ul className="-mt-4 mb-12 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
