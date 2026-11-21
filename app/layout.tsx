@@ -15,7 +15,7 @@ const instrumentSerif = Instrument_Serif({
 
 const title = "Sam Shih - Turn Your Idea Into a Product";
 const description =
-  "Product engineer helping founders turn ideas into MVPs, web apps and AI-powered tools, designed and built end to end.";
+  "I build your MVP and get it live in 21 days, fixed price, so you can start getting real customers without hiring a dev team.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://samjshih.com"),
