@@ -5,8 +5,9 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const steps = [
   {
-    title: "Free product call",
-    description: "20 minutes on your idea, who it's for, and an honest range for time and cost.",
+    title: "15-Minute Fit Check",
+    description:
+      "A free 15-minute fit check on your idea, who it's for, and an honest range for time and cost.",
   },
   {
     title: "Blueprint (week 1)",

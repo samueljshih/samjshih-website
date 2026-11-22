@@ -49,7 +49,7 @@ export function Navigation() {
                 {label}
               </a>
             ))}
-            <BookCallButton label="Book a call" size="md" />
+            <BookCallButton label="15-Minute Fit Check" size="md" />
           </div>
 
           <button
@@ -69,7 +69,7 @@ export function Navigation() {
                 {label}
               </a>
             ))}
-            <BookCallButton label="Book a call" className="mt-3 w-full" onClick={close} />
+            <BookCallButton label="15-Minute Fit Check" className="mt-3 w-full" onClick={close} />
           </div>
         )}
       </div>

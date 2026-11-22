@@ -275,7 +275,7 @@ export function TestimonialSection() {
         <div className="mt-16 text-center">
           <p className="font-serif text-4xl">Have an idea of your own?</p>
           <p className="mx-auto mt-2 mb-8 max-w-md text-lg text-muted-foreground">
-            Let&apos;s talk it through. 20 minutes, no pressure.
+            Let&apos;s talk it through on a free 15-minute fit check. No pressure.
           </p>
           <BookCallButton />
         </div>

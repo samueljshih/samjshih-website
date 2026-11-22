@@ -25,13 +25,13 @@ export function CalendlySection() {
     <section id="calendly" className="px-4 py-24 md:py-32">
       <div className="mx-auto max-w-4xl">
         <SectionHeader
-          eyebrow="Free product call"
+          eyebrow="15-Minute Fit Check"
           title={
             <>
               Bring your idea. Let&apos;s <em>map it out</em>.
             </>
           }
-          lede="In 20 minutes, you'll know what to build first, roughly what it costs and how long it takes to go live. No pitch, no pressure."
+          lede="On a free 15-minute fit check, you'll know what to build first, roughly what it costs and how long it takes to go live. No pitch, no pressure."
         />
 
         <ul className="-mt-4 mb-12 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
