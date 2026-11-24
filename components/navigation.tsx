@@ -1,17 +1,24 @@
 "use client";
 
-import { Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Logo } from "@/components/logo";
 import { BookCallButton } from "@/components/book-call-button";
+import { CAREER_WORLD_URL } from "@/lib/career-world";
 
-const links = [
+type NavLink = { href: string; label: string; external?: boolean };
+
+const links: NavLink[] = [
   { href: "#projects", label: "Work" },
   { href: "#testimonials", label: "Clients" },
   { href: "#process", label: "Process" },
   { href: "#pricing", label: "Pricing" },
   { href: "#about", label: "About" },
+  { href: CAREER_WORLD_URL, label: "Play", external: true },
 ];
+
+/** External links open in a new tab and carry a small arrow. */
+const externalProps = { target: "_blank", rel: "noopener noreferrer" };
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,13 +47,15 @@ export function Navigation() {
           </a>
 
           <div className="hidden items-center gap-8 lg:flex">
-            {links.map(({ href, label }) => (
+            {links.map(({ href, label, external }) => (
               <a
                 key={href}
                 href={href}
-                className="py-3 text-[15px] text-muted-foreground transition-colors hover:text-foreground"
+                {...(external && externalProps)}
+                className="inline-flex items-center gap-1 py-3 text-[15px] text-muted-foreground transition-colors hover:text-foreground"
               >
                 {label}
+                {external && <ArrowUpRight className="h-3.5 w-3.5" />}
               </a>
             ))}
             <BookCallButton label="Book a call" size="md" />
@@ -64,9 +73,16 @@ export function Navigation() {
 
         {isOpen && (
           <div className="flex flex-col gap-1 border-t border-border pt-3 pb-5 lg:hidden">
-            {links.map(({ href, label }) => (
-              <a key={href} href={href} onClick={close} className="py-2.5 text-xl text-foreground">
+            {links.map(({ href, label, external }) => (
+              <a
+                key={href}
+                href={href}
+                {...(external && externalProps)}
+                onClick={close}
+                className="inline-flex items-center gap-1.5 py-2.5 text-xl text-foreground"
+              >
                 {label}
+                {external && <ArrowUpRight className="h-4 w-4 text-muted-foreground" />}
               </a>
             ))}
             <BookCallButton label="Book a call" className="mt-3 w-full" onClick={close} />
