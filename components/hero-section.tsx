@@ -1,10 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Check, Star } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Star } from "lucide-react";
 import { BookCallButton } from "@/components/book-call-button";
 import { BrowserFrame } from "@/components/browser-frame";
 import { usePointerParallax } from "@/hooks/use-pointer-parallax";
+import { CAREER_WORLD_URL } from "@/lib/career-world";
 import { projects } from "@/lib/projects";
 
 const clientAvatars = [
@@ -102,6 +103,16 @@ export function HeroSection() {
               <p className="font-serif text-3xl md:text-4xl">Hi, I&apos;m Sam Shih</p>
               <p className="mt-1.5 text-base text-muted-foreground">Product engineer for founders</p>
               <p className="mt-1 text-sm font-medium text-emerald-700">Taking new projects</p>
+              <a
+                href={CAREER_WORLD_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group mt-3 inline-flex items-center gap-2 rounded-full border border-border bg-card py-1.5 pr-3.5 pl-1.5 text-sm font-medium text-foreground shadow-soft transition-colors hover:border-foreground/30"
+              >
+                <span className="rounded-full bg-primary/10 px-2 py-1 text-xs font-semibold text-primary">New</span>
+                Play my career as a game
+                <ArrowUpRight className="h-3.5 w-3.5 text-muted-foreground transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+              </a>
             </div>
           </div>
 
