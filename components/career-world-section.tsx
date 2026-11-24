@@ -6,6 +6,20 @@ import { useAutoplayInView } from "@/hooks/use-autoplay-in-view";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { CAREER_WORLD_URL } from "@/lib/career-world";
 
+/** A wide window on a high-density screen. The second form is for older Safari. */
+const RETINA_DESKTOP =
+  "(min-width: 1024px) and (min-resolution: 1.5dppx), (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5)";
+
+/**
+ * The same clip at three widths; the browser takes the first one whose media query matches.
+ * The clip is shown up to 1052 points wide, so a Retina laptop needs close to 2000 pixels to look sharp.
+ */
+const CLIP_SOURCES = [
+  { src: "/career-world/loop-1920.mp4", media: RETINA_DESKTOP },
+  { src: "/career-world/loop-1280.mp4", media: "(min-width: 640px)" },
+  { src: "/career-world/loop-960.mp4", media: undefined },
+];
+
 export function CareerWorldSection() {
   const revealRef = useScrollReveal();
   const videoRef = useAutoplayInView();
@@ -59,8 +73,9 @@ export function CareerWorldSection() {
               poster="/career-world/poster.jpg"
               className="h-full w-full object-cover"
             >
-              <source src="/career-world/loop.mp4" type="video/mp4" media="(min-width: 640px)" />
-              <source src="/career-world/loop-small.mp4" type="video/mp4" />
+              {CLIP_SOURCES.map(({ src, media }) => (
+                <source key={src} src={src} type="video/mp4" media={media} />
+              ))}
             </video>
           </BrowserChrome>
         </a>
