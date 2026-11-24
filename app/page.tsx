@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
 import { EngineeringProjectsSection } from "@/components/engineering-projects-section"
+import { CareerWorldSection } from "@/components/career-world-section"
 import { TestimonialSection } from "@/components/testimonial-section"
 import { ProcessSection } from "@/components/process-section"
 import { ExpertsSection } from "@/components/experts-section"
@@ -16,6 +17,7 @@ export default function HomePage() {
       <Navigation />
       <HeroSection />
       <EngineeringProjectsSection />
+      <CareerWorldSection />
       <TestimonialSection />
       <ExpertsSection />
       <ProcessSection />

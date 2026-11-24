@@ -1,24 +1,14 @@
+import type { ReactNode } from "react";
 import Image from "next/image";
 
-type BrowserFrameProps = {
+type BrowserChromeProps = {
   url: string;
-  screenshot: string;
-  title: string;
-  sizes: string;
-  priority?: boolean;
   className?: string;
-  imageClassName?: string;
+  children: ReactNode;
 };
 
-export function BrowserFrame({
-  url,
-  screenshot,
-  title,
-  sizes,
-  priority,
-  className = "",
-  imageClassName = "",
-}: BrowserFrameProps) {
+/** A browser window outline with an address bar. Children fill the 2:1 page area. */
+export function BrowserChrome({ url, className = "", children }: BrowserChromeProps) {
   return (
     <div className={`overflow-hidden rounded-xl border border-border bg-card ${className}`}>
       <div className="flex h-7 items-center gap-3 border-b border-border bg-muted/60 px-3">
@@ -31,16 +21,41 @@ export function BrowserFrame({
           {url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}
         </span>
       </div>
-      <div className="relative aspect-[2/1] overflow-hidden">
-        <Image
-          src={screenshot}
-          alt={`${title} website`}
-          fill
-          sizes={sizes}
-          priority={priority}
-          className={`object-cover object-top ${imageClassName}`}
-        />
-      </div>
+      <div className="relative aspect-[2/1] overflow-hidden">{children}</div>
     </div>
+  );
+}
+
+type BrowserFrameProps = {
+  url: string;
+  screenshot: string;
+  title: string;
+  sizes: string;
+  priority?: boolean;
+  className?: string;
+  imageClassName?: string;
+};
+
+/** A website screenshot inside a browser window. */
+export function BrowserFrame({
+  url,
+  screenshot,
+  title,
+  sizes,
+  priority,
+  className = "",
+  imageClassName = "",
+}: BrowserFrameProps) {
+  return (
+    <BrowserChrome url={url} className={className}>
+      <Image
+        src={screenshot}
+        alt={`${title} website`}
+        fill
+        sizes={sizes}
+        priority={priority}
+        className={`object-cover object-top ${imageClassName}`}
+      />
+    </BrowserChrome>
   );
 }

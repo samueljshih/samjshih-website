@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight, Gamepad2, Instagram, Linkedin, Music } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Music } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 const links = [
@@ -13,9 +13,6 @@ const links = [
     url: "https://open.spotify.com/artist/2n7IGUXyUVO7ofiCiMo4lg?si=rF7oHFYQQdSdQvF6RplIRw",
   },
 ];
-
-/** The walkable 3D career world (samjshih-play repo). */
-const CAREER_WORLD_URL = "https://play.samjshih.com";
 
 export function AboutSection() {
   const revealRef = useScrollReveal();
@@ -61,18 +58,7 @@ export function AboutSection() {
             </p>
           </div>
 
-          <a
-            href={CAREER_WORLD_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-6 inline-flex items-center gap-2 py-2 text-lg font-medium text-foreground transition-colors hover:text-primary"
-          >
-            <Gamepad2 className="h-5 w-5 text-primary" strokeWidth={1.75} />
-            See my career as a game
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-
-          <div className="mt-6 flex flex-wrap justify-center gap-3 md:justify-start">
+          <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
             {links.map((link) => (
               <a
                 key={link.label}
