@@ -58,7 +58,7 @@ export function Navigation() {
                 {external && <ArrowUpRight className="h-3.5 w-3.5" />}
               </a>
             ))}
-            <BookCallButton label="Book a call" size="md" />
+            <BookCallButton label="15-Minute Fit Check" size="md" />
           </div>
 
           <button
@@ -85,7 +85,7 @@ export function Navigation() {
                 {external && <ArrowUpRight className="h-4 w-4 text-muted-foreground" />}
               </a>
             ))}
-            <BookCallButton label="Book a call" className="mt-3 w-full" onClick={close} />
+            <BookCallButton label="15-Minute Fit Check" className="mt-3 w-full" onClick={close} />
           </div>
         )}
       </div>

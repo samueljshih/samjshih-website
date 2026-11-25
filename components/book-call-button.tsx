@@ -13,7 +13,7 @@ const sizes = {
 };
 
 export function BookCallButton({
-  label = "Book a free product call",
+  label = "15-Minute Fit Check",
   size = "lg",
   className = "",
   onClick,

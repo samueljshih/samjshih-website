@@ -158,7 +158,8 @@ export function PricingSection() {
         <div className="mt-12 flex flex-col items-center gap-3 text-center">
           <BookCallButton label="Get your free build estimate" />
           <p className="text-sm text-muted-foreground">
-            50% to start, 50% at launch. Payment plans available. I take on 2 builds at a time, so start dates fill up.
+            Blueprint paid upfront. Builds paid in milestones, for example 50/25/25. I take on 2 builds at a time, so
+            start dates fill up.
           </p>
         </div>
       </div>
