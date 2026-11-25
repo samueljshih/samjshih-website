@@ -8,79 +8,89 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 type Plan = {
   name: string;
   price: string;
-  priceNote: string;
   timeline: string;
   description: string;
+  includes?: string;
   features: string[];
+  example: string;
   featured?: boolean;
-  example?: string;
 };
 
+// Listed in desktop order. The featured plan moves first on phones and spans the
+// full row on tablets, so the remaining two cards sit side by side below it.
 const plans: Plan[] = [
   {
-    name: "Product Blueprint",
-    price: "$1,500",
-    priceNote: "100% credited to your build",
-    timeline: "5 to 7 days",
-    description: "See your idea as a clickable app before you commit to the build.",
+    name: "Proof Sprint",
+    price: "$3,500",
+    timeline: "Live in 14 days",
+    description: "One core workflow, so you can put it in front of real users.",
     features: [
-      "60-minute deep-dive session",
-      "Written scope: users, core flow, what's in v1",
-      "Clickable prototype of the key screens",
-      "Fixed price and build plan",
-      "Yours to keep, whoever builds it",
+      "1 core workflow",
+      "Login, database, and deploy on your domain",
+      "1 user role",
+      "Optional AI feature",
+      "14 days of fixes included",
     ],
+    example: "Pet Meets Owner",
   },
   {
-    name: "Launch Sprint: Starter",
-    price: "$6,000",
-    priceNote: "Fixed price",
-    timeline: "3 to 4 weeks",
-    description: "One core flow, built for real and live, so you can test it with users.",
+    name: "Launch MVP",
+    price: "$7,500",
+    timeline: "Live in 21 days",
+    description: "Up to 3 core workflows, with payments and an admin side.",
     features: [
-      "One core user flow, end to end",
-      "Logins and accounts",
-      "Designed from your approved prototype",
-      "Deployed on your domain",
-      "30 days of bug fixes",
+      "Up to 3 core workflows",
+      "Login, database, and deploy on your domain",
+      "Stripe payments",
+      "Admin dashboard and emails",
+      "One AI feature",
+      "User and admin roles",
+      "1 integration",
+      "30 days of fixes included",
     ],
-  },
-  {
-    name: "Launch Sprint: Core",
-    price: "$12,000",
-    priceNote: "Fixed price",
-    timeline: "6 to 8 weeks",
-    description: "A launched product with an AI layer built around how you work.",
-    features: [
-      "Everything in Starter",
-      "AI built on your method or knowledge base",
-      "Admin dashboard for you",
-      "Landing page and analytics to launch",
-      "Weekly demo and a live preview link",
-    ],
+    example: "Top 25 Strategy Lab",
     featured: true,
-    example: "Example build: Top 25 Strategy Lab",
   },
   {
-    name: "Launch Sprint: Complete",
-    price: "$20,000+",
-    priceNote: "Fixed price, quoted from your Blueprint",
-    timeline: "10 to 16 weeks",
-    description: "A full platform for multiple user types, integrations and deeper AI.",
+    name: "Launch + Grow",
+    price: "$12,000",
+    timeline: "Live in 28 days",
+    description: "Up to 5 workflows, plus 2 months of Growth Partner to keep improving it.",
+    includes: "Everything in Launch MVP, plus:",
     features: [
-      "Everything in Core",
-      "Multiple user roles and permissions",
-      "Integrations with your existing tools",
-      "Advanced AI workflows and reporting",
-      "60 days of post-launch support",
+      "Up to 5 core workflows",
+      "Multiple user roles",
+      "2 integrations",
+      "60 days of fixes included",
+      "2 months of Growth Partner included",
     ],
+    example: "Torchline AI",
   },
 ];
 
 const promises = [
-  "Fixed price. The quote is the price, no surprise invoices.",
-  "You own everything: code, domain and accounts in your name.",
-  "Don't love your Blueprint prototype? Full refund.",
+  "Fixed price. The price on this page is the price.",
+  "You own the code. The domain and accounts are in your name.",
+  "Live on the promised day, or your next month of Growth Partner is free.",
+];
+
+const notes = [
+  {
+    label: "What's a workflow?",
+    text: "One thing your users do from start to finish, like sign up, book a session, and pay.",
+  },
+  {
+    label: "After launch:",
+    text: "Growth Partner, $2,000/month with a 2-month minimum. One improvement shipped every week, hosting and error monitoring, fixes within 1 business day, and a monthly roadmap call. Or Care, $300/month for hosting, monitoring, and small fixes.",
+  },
+  {
+    label: "Not included:",
+    text: "native App Store apps, HIPAA or SOC 2 compliance, data migration, and marketing or ads.",
+  },
+  {
+    label: "Also available:",
+    text: "websites and AI automations. Ask on the fit check.",
+  },
 ];
 
 export function PricingSection() {
@@ -93,18 +103,20 @@ export function PricingSection() {
           eyebrow="Pricing"
           title={
             <>
-              Clear prices. <em>No surprises.</em>
+              The 21-Day <em>MVP Launch</em>
             </>
           }
-          lede="Start with a Blueprint to see your idea as a clickable app. If you build with me, the fee comes off your build."
+          lede="A real, working first version of your product, live with real users in 21 days. Fixed price. You own the code."
         />
 
-        <div ref={revealRef} className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div ref={revealRef} className="reveal-stagger grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {plans.map((plan) => (
             <div
               key={plan.name}
               className={`relative flex flex-col rounded-2xl border bg-card p-7 shadow-soft ${
-                plan.featured ? "border-primary ring-1 ring-primary" : "border-border"
+                plan.featured
+                  ? "order-first border-primary ring-1 ring-primary sm:col-span-2 lg:order-none lg:col-span-1"
+                  : "border-border"
               }`}
             >
               {plan.featured && (
@@ -114,10 +126,11 @@ export function PricingSection() {
               )}
               <h3 className="text-lg font-medium">{plan.name}</h3>
               <p className="mt-4 font-serif text-5xl leading-none">{plan.price}</p>
-              <p className="mt-2 text-sm text-muted-foreground">{plan.priceNote}</p>
+              <p className="mt-2 text-sm text-muted-foreground">Fixed price</p>
               <p className="mt-1 text-sm font-medium text-foreground">{plan.timeline}</p>
               <p className="mt-5 text-base leading-relaxed text-muted-foreground">{plan.description}</p>
-              <ul className="mt-6 mb-6 space-y-2.5">
+              {plan.includes && <p className="mt-6 text-[15px] font-medium">{plan.includes}</p>}
+              <ul className={`${plan.includes ? "mt-3" : "mt-6"} mb-6 space-y-2.5`}>
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-2.5 text-[15px]">
                     <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-primary" strokeWidth={2} />
@@ -125,21 +138,20 @@ export function PricingSection() {
                   </li>
                 ))}
               </ul>
-              {plan.example && (
-                <p className="mt-auto border-t border-border pt-4 text-sm text-muted-foreground">{plan.example}</p>
-              )}
+              <p className="mt-auto border-t border-border pt-4 text-sm text-muted-foreground">
+                Example build: <span className="text-foreground">{plan.example}</span>
+              </p>
             </div>
           ))}
         </div>
 
-        <p className="mt-8 text-center text-base text-muted-foreground">
-          <span className="font-medium text-foreground">After launch:</span> Care plan $300/mo (hosting, monitoring,
-          small fixes) or Product Partner $1,500/mo (new features every month). Cancel anytime.
-        </p>
-        <p className="mt-2 text-center text-base text-muted-foreground">
-          <span className="font-medium text-foreground">Also available:</span> websites and AI automations. Ask on the
-          call.
-        </p>
+        <div className="mx-auto mt-10 max-w-4xl space-y-2">
+          {notes.map((note) => (
+            <p key={note.label} className="text-center text-base text-muted-foreground">
+              <span className="font-medium text-foreground">{note.label}</span> {note.text}
+            </p>
+          ))}
+        </div>
 
         <div className="mx-auto mt-12 max-w-4xl rounded-2xl border border-border bg-muted/60 p-7">
           <div className="flex items-center gap-2.5">
@@ -156,10 +168,8 @@ export function PricingSection() {
         </div>
 
         <div className="mt-12 flex flex-col items-center gap-3 text-center">
-          <BookCallButton label="Get your free build estimate" />
-          <p className="text-sm text-muted-foreground">
-            50% to start, 50% at launch. Payment plans available. I take on 2 builds at a time, so start dates fill up.
-          </p>
+          <BookCallButton />
+          <p className="text-sm text-muted-foreground">50% to start, 50% on launch day.</p>
         </div>
       </div>
     </section>

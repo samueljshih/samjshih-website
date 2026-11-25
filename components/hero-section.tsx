@@ -129,15 +129,15 @@ export function HeroSection() {
             className="hero-animate mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted-foreground text-pretty lg:mx-0"
             style={{ animationDelay: "0.16s" }}
           >
-            I design and build MVPs, web apps and AI-powered tools end to end, so you can launch, get real users and
-            grow without hiring a team.
+            I build your MVP and get it live in 21 days, fixed price, so you can start getting real customers without
+            hiring a dev team.
           </p>
 
           <ul
             className="hero-animate mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-x-5 gap-y-2 text-base font-medium text-foreground lg:mx-0 lg:justify-start"
             style={{ animationDelay: "0.2s" }}
           >
-            {["Fixed price", "Clickable prototype in week 1", "Live in 6 to 8 weeks", "You own everything"].map(
+            {["A real product, not a prototype", "You own the code", "Live on your own domain"].map(
               (item) => (
                 <li key={item} className="flex items-center gap-1.5">
                   <Check className="h-4 w-4 text-primary" strokeWidth={2} />
@@ -151,7 +151,7 @@ export function HeroSection() {
             className="hero-animate mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center lg:justify-start"
             style={{ animationDelay: "0.24s" }}
           >
-            <BookCallButton label="Get your free build estimate" className="w-full sm:w-auto" />
+            <BookCallButton className="w-full sm:w-auto" />
             <a
               href="#projects"
               className="group inline-flex h-14 items-center gap-1.5 px-2 text-lg font-medium text-foreground transition-colors hover:text-primary"
